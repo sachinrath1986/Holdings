@@ -1,5 +1,5 @@
 {
-  "name": "photo-gallery",
+  "name": "wissen-portfolio-app",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -67,5 +67,5 @@
   "devDependencies": {
     "@capacitor/cli": "3.1.1"
   },
-  "description": "An Ionic project"
+  "description": "An Investment Portfolio Management Application"
 }
