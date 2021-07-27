@@ -3,7 +3,7 @@ import './login.css';
 
 const Login: React.FC = () => {
   return (
-    <IonPage>
+    <IonPage id="login-page">
       <IonHeader>
         <IonToolbar>
           <IonTitle>Login</IonTitle>
