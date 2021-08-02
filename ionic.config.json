@@ -1,0 +1,7 @@
+{
+  "name": "wissen-portfolio-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
