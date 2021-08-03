@@ -12,7 +12,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
 import Login from './pages/login';
 import CreatePin  from './pages/createpin';
-import Portfolio from './pages/portfolio';
+// import Portfolio from './pages/portfolio';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -46,9 +46,9 @@ const App: React.FC = () => (
           <Route exact path="/createpin">
             <CreatePin />
           </Route> 
-          <Route exact path="/summary">
+          {/* <Route exact path="/summary">
             <Portfolio />
-          </Route> 
+          </Route>  */}
         </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
