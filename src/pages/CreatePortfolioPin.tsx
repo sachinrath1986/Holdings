@@ -1,7 +1,7 @@
 import { useState, FC } from 'react';
-import './CreatePortfolioPin.css';
 import { IonContent, IonPage, IonAvatar, IonText, IonButton} from '@ionic/react';
 import OtpInput from "react-otp-input";
+import './CreatePortfolioPin.css';
 
 const CreatePin: FC = () => {
     // State Variables
