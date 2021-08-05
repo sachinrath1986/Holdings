@@ -1,145 +1,128 @@
-h1, h2, h3, h4, h5, h6,p{
-    margin-bottom: 5px !important;
-    margin-top: 0 !important;
-  }
-  
-  .p-1{
-    padding: 0.5rem;
-  }
-  
-  .p-2{
-    padding: 1rem;
-  }
-  
-  .p-0{
-    padding:0;
-  }
-  
-  .pl-0{
-    padding-left: 0;
-  }
-  
-  .pb-0{
-    padding-bottom: 0;
-  }
-  
-  .pt-0{
-    padding-top: 0;
-  }
-  
-  .pr-0{
-    padding-right: 0;
-  }
-  
-  .m-1{
-    margin: 0.5rem;
-  }
-  
-  .m-2{
-    margin: 1rem;
-  }
-  
-  .mb-2{
-    margin-bottom: 1rem;
-    height: 1px;
-  }
-
-  .m-0{
-    margin: 0;
-  }
-  
-  .ml-0{
-    margin-left: 0;
-  }
-  
-  .mb-0{
-    margin-bottom: 0;
-  }
-  
-  .mt-0{
-    margin-top: 0;
-  }
-  
-  .mb-0{
-    margin-right: 0;
-  }
-
-  
-  .w-100{
-    width: 100%;
-  }
-  
-  .--uppercase{
-    text-transform: uppercase;
-  }
-  .--small-text{
-    font-size: 0.7rem;
-  }
-  
-  .--text-right{
-    text-align: right;
-  }
-  
-  .--font-bold{
-    font-weight: bold;
-  }
-  
-  ion-footer{
-    height: 82.67px;
-  }
-  
-ion-content{
-    --background:#020b3f !important;
+:root {
+  --white: #ffffff;
+  --btn-orange: #ff5722;
+  --otp-input-bg: #262d52;
+  --screen-bg: #020b3f;
 }
 
-ion-avatar {
-    background: white;
-    margin-bottom:1rem;
-    width: 65px;
-    height: 65px;
+.heading-h1, .heading-h6 {
+  margin-bottom: 0.31rem;
+  margin-top: 0;
 }
 
-ion-button.btn-orange{
-    --background: #ff5722;
-    --color: white;
+.p-1 {
+  padding: 0.5rem;
 }
 
-ion-button.button-round{
-    --border-radius:7px;
+.p-2 {
+  padding: 1rem;
 }
 
-ion-list.pin-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: transparent;
+.p-0 {
+  padding: 0;
 }
 
-.pin-flex ion-item {
-    --background: transparent;
-    --padding-start: 0;
-    --inner-border-width: none;
-    --border-color: transparent;
-    display: flex;
-    --border-style: none;
+.pl-0 {
+  padding-left: 0;
 }
 
-.otp-ip input {
-    background: #262d52 !important;
-    margin: auto;
-    border-radius: 5px;
-    width: 45px !important;
-    height: 45px;
-    color: white !important;
-    padding: 10px !important;
-    font-size: 20px !important;
-    border: none;
+.pb-0 {
+  padding-bottom: 0;
 }
 
-.otp-ip input:focus-visible {
-    outline: none;
+.pt-0 {
+  padding-top: 0;
 }
 
-div[otpip="otpip"] {
+.pr-0 {
+  padding-right: 0;
+}
+
+.m-1 {
+  margin: 0.5rem;
+}
+
+.m-2 {
+  margin: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+  height: 1px;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mb-0 {
+  margin-right: 0;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.--uppercase {
+  text-transform: uppercase;
+}
+
+.--small-text {
+  font-size: 0.7rem;
+}
+
+.--text-right {
+  text-align: right;
+}
+
+.--font-bold {
+  font-weight: bold;
+}
+
+.createpin-ion-content {
+  --background: var(--screen-bg);
+}
+
+.screen-avatar {
+  background: var(--white);
+  width: 4rem;
+  height: 4rem;
+}
+
+.btn-orange {
+  --background: var(--btn-orange);
+  --color: var(--white);
+  --border-radius: 0.43rem;
+}
+
+.otp-input input {
+  background: var(--otp-input-bg);
+  margin: auto;
+  border-radius: 0.31rem;
+  width: 2.8rem !important;
+  height: 2.8rem;
+  color: var(--white);
+  padding: 0.625rem;
+  font-size: 1.25rem;
+  border: none;
+}
+
+.otp-input input:focus-visible {
+  outline: none;
+}
+
+.otp-div>div:first-child {
   justify-content: space-between;
 }
