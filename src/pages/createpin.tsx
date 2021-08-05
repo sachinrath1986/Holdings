@@ -4,7 +4,7 @@ import { IonContent, IonPage, IonAvatar, IonText, IonButton} from '@ionic/react'
 import OtpInput from "react-otp-input";
 
 const CreatePin: FC = () => {
-
+    // State Variables
     const [pin, setPin] = useState("")
     const [confirmPin, setConfirmPin] = useState("")
     const isInvalid = pin === "" || confirmPin === '' || pin !== confirmPin;
