@@ -1,0 +1,102 @@
+:root {
+    --white: #ffffff;
+    --bkgrd-blue: rgb(18, 18, 90);
+    --txt-grey: rgba(175, 174, 174, 0.863);
+    --btn-orange: rgb(190, 80, 17);
+  }
+
+#login-page {
+    background-color: var(--bkgrd-blue);
+    padding: 5% 10%;
+    justify-content: initial;
+}
+
+ion-avatar.logo {
+    background: var(--white);
+    margin-bottom: 1rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+.header h5 {
+    margin: 0 0 0.3rem 0;
+    font-size: 0.875rem;
+}
+
+.header h2 {
+    margin: 0.3rem 0;
+    font-weight: bold;
+}
+
+form.login-form {
+    color: var(--txt-grey);
+    margin-top:  1.5rem;
+}
+
+ion-label.input-label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.875rem;
+
+}
+
+ion-input.input {
+    --color: var(--white);
+    --padding-bottom: 1rem;
+    --padding-end: 1rem;
+    --padding-start: 1rem;
+    --padding-top: 1rem;
+    border: 1px solid var(--txt-grey);
+    --background: var(--bkgrd-blue);
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 1.25rem;
+    --placeholder-opacity: 0.3;
+    --placeholder-font-weight: normal;
+}
+
+.foot-note {
+    position: fixed;
+    bottom: 0.6rem;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    color: var(--txt-grey);
+}
+
+ion-button.login-btn {
+    --color: var(--white);
+    display: block;
+    --background: var(--btn-orange);
+    --border-radius: 5px;
+    margin: 1.8rem 0 0 0;
+    height: 3rem;
+}
+
+ion-text.create-account {
+    color: var(--btn-orange);
+}
+
+ion-checkbox.tc-check {
+    --size: 1.125rem;
+    --border-radius: 5px;
+    --background: var(--bkgrd-blue);
+    --background-checked: var(--bkgrd-blue);
+    --checkmark-color: var(--white);
+    --border-color: var(--txt-grey);
+    --border-color-checked: var(--txt-grey);
+    --checkmark-width: 3px;
+    position: relative;
+    top: 1px;
+    left: 1px;
+}
+
+ion-grid.tc-check-grid {
+    --ion-grid-padding: 0;
+}
+
+ion-col.checkbox-col, ion-col.label-col {
+    padding-inline-start: initial;
+}
+    
+  
