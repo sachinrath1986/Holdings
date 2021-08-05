@@ -1,5 +1,5 @@
 import { useState, FC } from 'react';
-import './CreatePin.css';
+import './CreatePortfolioPin.css';
 import { IonContent, IonPage, IonAvatar, IonText, IonButton} from '@ionic/react';
 import OtpInput from "react-otp-input";
 
