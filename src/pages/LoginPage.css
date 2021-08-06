@@ -1,8 +1,8 @@
 :root {
     --white: #ffffff;
-    --bkgrd-blue: rgb(18, 18, 90);
-    --txt-grey: rgba(175, 174, 174, 0.863);
-    --btn-orange: rgb(190, 80, 17);
+    --bkgrd-blue: #12125a;
+    --txt-grey: #afaeaedc;
+    --btn-orange: #be5011;
   }
 
 #login-page {
@@ -77,7 +77,7 @@ ion-text.create-account {
     color: var(--btn-orange);
 }
 
-ion-checkbox.tc-check {
+ion-checkbox.terms-check {
     --size: 1.125rem;
     --border-radius: 5px;
     --background: var(--bkgrd-blue);
@@ -91,7 +91,7 @@ ion-checkbox.tc-check {
     left: 1px;
 }
 
-ion-grid.tc-check-grid {
+ion-grid.terms-check-grid {
     --ion-grid-padding: 0;
 }
 

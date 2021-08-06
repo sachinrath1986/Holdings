@@ -27,10 +27,10 @@ const Login: React.FC = () => {
         <IonLabel className='input-label'>Password</IonLabel>
         <IonInput value={''}  type='password' placeholder="Enter password" className='input' onIonChange={e => {}}></IonInput>
 
-        <IonGrid className='tc-check-grid'>
+        <IonGrid className='terms-check-grid'>
           <IonRow>
             <IonCol size='1' className='checkbox-col'>
-              <IonCheckbox onIonChange={e => {}} className='tc-check' />
+              <IonCheckbox onIonChange={e => {}} className='terms-check' />
             </IonCol>
             <IonCol size='11' className='label-col'>
               <IonLabel>By creating or logging into an account you agree to our Terms and Conditions and Privacy policies.</IonLabel>
