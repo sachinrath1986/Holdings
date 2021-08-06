@@ -5,6 +5,7 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Login from './pages/LoginPage';
+import CreatePin  from './pages/CreatePortfolioPin';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -35,6 +36,9 @@ const App: React.FC = () => (
           <Route exact path="/">
             <Redirect to="/login" />
           </Route>
+          <Route exact path="/createpin">
+            <CreatePin />
+          </Route> 
         </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
