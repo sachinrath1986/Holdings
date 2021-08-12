@@ -1,0 +1,130 @@
+/* Variables */
+:root {
+  --white: #ffffff;
+  --btn-orange: #ff5722;
+  --otp-input-bg: #262d52;
+  --summary-screen-bg: #020b3f;
+  --summary-nav-tab-bg:#121c52;
+}
+
+.heading-h1, .heading-h6 {
+  margin-bottom: 0.31rem;
+  margin-top: 0;
+}
+
+.p-1 {
+  padding: 0.5rem;
+}
+
+.p-2 {
+  padding: 1rem;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+.m-1 {
+  margin: 0.5rem;
+}
+
+.m-2 {
+  margin: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+  height: 1px;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mb-0 {
+  margin-right: 0;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.--uppercase {
+  text-transform: uppercase;
+}
+
+.--small-text {
+  font-size: 0.7rem;
+}
+
+.--text-right {
+  text-align: right;
+}
+
+.--font-bold {
+  font-weight: bold;
+}
+
+.summary-screen-footer {
+  height: 5.16rem;
+}
+
+.summary-screen-content {
+  --background: var(--summary-screen-bg);
+}
+
+.holdings-list {
+  background: transparent;
+}
+
+.holdings-list .holdings-list-item {
+  --background: transparent;
+  --padding-start: 0;
+  --inner-border-width: 0 0 0.0625rem 0;
+  --border-color: #7f7f7f;
+  --inner-padding-end: 0;
+}
+
+.holdings-list .holdings-list-item:first-child {
+  border-top: 0.0625rem solid #7f7f7f;
+}
+
+.holdings-grid {
+  padding-inline-end: 0;
+  padding-inline-start: 0;
+  padding: 0;
+}
+
+.current-data-container{
+  background: #111b4f;
+  height: 9.3rem;
+  border-radius: 0.9rem;
+}

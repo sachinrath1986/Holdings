@@ -1,0 +1,8 @@
+:root {
+    --summary-nav-tab-bg: #121c52;
+}
+
+.summary-screen-tab-bar {
+    --background: var(--summary-nav-tab-bg);
+    padding: 1rem 0;
+}
