@@ -45,12 +45,17 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "run-s prettier eslint",
+    "eslint": "eslint --fix src/**",
+    "prettier": "prettier --write src/ --ignore-unknown",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "eslint:recommended"
     ]
   },
   "browserslist": {
@@ -66,7 +71,28 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "3.1.1"
+    "@capacitor/cli": "3.1.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.2",
+    "run-s": "^0.0.0"
   },
-  "description": "An Investment Portfolio Management Application"
+  "description": "An Investment Portfolio Management Application",
+  "lint-staged": {
+    "**/*": "npm run lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }
