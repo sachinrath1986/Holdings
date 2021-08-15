@@ -4,10 +4,11 @@
   --btn-orange: #ff5722;
   --otp-input-bg: #262d52;
   --summary-screen-bg: #020b3f;
-  --summary-nav-tab-bg:#121c52;
+  --summary-nav-tab-bg: #121c52;
 }
 
-.heading-h1, .heading-h6 {
+.heading-h1,
+.heading-h6 {
   margin-bottom: 0.31rem;
   margin-top: 0;
 }
@@ -123,7 +124,7 @@
   padding: 0;
 }
 
-.current-data-container{
+.current-data-container {
   background: #111b4f;
   height: 9.3rem;
   border-radius: 0.9rem;

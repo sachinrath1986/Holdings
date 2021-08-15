@@ -6,7 +6,8 @@
   --screen-bg: #020b3f;
 }
 
-.heading-h1, .heading-h6 {
+.heading-h1,
+.heading-h6 {
   margin-bottom: 0.31rem;
   margin-top: 0;
 }
@@ -124,6 +125,6 @@
   outline: none;
 }
 
-.otp-div>div:first-child {
+.otp-div > div:first-child {
   justify-content: space-between;
 }
