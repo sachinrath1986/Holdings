@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   IonPage,
   IonRow,
@@ -10,68 +10,68 @@ import {
   IonAvatar,
   IonCheckbox,
   IonGrid,
-} from '@ionic/react'
-import './LoginPage.css'
+} from '@ionic/react';
+import './LoginPage.css';
 
-const Login: React.FC = () => {
-  return (
-    <IonPage id="login-page">
-      <IonAvatar className="logo"></IonAvatar>
+const SIGN_IN_MSG = `Let's sign you in`;
 
-      <div className="header">
-        <IonText color="light">
-          <h5>Welcome to Wissen</h5>
-        </IonText>
-        <IonText color="light">
-          <h2>Let's sign you in</h2>
-        </IonText>
-      </div>
+const Login: React.FC = () => (
+  <IonPage id="login-page">
+    <IonAvatar className="logo" />
 
-      <form className="login-form">
-        <IonLabel className="input-label">Email</IonLabel>
-        <IonInput
-          value={''}
-          type="email"
-          placeholder="Enter email"
-          className="input"
-          onIonChange={(e) => {}}
-        ></IonInput>
-        <IonLabel className="input-label">Password</IonLabel>
-        <IonInput
-          value={''}
-          type="password"
-          placeholder="Enter password"
-          className="input"
-          onIonChange={(e) => {}}
-        ></IonInput>
+    <div className="header">
+      <IonText color="light">
+        <h5>Welcome to Wissen</h5>
+      </IonText>
+      <IonText color="light">
+        <h2>{SIGN_IN_MSG}</h2>
+      </IonText>
+    </div>
 
-        <IonGrid className="terms-check-grid">
-          <IonRow>
-            <IonCol size="1" className="checkbox-col">
-              <IonCheckbox onIonChange={(e) => {}} className="terms-check" />
-            </IonCol>
-            <IonCol size="11" className="label-col">
-              <IonLabel>
-                By creating or logging into an account you agree to our Terms
-                and Conditions and Privacy policies.
-              </IonLabel>
-            </IonCol>
-          </IonRow>
-        </IonGrid>
+    <form className="login-form">
+      <IonLabel className="input-label">Email</IonLabel>
+      <IonInput
+        value=""
+        type="email"
+        placeholder="Enter email"
+        className="input"
+        onIonChange={(e) => {}}
+      />
+      <IonLabel className="input-label">Password</IonLabel>
+      <IonInput
+        value=""
+        type="password"
+        placeholder="Enter password"
+        className="input"
+        onIonChange={(e) => {}}
+      />
 
-        <IonButton className="login-btn">Login</IonButton>
-      </form>
+      <IonGrid className="terms-check-grid">
+        <IonRow>
+          <IonCol size="1" className="checkbox-col">
+            <IonCheckbox onIonChange={(e) => {}} className="terms-check" />
+          </IonCol>
+          <IonCol size="11" className="label-col">
+            <IonLabel>
+              By creating or logging into an account you agree to our Terms and
+              Conditions and Privacy policies.
+            </IonLabel>
+          </IonCol>
+        </IonRow>
+      </IonGrid>
 
-      <div className="foot-note">
-        <IonText>
-          <span>Not registered yet?&nbsp;</span>
-        </IonText>
-        <IonText className="create-account">
-          <span>Create an account.</span>
-        </IonText>
-      </div>
-    </IonPage>
-  )
-}
+      <IonButton className="login-btn">Login</IonButton>
+    </form>
 
-export default Login
+    <div className="foot-note">
+      <IonText>
+        <span>Not registered yet?&nbsp;</span>
+      </IonText>
+      <IonText className="create-account">
+        <span>Create an account.</span>
+      </IonText>
+    </div>
+  </IonPage>
+);
+
+export default Login;

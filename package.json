@@ -47,17 +47,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "run-s prettier eslint",
-    "eslint": "eslint --fix src/**",
+    "eslint": "eslint --fix \"src/**/*.?(j|t)s?(x)\"",
     "prettier": "prettier --write . --ignore-unknown",
     "prepare": "husky install"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "eslint:recommended",
-      "prettier"
-    ]
   },
   "browserslist": {
     "production": [

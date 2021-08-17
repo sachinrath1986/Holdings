@@ -1,39 +1,39 @@
-import { useState, FC } from 'react'
+import { useState, FC } from 'react';
 import {
   IonContent,
   IonPage,
   IonAvatar,
   IonText,
   IonButton,
-} from '@ionic/react'
-import OtpInput from 'react-otp-input'
-import './CreatePortfolioPin.css'
+} from '@ionic/react';
+import OtpInput from 'react-otp-input';
+import './CreatePortfolioPin.css';
 
 const CreatePin: FC = () => {
   // State Variables
-  const [pin, setPin] = useState('')
-  const [confirmPin, setConfirmPin] = useState('')
-  const isInvalid = pin === '' || confirmPin === '' || pin !== confirmPin
+  const [pin, setPin] = useState('');
+  const [confirmPin, setConfirmPin] = useState('');
+  const isInvalid = pin === '' || confirmPin === '' || pin !== confirmPin;
 
   const handleChangePin = (e: string) => {
-    setPin(e)
-  }
+    setPin(e);
+  };
 
   const handleChangeConfirmPin = (e: string) => {
-    setConfirmPin(e)
-  }
+    setConfirmPin(e);
+  };
 
   return (
     <IonPage>
       <IonContent class="createpin-ion-content">
         <div className="p-2">
-          <IonAvatar class="screen-avatar"></IonAvatar>
-          <div className="mb-2"></div>
+          <IonAvatar class="screen-avatar" />
+          <div className="mb-2" />
           <IonText color="light">
             <h1 className="--font-bold heading-h1">Create Pin</h1>
           </IonText>
-          <div className="mb-2"></div>
-          <div className="mb-2"></div>
+          <div className="mb-2" />
+          <div className="mb-2" />
           <IonText color="light">
             <h6 className="heading-h6">Enter Pin</h6>
           </IonText>
@@ -47,7 +47,7 @@ const CreatePin: FC = () => {
               isInputSecure
             />
           </div>
-          <div className="mb-2"></div>
+          <div className="mb-2" />
           <IonText color="light">
             <h6 className="heading-h6">Confirm Pin</h6>
           </IonText>
@@ -61,8 +61,8 @@ const CreatePin: FC = () => {
               isInputNum
             />
           </div>
-          <div className="mb-2"></div>
-          <div className="mb-2"></div>
+          <div className="mb-2" />
+          <div className="mb-2" />
           <IonButton
             disabled={isInvalid}
             expand="full"
@@ -75,7 +75,7 @@ const CreatePin: FC = () => {
         </div>
       </IonContent>
     </IonPage>
-  )
-}
+  );
+};
 
-export default CreatePin
+export default CreatePin;
