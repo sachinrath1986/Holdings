@@ -47,7 +47,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "run-s prettier eslint",
-    "eslint": "eslint --fix \"src/**/*.?(j|t)s?(x)\"",
+    "eslint": "eslint --fix --max-warnings 10 \"src/**/*.?(j|t)s?(x)\"",
     "prettier": "prettier --write . --ignore-unknown",
     "prepare": "husky install"
   },

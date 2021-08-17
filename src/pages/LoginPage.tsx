@@ -35,7 +35,6 @@ const Login: React.FC = () => (
         type="email"
         placeholder="Enter email"
         className="input"
-        onIonChange={(e) => {}}
       />
       <IonLabel className="input-label">Password</IonLabel>
       <IonInput
@@ -43,13 +42,12 @@ const Login: React.FC = () => (
         type="password"
         placeholder="Enter password"
         className="input"
-        onIonChange={(e) => {}}
       />
 
       <IonGrid className="terms-check-grid">
         <IonRow>
           <IonCol size="1" className="checkbox-col">
-            <IonCheckbox onIonChange={(e) => {}} className="terms-check" />
+            <IonCheckbox className="terms-check" />
           </IonCol>
           <IonCol size="11" className="label-col">
             <IonLabel>

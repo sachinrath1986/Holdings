@@ -35,6 +35,7 @@ module.exports = {
       { extensions: ['.js', '.jsx', '.tsx', '.ts'] },
     ],
     'react/react-in-jsx-scope': 0,
+    'react/no-array-index-key': 1,
     'import/extensions': [
       2,
       'ignorePackages',

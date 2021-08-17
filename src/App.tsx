@@ -34,7 +34,7 @@ const App: React.FC = () => (
         <Route exact path="/">
           <Redirect to="/login" />
         </Route>
-        <Route exact path="/createpin">
+        <Route exact path="/create-pin">
           <CreatePin />
         </Route>
         <Route exact path="/summary">
