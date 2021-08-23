@@ -8,6 +8,7 @@ import {
 } from '@ionic/react';
 import OtpInput from 'react-otp-input';
 import './CreatePortfolioPin.css';
+import { useHistory } from 'react-router';
 
 const CreatePin: FC = () => {
   // State Variables
@@ -22,7 +23,10 @@ const CreatePin: FC = () => {
   const handleChangeConfirmPin = (e: string) => {
     setConfirmPin(e);
   };
-
+  const history = useHistory();
+  const doLogin = ()=>{
+    history.push('/summary');
+  }
   return (
     <IonPage>
       <IonContent class="createpin-ion-content">
@@ -69,6 +73,7 @@ const CreatePin: FC = () => {
             size="large"
             class="btn-orange"
             shape="round"
+            onClick={doLogin}
           >
             Create
           </IonButton>
