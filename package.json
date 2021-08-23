@@ -82,7 +82,10 @@
   },
   "description": "An Investment Portfolio Management Application",
   "lint-staged": {
-    "**/*": "npm run lint"
+    "*.{js,jsx,ts,tsx}": [
+      "prettier",
+      "eslint --max-warnings 10"
+    ]
   },
   "husky": {
     "hooks": {
