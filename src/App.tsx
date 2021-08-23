@@ -3,7 +3,9 @@ import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Login from './pages/LoginPage';
 import CreatePin from './pages/CreatePortfolioPin';
+import AccountSummary from './pages/AccountSummary';
 import PortfolioSummary from './pages/PortfolioSummary';
+import HoldingSummary from './pages/HoldingSummary';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -24,6 +26,9 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+/* Theme tailwind */
+import './theme/tailwind.css'
+
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
@@ -37,8 +42,14 @@ const App: React.FC = () => (
         <Route exact path="/create-pin">
           <CreatePin />
         </Route>
-        <Route exact path="/summary">
+        <Route exact path="/portfoliosummary">
           <PortfolioSummary />
+        </Route>
+        <Route exact path="/accountsummary">
+          <AccountSummary />
+        </Route>
+        <Route exact path="/holdingsummary">
+          <HoldingSummary />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
