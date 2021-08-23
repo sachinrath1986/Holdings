@@ -10,9 +10,13 @@ import {
   IonCol,
   IonText,
   IonFooter,
+  IonMenu,
+  IonButtons,
+  IonMenuButton
 } from '@ionic/react';
 // Custom Components
 import PortfolioTab from '../components/PortfolioTab';
+import SideMenuBar from '../components/SideMenuBar';
 // CSS Files
 import './PortfolioSummary.css';
 
@@ -20,9 +24,14 @@ const Portfolio: FC = () => {
   const [holdings, setHoldings] = useState(new Array(5).fill(' '));
 
   return (
+
     <IonPage>
-      <IonContent fullscreen class="summary-screen-content">
+      <SideMenuBar />
+      <IonContent fullscreen class="summary-screen-content" id="main">
         <div className="p-1">
+        <IonButtons slot="start">
+            <IonMenuButton color='light' />
+          </IonButtons>
           <IonText color="light">
             <h1 className="--font-bold heading-h1">Portfolio</h1>
           </IonText>
@@ -43,6 +52,7 @@ const Portfolio: FC = () => {
         </div>
         <IonList class="holdings-list">
           {holdings.map((data, index) => (
+            // eslint-disable-next-line react/no-array-index-key
             <IonItem class="holdings-list-item" key={index}>
               <div className="w-100 p-1">
                 <IonGrid class="holdings-grid">

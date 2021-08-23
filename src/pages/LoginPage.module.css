@@ -5,7 +5,7 @@
   --btn-orange: #be5011;
 }
 
-#login-page {
+ion-app div.login-page {
   background-color: var(--bkgrd-blue);
   padding: 5% 10%;
   justify-content: initial;
