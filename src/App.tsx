@@ -27,7 +27,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 /* Theme tailwind */
-import './theme/tailwind.css'
+import './theme/tailwind.css';
 
 const App: React.FC = () => (
   <IonApp>

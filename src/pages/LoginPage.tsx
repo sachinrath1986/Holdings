@@ -11,23 +11,82 @@ import {
   IonCheckbox,
   IonGrid,
 } from '@ionic/react';
-import './LoginPage.css';
 import { useHistory } from 'react-router';
+import styles from './LoginPage.module.css';
+// import './LoginPage.css';
 
 const SIGN_IN_MSG = `Let's sign you in`;
 const Login: React.FC = () => {
   const history = useHistory();
   const doLogin = () => {
     history.push('/accountsummary');
-  }
+  };
   const doRegister = () => {
     history.push('/create-pin');
-  }
+  };
   return (
-    <IonPage id="login-page">
-      <IonAvatar className="logo" />
+    <IonPage className={styles['login-page']}>
+      <IonAvatar className={styles.logo} />
 
-      <div className="header">
+      {/* const Login: React.FC = () => (
+  <IonPage  className={styles["login-page"]}>
+    <IonAvatar className={styles.logo} />
+
+    <div className={styles.header}>
+      <IonText color="light">
+        <h5>Welcome to Wissen</h5>
+      </IonText>
+      <IonText color="light">
+        <h2>{SIGN_IN_MSG}</h2>
+      </IonText>
+    </div>
+
+    <form className={styles["login-form"]}>
+      <IonLabel className={styles["input-label"]}>Email</IonLabel>
+      <IonInput
+        value=""
+        type="email"
+        placeholder="Enter email"
+        className={styles.input}
+      />
+      <IonLabel className={styles["input-label"]}>Password</IonLabel>
+      <IonInput
+        value=""
+        type="password"
+        placeholder="Enter password"
+        className={styles.input}
+      />
+
+      <IonGrid className={styles["terms-check-grid"]}>
+        <IonRow>
+          <IonCol size="1" className={styles["checkbox-col"]}>
+            <IonCheckbox 
+            className={styles["terms-check"]} />
+          </IonCol>
+          <IonCol size="11" className={styles["label-col"]}>
+            <IonLabel>
+              By creating or logging into an account you agree to our Terms and
+              Conditions and Privacy policies.
+            </IonLabel>
+          </IonCol>
+        </IonRow>
+      </IonGrid>
+
+      <IonButton className={styles["login-btn"]}>Login</IonButton>
+    </form>
+
+    <div className={styles["foot-note"]}>
+      <IonText>
+        <span>Not registered yet?&nbsp;</span>
+      </IonText>
+      <IonText className={styles["create-account"]}>
+        <span>Create an account.</span>
+      </IonText>
+    </div>
+
+  </IonPage>
+); */}
+      <div className={styles.header}>
         <IonText color="light">
           <h5>Welcome to Wissen</h5>
         </IonText>
@@ -36,49 +95,51 @@ const Login: React.FC = () => {
         </IonText>
       </div>
 
-      <form className="login-form">
-        <IonLabel className="input-label">Email</IonLabel>
+      <form className={styles['login-form']}>
+        <IonLabel className={styles['input-label']}>Email</IonLabel>
         <IonInput
           value=""
           type="email"
           placeholder="Enter email"
-          className="input"
+          className={styles.input}
         />
-        <IonLabel className="input-label">Password</IonLabel>
+        <IonLabel className={styles['input-label']}>Password</IonLabel>
         <IonInput
           value=""
           type="password"
           placeholder="Enter password"
-          className="input"
+          className={styles.input}
         />
 
-        <IonGrid className="terms-check-grid">
+        <IonGrid className={styles['terms-check-grid']}>
           <IonRow>
-            <IonCol size="1" className="checkbox-col">
-              <IonCheckbox className="terms-check" />
+            <IonCol size="1" className={styles['checkbox-col']}>
+              <IonCheckbox className={styles['terms-check']} />
             </IonCol>
-            <IonCol size="11" className="label-col">
+            <IonCol size="11" className={styles['label-col']}>
               <IonLabel>
-                By creating or logging into an account you agree to our Terms and
-                Conditions and Privacy policies.
+                By creating or logging into an account you agree to our Terms
+                and Conditions and Privacy policies.
               </IonLabel>
             </IonCol>
           </IonRow>
         </IonGrid>
 
-        <IonButton className="login-btn" onClick={doLogin}>Login</IonButton>
+        <IonButton className={styles['login-btn']} onClick={doLogin}>
+          Login
+        </IonButton>
       </form>
 
-      <div className="foot-note">
+      <div className={styles['foot-note']}>
         <IonText>
           <span>Not registered yet?&nbsp;</span>
         </IonText>
-        <IonText className="create-account" onClick={doRegister}>
+        <IonText className={styles['create-account']} onClick={doRegister}>
           <span>Create an account.</span>
         </IonText>
       </div>
     </IonPage>
   );
-}
+};
 
 export default Login;

@@ -5,7 +5,7 @@
   --btn-orange: #be5011;
 }
 
-#login-page {
+ion-app div.login-page {
   background-color: var(--bkgrd-blue);
   padding: 5% 10%;
   justify-content: initial;
@@ -86,7 +86,7 @@ ion-checkbox.terms-check {
   --border-color-checked: var(--txt-grey);
   --checkmark-width: 3px;
   position: relative;
-  top: 1px;
+  top: 4px;
   left: 1px;
 }
 

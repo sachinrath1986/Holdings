@@ -1,0 +1,68 @@
+:root {
+  --white: #ffffff;
+  --menu-bg: #020c46ef;
+}
+
+ion-content.menu-content {
+  --background: var(--menu-bg);
+}
+
+.menu-list {
+  background: transparent;
+}
+
+ion-row.profile-row {
+  padding-top: 0.625rem;
+}
+
+.menu-list-item {
+  --background: transparent;
+  --padding-start: 0;
+  --color: rgba(255, 255, 255, 0.89);
+  --border-color: #7f7f7f77;
+  --min-height: 4rem;
+}
+
+.menu-list-item img {
+  position: relative;
+  top: -1px;
+  margin: 0 0.5rem;
+}
+
+.menu-list .menu-list-item:last-child {
+  --color: rgba(255, 255, 255, 0.247);
+}
+
+ion-col.profile-info-col {
+  padding-top: 0.6rem;
+}
+
+.profile-image-col {
+  align-self: flex-end;
+}
+
+.profile-image-col img {
+  border-radius: 5px;
+}
+
+.profile-info-col span {
+  display: block;
+}
+
+.profile-info-col span:first-child {
+  color: rgba(255, 255, 255, 0.89);
+  font-size: 1.4rem;
+}
+
+span.email-and-id {
+  color: rgba(255, 255, 255, 0.541);
+  font-size: 0.9rem;
+}
+
+.transaction-num {
+  background-color: #ff5722;
+  border-radius: 1rem;
+  padding: 2px 7px;
+  position: absolute;
+  right: 1rem;
+}

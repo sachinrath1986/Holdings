@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   IonText,
   IonGrid,
@@ -6,38 +6,38 @@ import {
   IonCol,
   IonIcon,
   IonList,
-  IonItem
-} from "@ionic/react";
-import {
-  chevronForwardOutline
-} from 'ionicons/icons';
+  IonItem,
+} from '@ionic/react';
+import { chevronForwardOutline } from 'ionicons/icons';
 import HoldingAnalyticsStyles from '../theme/styles.module.css';
 
 const HoldingAnalytics: React.FC = () => {
   const [overViewData, setOverViewData] = useState({
-    "Invested": "$234,56.10",
-    "Current": "$534,56.10",
-    "ProfitOrLoss": {
-      "PorL": "Profit",
-      "Value": "5194.40"
+    Invested: '$234,56.10',
+    Current: '$534,56.10',
+    ProfitOrLoss: {
+      PorL: 'Profit',
+      Value: '5194.40',
     },
-    "DayProfitOrLoss": "$513.80",
-    "AveragePrice": "$268.89",
-    "Quantity": "T1:549",
-    "Open": "$268.89",
-    "High": "$250.00",
-    "Low": "$236.89",
-    "PreviousClose": "$263.60",
-    "WeekLowOrHigh": {
-      "Low": "$51,800.00",
-      "High": "$57,800.00"
-    }
-  })
+    DayProfitOrLoss: '$513.80',
+    AveragePrice: '$268.89',
+    Quantity: 'T1:549',
+    Open: '$268.89',
+    High: '$250.00',
+    Low: '$236.89',
+    PreviousClose: '$263.60',
+    WeekLowOrHigh: {
+      Low: '$51,800.00',
+      High: '$57,800.00',
+    },
+  });
   return (
     <div>
       <div className="h-52" />
       <div className="p-4">
-        <div className={`px-5 py-4 w-full rounded-xl mb-4 ${HoldingAnalyticsStyles.data_container}`}>
+        <div
+          className={`px-5 py-4 w-full rounded-xl mb-4 ${HoldingAnalyticsStyles.data_container}`}
+        >
           <div>
             <IonGrid class="p-0">
               <IonRow>
