@@ -9,90 +9,326 @@ import {
   IonRow,
   IonCol,
   IonText,
-  IonFooter,
+  IonHeader,
+  IonIcon
 } from '@ionic/react';
-// Custom Components
-import PortfolioTab from '../components/PortfolioTab';
+import {
+  alertCircle,
+  chevronForwardOutline
+} from 'ionicons/icons';
+import { useHistory } from 'react-router';
 // CSS Files
-import './PortfolioSummary.css';
+import PortfolioSummaryStyles from '../theme/styles.module.css';
 
 const Portfolio: FC = () => {
-  const [holdings, setHoldings] = useState(new Array(5).fill(' '));
+  const [holdingsData, setHoldingsData] = useState([
+    {
+      "HoldingId": "a12",
+      "HoldingName": "rcom",
+      "Invested": "$2,789.00",
+      "HoldingType": 'Bonds',
+      "ProfitOrLoss": {
+        "PorL": "Profit",
+        "Value": "$150.55",
+        "HoldingPercentage": "15.8",
+        "StockValue": "7.89",
+        "StockPercentage": "0.28"
+      }
+    },
+    {
+      "HoldingId": "b34",
+      "HoldingName": "indigo",
+      "Invested": "$2,789.00",
+      "HoldingType": 'Royalties',
+      "ProfitOrLoss": {
+        "PorL": "Loss",
+        "Value": "$150.55",
+        "HoldingPercentage": "15.8",
+        "StockValue": "7.89",
+        "StockPercentage": "0.28"
+      }
+    },
+    {
+      "HoldingId": "c56",
+      "HoldingName": "bit coin",
+      "Invested": "$2,789.00",
+      "HoldingType": 'Stocks',
+      "ProfitOrLoss": {
+        "PorL": "Profit",
+        "Value": "$150.55",
+        "HoldingPercentage": "15.8",
+        "StockValue": "7.89",
+        "StockPercentage": "0.28"
+      }
+    },
+    {
+      "HoldingId": "d78",
+      "HoldingName": "uti assets",
+      "Invested": "$2,789.00",
+      "HoldingType": 'Bonds',
+      "ProfitOrLoss": {
+        "PorL": "Loss",
+        "Value": "$150.55",
+        "HoldingPercentage": "15.8",
+        "StockValue": "7.89",
+        "StockPercentage": "0.28"
+      }
+    },
+    {
+      "HoldingId": "e90",
+      "HoldingName": "ibulhsgfin",
+      "Invested": "$2,789.00",
+      "HoldingType": 'Bonds',
+      "ProfitOrLoss": {
+        "PorL": "Profit",
+        "Value": "$150.55",
+        "HoldingPercentage": "15.8",
+        "StockValue": "7.89",
+        "StockPercentage": "0.28"
+      }
+    }
+  ]);
+  const [overallData, setOverAllData] = useState({
+    "Current": "$280,977.10",
+    "Invested": "$240,977.10",
+    "ProfitOrLoss": {
+      "PorL": "Loss",
+      "Value": "43,097.10",
+      "Percentage": "1.67"
+    },
+    "TodayProfitOrLoss": {
+      "PorL": "Loss",
+      "Value": "23,097.10",
+      "Percentage": "1.67"
+    },
+  });
+
+  const history = useHistory();
+  const selectHolding = () => {
+    history.push('/holdingsummary');
+  }
 
   return (
     <IonPage>
-      <IonContent fullscreen class="summary-screen-content">
-        <div className="p-1">
+      <IonHeader class={PortfolioSummaryStyles.header_bg}>
+        <div className="w-full p-4 flex flexx-row items-center justify-center">
           <IonText color="light">
-            <h1 className="--font-bold heading-h1">Portfolio</h1>
+            <h1 className="font-semibold text-xl">Portfolio</h1>
           </IonText>
         </div>
-        {/* Top Section */}
-        <div className="p-1">
-          <div className="current-data-container" />
-        </div>
-        {/* End of Top Section */}
-        <div className="mb-2" />
-        {/* Holdings Section */}
-        <div className="p-1 pb-0">
-          <IonText color="medium">
-            <h6 className="--uppercase --small-text heading-h6">
-              top 5 holdings
-            </h6>
-          </IonText>
-        </div>
-        <IonList class="holdings-list">
-          {holdings.map((data, index) => (
-            <IonItem class="holdings-list-item" key={index}>
-              <div className="w-100 p-1">
-                <IonGrid class="holdings-grid">
-                  <IonRow>
-                    <IonCol class="pl-0">
-                      <IonText color="medium">
-                        <h6 className="--small-text heading-h6">
-                          Invested:&nbsp;51009.00
-                        </h6>
-                      </IonText>
-                      <IonText color="light">
-                        <h6 className="--uppercase heading-h6">rcom</h6>
-                      </IonText>
-                      <IonText color="medium">
-                        <h6 className="--small-text heading-h6">Royalties</h6>
-                      </IonText>
+      </IonHeader>
+      <IonContent fullscreen class={PortfolioSummaryStyles.screen_bg}>
+        <div>
+          <div className="p-4 pt-0">
+            <div className={`px-5 py-3 pt-0 w-full rounded-xl mb-3 ${PortfolioSummaryStyles.data_container}`}>
+              <div className="pb-3 pt-3">
+                <IonGrid class="p-0">
+                  <IonRow class="p-0">
+                    <IonCol class="p-0">
+                      <div className="flex flex-row items-center">
+                        <div className="mr-1">
+                          <IonText color="light">
+                            <h2 className="text-sm text-gray-500">Current</h2>
+                          </IonText>
+                        </div>
+                        <div>
+                          <IonIcon icon={alertCircle} class="text-gray-500 text-xs" />
+                        </div>
+                      </div>
+                      <div>
+                        <IonText color="light">
+                          <p className="text-lg">{overallData.Current}</p>
+                        </IonText>
+                      </div>
+                      <div>
+                        <IonText>
+                          <p className="text-xs text-gray-300">Invested: {overallData.Invested}</p>
+                        </IonText>
+                      </div>
                     </IonCol>
-                    <IonCol />
-                    <IonCol class="pr-0">
-                      <IonText color="success">
-                        <h6 className="--small-text --text-right heading-h6">
-                          +15.36%
-                        </h6>
-                      </IonText>
-                      <IonText color="success">
-                        <h6 className="--text-right heading-h6">270.55</h6>
-                      </IonText>
-                      <p className="--small-text --text-right ">
-                        <IonText color="medium">+7.89&nbsp;</IonText>
-                        <IonText color="success">(0.68%)</IonText>
-                      </p>
+                    <IonCol class="p-0">
+                      <div className="flex flex-row items-center">
+                        <div className="mr-1">
+                          <IonText color="light">
+                            <h2 className="text-sm text-gray-500">P&#38;L</h2>
+                          </IonText>
+                        </div>
+                        <div>
+                          <IonIcon icon={alertCircle} class="text-gray-500 text-xs" />
+                        </div>
+                      </div>
+                      <div className="flex flex-col">
+                        <div className="mr-1">
+                          {
+                            overallData.ProfitOrLoss.PorL === "Profit" ?
+                              <IonText class={PortfolioSummaryStyles.profit_text}>
+                                <p className="text-lg">+{overallData.ProfitOrLoss.Value}</p>
+                              </IonText>
+                              :
+                              <IonText class={PortfolioSummaryStyles.loss_text}>
+                                <p className="text-lg">-{overallData.ProfitOrLoss.Value}</p>
+                              </IonText>
+                          }
+                        </div>
+                        <div>
+                          {
+                            overallData.ProfitOrLoss.PorL === "Profit" ?
+                              <IonText class={PortfolioSummaryStyles.profit_text}>
+                                <p className="text-sm">({overallData.ProfitOrLoss.Percentage}%)</p>
+                              </IonText>
+                              :
+                              <IonText class={PortfolioSummaryStyles.loss_text}>
+                                <p className="text-sm">({overallData.ProfitOrLoss.Percentage}%)</p>
+                              </IonText>
+                          }
+                        </div>
+                      </div>
                     </IonCol>
                   </IonRow>
                 </IonGrid>
               </div>
-            </IonItem>
-          ))}
-        </IonList>
-        {/* End of Holdings Section */}
-        <div className="mb-2" />
-        <div className="p-1">
-          <IonText color="danger">
-            <h6 className="--small-text">View all holdings</h6>
-          </IonText>
+              <div className="h-px w-full bg-gray-500" />
+              <div className="pt-3">
+                <IonGrid class="p-0">
+                  <IonRow class="p-0">
+                    <IonCol class="p-0">
+                      <div>
+                        <IonText color="light">
+                          <h2 className="text-sm text-gray-500">Today&lsquo;s P&#38;L</h2>
+                        </IonText>
+                      </div>
+                    </IonCol>
+                    <IonCol class="p-0">
+                      <div className="flex flex-row items-center">
+                        <div className="mr-1">
+                          {
+                            overallData.TodayProfitOrLoss.PorL === "Profit" ?
+                              <IonText class={PortfolioSummaryStyles.profit_text}>
+                                <p className="text-sm font-bold">+{overallData.TodayProfitOrLoss.Value}</p>
+                              </IonText>
+                              :
+                              <IonText class={PortfolioSummaryStyles.loss_text}>
+                                <p className="text-sm font-bold">-{overallData.TodayProfitOrLoss.Value}</p>
+                              </IonText>
+                          }
+                        </div>
+                        <div>
+                          {
+                            overallData.TodayProfitOrLoss.PorL === "Profit" ?
+                              <IonText class={PortfolioSummaryStyles.profit_text}>
+                                <p className="text-sm font-bold">({overallData.TodayProfitOrLoss.Percentage}%)</p>
+                              </IonText>
+                              :
+                              <IonText class={PortfolioSummaryStyles.loss_text}>
+                                <p className="text-sm font-bold">({overallData.TodayProfitOrLoss.Percentage}%)</p>
+                              </IonText>
+                          }
+                        </div>
+                      </div>
+                    </IonCol>
+                  </IonRow>
+                </IonGrid>
+              </div>
+            </div>
+          </div>
+          <div className="p-4">
+            <div className="h-40" />
+          </div>
+          <div className="p-4 pb-1">
+            <div className="flex flex-row items-center justify-between">
+              <div className="flex flex-row items-center">
+                <div className="mr-1">
+                  <IonText color="light">
+                    <h2 className="text-sm text-gray-600 uppercase font-bold">top 5 holdings</h2>
+                  </IonText>
+                </div>
+                <div>
+                  <IonIcon icon={alertCircle} class="text-gray-400 text-xs" />
+                </div>
+              </div>
+              <div className="flex flex-row items-start">
+                <div>
+                  <IonText color="secondary">
+                    <h2 className="text-sm">View all Holdings</h2>
+                  </IonText>
+                </div>
+                <div>
+                  <IonIcon icon={chevronForwardOutline} class="text-sm font-bold" color="secondary" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <IonList class={PortfolioSummaryStyles.holdings_list}>
+            {holdingsData.map((data, index) => (
+              <IonItem class={PortfolioSummaryStyles.holdings_list_item} key={data.HoldingId} onClick={selectHolding}>
+                <div className="w-full p-4 pt-3">
+                  <IonGrid class="p-0">
+                    <IonRow>
+                      <IonCol class="pl-0 pb-0">
+                        <IonText color="secondary">
+                          <p className="text-lg uppercase font-bold">
+                            {data.HoldingName}
+                          </p>
+                        </IonText>
+                        <IonText color="light">
+                          <p className="text-sm">
+                            Invested:&nbsp;{data.Invested}
+                          </p>
+                        </IonText>
+                        <IonText color="medium">
+                          <p className="text-sm">{data.HoldingType}</p>
+                        </IonText>
+                      </IonCol>
+                      <IonCol class="pb-0" />
+                      <IonCol class="pr-0 pb-0">
+                        <IonText>
+                          {
+                            data.ProfitOrLoss.PorL === "Profit" ?
+                              <p className={`text-sm text-right ${PortfolioSummaryStyles.profit_text}`}>
+                                +{data.ProfitOrLoss.HoldingPercentage}%
+                              </p>
+                              :
+                              <p className={`text-sm text-right ${PortfolioSummaryStyles.loss_text}`}>
+                                -{data.ProfitOrLoss.HoldingPercentage}%
+                              </p>
+                          }
+                        </IonText>
+                        <IonText>
+                          {
+                            data.ProfitOrLoss.PorL === "Profit" ?
+                              <p className={`${PortfolioSummaryStyles.profit_text} text-lg font-bold text-right`}>{data.ProfitOrLoss.Value}</p>
+                              :
+                              <p className={`${PortfolioSummaryStyles.loss_text} text-lg font-bold text-right`}>{data.ProfitOrLoss.Value}</p>
+                          }
+                        </IonText>
+                        <h6 className="text-sm text-right flex justify-end">
+                          <IonText color="medium">
+                            {
+                              data.ProfitOrLoss.PorL === "Profit" ?
+                                "+"
+                                :
+                                "-"
+                            }
+                            {data.ProfitOrLoss.StockValue}&nbsp;
+                          </IonText>
+                          <IonText>
+                            {
+                              data.ProfitOrLoss.PorL === "Profit" ?
+                                <p className={`${PortfolioSummaryStyles.profit_text} text-sm font-bold text-right`}>({data.ProfitOrLoss.StockPercentage}%)</p>
+                                :
+                                <p className={`${PortfolioSummaryStyles.loss_text} text-sm font-bold text-right`}>({data.ProfitOrLoss.StockPercentage}%)</p>
+                            }
+                          </IonText>
+                        </h6>
+                      </IonCol>
+                    </IonRow>
+                  </IonGrid>
+                </div>
+              </IonItem>
+            ))}
+          </IonList>
         </div>
-        <div className="mb-2" />
       </IonContent>
-      <IonFooter class="summary-screen-footer">
-        <PortfolioTab />
-      </IonFooter>
     </IonPage>
   );
 };

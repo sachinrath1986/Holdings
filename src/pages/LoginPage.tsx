@@ -18,7 +18,7 @@ const SIGN_IN_MSG = `Let's sign you in`;
 const Login: React.FC = () => {
   const history = useHistory();
   const doLogin = () => {
-    history.push('/summary');
+    history.push('/accountsummary');
   }
   const doRegister = () => {
     history.push('/create-pin');
