@@ -81,9 +81,9 @@ http://ionicframework.com/docs/theming/ */
   --otp-input-bg: #262d52;
   --screen-bg: #020b3f;
   --summary-nav-tab-bg: #121c52;
-  --data-container-bg:#171f49;
-  --profit-text-color:#14ea14;
-  --loss-text-color:#fd5019;
+  --data-container-bg: #171f49;
+  --profit-text-color: #14ea14;
+  --loss-text-color: #fd5019;
 }
 
 @media (prefers-color-scheme: dark) {
