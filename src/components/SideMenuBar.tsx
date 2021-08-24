@@ -1,21 +1,14 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import {
-  IonPage,
   IonContent,
   IonList,
   IonItem,
   IonGrid,
   IonRow,
   IonCol,
-  IonText,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
   IonMenu,
-  IonIcon,
-  IonLabel
 } from '@ionic/react';
-import { menuController } from '@ionic/core';
+import { useHistory } from 'react-router';
 import styles from './SideMenuBar.module.css';
 import homeIcon from '../images/home.png'
 import documentIcon from '../images/document.png'
@@ -27,30 +20,12 @@ import logoutIcon from '../images/logout.png'
 import profileImage from '../images/profile-image.jpg'
 import rightArrowIcon from '../images/right-arrow-blue.png'
 
-
-// interface ItemIcon {
-//   'Dashboard': string,
-//   'Documents & Reports': string,
-//   'Transactions': string,
-//   'Profile': string,
-//   'Settings': string,
-//   'Help': string,
-//   'Logout': string
-// }
-
-// const menuItems: string[]= ['Dashboard', 'Documents & Reports', 'Transactions', 'Profile', 'Settings', 'Help', 'Logout']
-// const itemIcon : ItemIcon = {
-//   'Dashboard': homeIcon,
-//   'Documents & Reports': documentIcon,
-//   'Transactions': transactionsIcon,
-//   'Profile': profileIcon,
-//   'Settings': settingsIcon,
-//   'Help': helpIcon,
-//   'Logout': logoutIcon
-// }
-
-const SideMenuBar: FC = () => 
-  (
+const SideMenuBar: FC = () =>  {
+  const history = useHistory();
+  const backToSummary = () => {
+    history.push('/accountsummary');
+  }
+ return (
     <IonMenu side="start" type='overlay' content-id="main">
       <IonContent class={styles['menu-content']}>
         <IonGrid>
@@ -69,7 +44,7 @@ const SideMenuBar: FC = () =>
                 MS12345
               </span>
             </IonCol>
-            <IonCol size='2' class={styles['arrow-btn-col']} onClick={() => menuController.close()}>
+            <IonCol size='2' class={styles['arrow-btn-col']} onClick={() => backToSummary()}>
               <img src={rightArrowIcon} alt="" />
             </IonCol>
           </IonRow>
@@ -106,12 +81,8 @@ const SideMenuBar: FC = () =>
                 <span>Logout</span>
               </IonItem>
         </IonList>
-        
-     
       </IonContent>
-       
-
       </IonMenu>
   )
-
+ }
 export default SideMenuBar

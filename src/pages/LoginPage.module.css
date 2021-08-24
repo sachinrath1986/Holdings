@@ -86,7 +86,7 @@ ion-checkbox.terms-check {
   --border-color-checked: var(--txt-grey);
   --checkmark-width: 3px;
   position: relative;
-  top: 1px;
+  top: 4px;
   left: 1px;
 }
 

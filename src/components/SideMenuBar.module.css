@@ -1,10 +1,10 @@
 :root {
-    --white: #ffffff;
-    --menu-bg: #020c46ef;
-  }
+  --white: #ffffff;
+  --menu-bg: #020c46ef;
+}
 
 ion-content.menu-content {
-    --background: var(--menu-bg);
+  --background: var(--menu-bg);
 }
 
 .menu-list {
@@ -23,9 +23,9 @@ ion-row.profile-row {
   --min-height: 4rem;
 }
 
-.menu-list-item img{
+.menu-list-item img {
   position: relative;
-  top: -2px;
+  top: -1px;
   margin: 0 0.5rem;
 }
 
@@ -37,23 +37,21 @@ ion-col.profile-info-col {
   padding-top: 0.6rem;
 }
 
+.profile-image-col {
+  align-self: flex-end;
+}
+
 .profile-image-col img {
   border-radius: 5px;
 }
 
 .profile-info-col span {
   display: block;
-
 }
 
 .profile-info-col span:first-child {
-  color:rgba(255, 255, 255, 0.89);
+  color: rgba(255, 255, 255, 0.89);
   font-size: 1.4rem;
-  margin-bottom: 0.3rem;
-}
-
-.profile-info-col span:nth-last-child(2) {
-  margin-bottom: 0.15rem;
 }
 
 span.email-and-id {
