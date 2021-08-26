@@ -1,29 +1,35 @@
 export default {
-  data: [
+  totalHolding: 1000000,
+  assets: [
     {
       assetClass: '',
-      assetDescription: '',
-      assetPercentage: '',
+      assetDescription: 'Cash and Equivalents',
+      assetPercentage: 10,
+      assetHolding: 100000,
     },
     {
       assetClass: '',
-      assetDescription: '',
-      assetPercentage: '',
+      assetDescription: 'Equities',
+      assetPercentage: 30,
+      assetHolding: 300000,
     },
     {
       assetClass: '',
-      assetDescription: '',
-      assetPercentage: '',
+      assetDescription: 'Convertible Securities',
+      assetPercentage: 20,
+      assetHolding: 200000,
     },
     {
       assetClass: '',
-      assetDescription: '',
-      assetPercentage: '',
+      assetDescription: 'Debt Instruments',
+      assetPercentage: 25,
+      assetHolding: 250000,
     },
     {
       assetClass: '',
-      assetDescription: '',
-      assetPercentage: '',
+      assetDescription: 'Commodities',
+      assetPercentage: 15,
+      assetHolding: 150000,
     },
   ],
 };

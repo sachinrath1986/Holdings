@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "wissen-portfolio-app",
+  "appId": "io.wissen",
+  "appName": "wissen-portfolio",
   "webDir": "build",
   "bundledWebRuntime": false
 }
