@@ -2,7 +2,7 @@
   --white: #ffffff;
   --bkgrd-blue: #12125a;
   --txt-grey: #afaeaedc;
-  --btn-orange: #be5011;
+  --btn-blue: #007fe4e0;
 }
 
 ion-app div.login-page {
@@ -26,6 +26,7 @@ ion-avatar.logo {
 .header h2 {
   margin: 0.3rem 0;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
 form.login-form {
@@ -66,24 +67,24 @@ ion-input.input {
 ion-button.login-btn {
   --color: var(--white);
   display: block;
-  --background: var(--btn-orange);
+  --background: var(--btn-blue);
   --border-radius: 5px;
   margin: 1.8rem 0 0 0;
   height: 3rem;
 }
 
 ion-text.create-account {
-  color: var(--btn-orange);
+  color: var(--btn-blue);
 }
 
 ion-checkbox.terms-check {
   --size: 1.125rem;
   --border-radius: 5px;
   --background: var(--bkgrd-blue);
-  --background-checked: var(--bkgrd-blue);
+  --background-checked: var(--btn-blue);
   --checkmark-color: var(--white);
   --border-color: var(--txt-grey);
-  --border-color-checked: var(--txt-grey);
+  --border-color-checked: var(--btn-blue);
   --checkmark-width: 3px;
   position: relative;
   top: 4px;

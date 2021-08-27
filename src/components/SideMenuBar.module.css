@@ -1,10 +1,5 @@
-:root {
-  --white: #ffffff;
-  --menu-bg: #020c46ef;
-}
-
 ion-content.menu-content {
-  --background: var(--menu-bg);
+  --background: #020c46ef;
 }
 
 .menu-list {
@@ -18,19 +13,25 @@ ion-row.profile-row {
 .menu-list-item {
   --background: transparent;
   --padding-start: 0;
-  --color: rgba(255, 255, 255, 0.89);
+  --color: #ffffffe3;
   --border-color: #7f7f7f77;
   --min-height: 4rem;
+}
+
+.menu-list-item:active {
+  --color: #5f5ffb;
+  --border-color: #000b4ab3;
+  --background: #000b4ab3; 
 }
 
 .menu-list-item img {
   position: relative;
   top: -1px;
-  margin: 0 0.5rem;
+  margin: 0 0.5rem 0 0.8rem;;
 }
 
 .menu-list .menu-list-item:last-child {
-  --color: rgba(255, 255, 255, 0.247);
+  --color: #ffffff3f;
 }
 
 ion-col.profile-info-col {
@@ -38,11 +39,14 @@ ion-col.profile-info-col {
 }
 
 .profile-image-col {
-  align-self: flex-end;
+  align-self: center;
+  padding-top: 0.6rem;
+  padding-left: 0.5rem;
 }
 
 .profile-image-col img {
   border-radius: 5px;
+  height: 4rem;
 }
 
 .profile-info-col span {
@@ -50,19 +54,19 @@ ion-col.profile-info-col {
 }
 
 .profile-info-col span:first-child {
-  color: rgba(255, 255, 255, 0.89);
+  color: #ffffffe3;
   font-size: 1.4rem;
 }
 
 span.email-and-id {
-  color: rgba(255, 255, 255, 0.541);
+  color: #ffffff8a;
   font-size: 0.9rem;
 }
 
 .transaction-num {
   background-color: #ff5722;
   border-radius: 1rem;
-  padding: 2px 7px;
+  padding: 0 5px;
   position: absolute;
   right: 1rem;
 }
