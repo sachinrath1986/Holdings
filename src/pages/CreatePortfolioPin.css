@@ -1,19 +1,19 @@
 .otp-input input {
-  background: var(--otp-input-bg);
-  margin: auto;
-  border-radius: 0.31rem;
-  width: 2.8rem !important;
-  height: 2.8rem;
-  color: var(--white);
-  padding: 0.625rem;
-  font-size: 1.25rem;
-  border: none;
+	background: var(--otp-input-bg);
+	margin: auto;
+	border-radius: 0.31rem;
+	width: 2.8rem !important;
+	height: 2.8rem;
+	color: var(--white);
+	padding: 0.625rem;
+	font-size: 1.25rem;
+	border: none;
 }
 
 .otp-input input:focus-visible {
-  outline: none;
+	outline: none;
 }
 
-.otp-div > div:first-child {
-  justify-content: space-between;
+.otp-div>div:first-child {
+	justify-content: space-between;
 }
