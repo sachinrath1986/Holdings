@@ -9,7 +9,6 @@ import {
   IonRow,
   IonCol,
   IonText,
-  IonFooter,
   IonButtons,
   IonMenuButton,
   IonHeader,
