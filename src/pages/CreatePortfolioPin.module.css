@@ -1,0 +1,9 @@
+.screen_bg {
+  --background: var(--screen-bg);
+}
+
+.btn_blue {
+  --background: var(--btn-blue);
+  --color: var(--white);
+  --border-radius: 0.43rem;
+}

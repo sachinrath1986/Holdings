@@ -15,12 +15,15 @@ import {
   IonIcon,
 } from '@ionic/react';
 import { useHistory } from 'react-router';
-import { alertCircle, chevronForwardOutline } from 'ionicons/icons';
+import {
+  alertCircle, chevronForwardOutline, arrowDownOutline,
+  arrowUpOutline
+} from 'ionicons/icons';
 // Custom Components
 import SideMenuBar from '../components/SideMenuBar';
 
 // CSS Files
-import PortfolioSummaryStyles from '../theme/styles.module.css';
+import PortfolioSummaryStyles from './PortfolioSummary.module.css';
 
 const Portfolio: FC = () => {
   const [holdingsData, setHoldingsData] = useState([
@@ -114,7 +117,7 @@ const Portfolio: FC = () => {
     <IonPage>
       <SideMenuBar />
       <IonHeader class={PortfolioSummaryStyles.header_bg}>
-        <div className="w-full p-4 flex flexx-row items-center justify-between">
+        <div className="w-full p-4 pl-2 pr-2 flex flexx-row items-center justify-between">
           <IonButtons slot="start">
             <IonMenuButton color="light" />
           </IonButtons>
@@ -125,7 +128,7 @@ const Portfolio: FC = () => {
         </div>
       </IonHeader>
       <IonContent fullscreen class={PortfolioSummaryStyles.screen_bg} id="main">
-        <div className="mt-6">
+        <div className="mt-2">
           <div className="p-4 pt-0">
             <div
               className={`px-5 py-3 pt-0 w-full rounded-xl mb-3 ${PortfolioSummaryStyles.data_container}`}
@@ -149,18 +152,18 @@ const Portfolio: FC = () => {
                       </div>
                       <div>
                         <IonText color="light">
-                          <p className="text-lg">{overallData.Current}</p>
+                          <p className="text-xl">{overallData.Current}</p>
                         </IonText>
                       </div>
                       <div>
                         <IonText>
-                          <p className="text-xs text-gray-300">
+                          <p className="text-sm text-gray-300">
                             Invested: {overallData.Invested}
                           </p>
                         </IonText>
                       </div>
                     </IonCol>
-                    <IonCol class="p-0">
+                    <IonCol class="p-0 pl-4">
                       <div className="flex flex-row items-center">
                         <div className="mr-1">
                           <IonText color="light">
@@ -176,34 +179,34 @@ const Portfolio: FC = () => {
                       </div>
                       <div className="flex flex-col">
                         <div className="mr-1">
-                          {overallData.ProfitOrLoss.PorL === 'Profit' ? (
-                            <IonText class={PortfolioSummaryStyles.profit_text}>
-                              <p className="text-lg">
+                          <IonText>
+                            {overallData.ProfitOrLoss.PorL === 'Profit' ? (
+                              <p className={`${PortfolioSummaryStyles.profit_text} text-lg`}>
                                 +{overallData.ProfitOrLoss.Value}
                               </p>
-                            </IonText>
-                          ) : (
-                            <IonText class={PortfolioSummaryStyles.loss_text}>
-                              <p className="text-lg">
+                            ) : (
+                              <p className={`${PortfolioSummaryStyles.loss_text} text-lg`}>
                                 -{overallData.ProfitOrLoss.Value}
                               </p>
-                            </IonText>
-                          )}
+                            )}
+                          </IonText>
                         </div>
                         <div>
-                          {overallData.ProfitOrLoss.PorL === 'Profit' ? (
-                            <IonText class={PortfolioSummaryStyles.profit_text}>
-                              <p className="text-sm">
-                                ({overallData.ProfitOrLoss.Percentage}%)
+                          <IonText>
+                            {overallData.ProfitOrLoss.PorL === 'Profit' ? (
+                              <p className={`${PortfolioSummaryStyles.profit_text} text-sm`}>
+                                (
+                                <IonIcon icon={arrowUpOutline} class="text-sm" />
+                                {overallData.ProfitOrLoss.Percentage}%)
                               </p>
-                            </IonText>
-                          ) : (
-                            <IonText class={PortfolioSummaryStyles.loss_text}>
-                              <p className="text-sm">
-                                ({overallData.ProfitOrLoss.Percentage}%)
+                            ) : (
+                              <p className={`${PortfolioSummaryStyles.loss_text} text-sm`}>
+                                (
+                                <IonIcon icon={arrowDownOutline} class="text-sm" />
+                                {overallData.ProfitOrLoss.Percentage}%)
                               </p>
-                            </IonText>
-                          )}
+                            )}
+                          </IonText>
                         </div>
                       </div>
                     </IonCol>
@@ -223,34 +226,36 @@ const Portfolio: FC = () => {
                         </IonText>
                       </div>
                     </IonCol>
-                    <IonCol class="p-0">
+                    <IonCol class="p-0 pl-4">
                       <div className="flex flex-row items-center">
                         <div className="mr-1">
-                          {overallData.TodayProfitOrLoss.PorL === 'Profit' ? (
-                            <IonText class={PortfolioSummaryStyles.profit_text}>
-                              <p className="text-sm font-bold">
+                          <IonText>
+                            {overallData.TodayProfitOrLoss.PorL === 'Profit' ? (
+                              <p className={`text-sm font-bold ${PortfolioSummaryStyles.profit_text}`}>
                                 +{overallData.TodayProfitOrLoss.Value}
                               </p>
-                            </IonText>
-                          ) : (
-                            <IonText class={PortfolioSummaryStyles.loss_text}>
-                              <p className="text-sm font-bold">
+                            ) : (
+                              <p className={`text-sm font-bold ${PortfolioSummaryStyles.loss_text}`}>
                                 -{overallData.TodayProfitOrLoss.Value}
                               </p>
-                            </IonText>
-                          )}
+                            )}
+                          </IonText>
                         </div>
                         <div>
                           {overallData.TodayProfitOrLoss.PorL === 'Profit' ? (
                             <IonText class={PortfolioSummaryStyles.profit_text}>
                               <p className="text-sm font-bold">
-                                ({overallData.TodayProfitOrLoss.Percentage}%)
+                                (
+                                <IonIcon icon={arrowUpOutline} class="text-sm" />
+                                {overallData.TodayProfitOrLoss.Percentage}%)
                               </p>
                             </IonText>
                           ) : (
                             <IonText class={PortfolioSummaryStyles.loss_text}>
                               <p className="text-sm font-bold">
-                                ({overallData.TodayProfitOrLoss.Percentage}%)
+                                (
+                                <IonIcon icon={arrowDownOutline} class="text-sm" />
+                                {overallData.TodayProfitOrLoss.Percentage}%)
                               </p>
                             </IonText>
                           )}
@@ -306,7 +311,7 @@ const Portfolio: FC = () => {
                   <IonGrid class="p-0">
                     <IonRow>
                       <IonCol class="pl-0 pb-0">
-                        <IonText color="secondary">
+                        <IonText color="primary">
                           <p className="text-lg uppercase font-bold">
                             {data.HoldingName}
                           </p>
