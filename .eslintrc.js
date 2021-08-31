@@ -41,5 +41,6 @@ module.exports = {
       'ignorePackages',
       { js: 'never', jsx: 'never', ts: 'never', tsx: 'never' },
     ],
+    'react/prop-types': 0,
   },
 };

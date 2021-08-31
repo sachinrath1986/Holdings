@@ -4,7 +4,6 @@ import {
   IonPage,
   IonContent,
   IonList,
-  IonItem,
   IonGrid,
   IonRow,
   IonCol,
@@ -14,101 +13,94 @@ import {
   IonHeader,
   IonIcon,
 } from '@ionic/react';
-import { useHistory } from 'react-router';
 import { alertCircle, chevronForwardOutline } from 'ionicons/icons';
 // Custom Components
 import SideMenuBar from '../components/SideMenuBar';
 
 // CSS Files
 import PortfolioSummaryStyles from '../theme/styles.module.css';
+import HoldingCard from '../components/HoldingCard';
+import { currencyFormatter } from '../utils/currency';
+
+export type HoldingDataType = {
+  holdingId: string;
+  holdingName: string;
+  investmentAmount: number;
+  holdingType: string;
+  holdingAmount: number;
+  holdingChange: number;
+  holdingPercentChange: number;
+  oneDayChange: number;
+  oneDayPercentChange: number;
+};
 
 const Portfolio: FC = () => {
-  const [holdingsData, setHoldingsData] = useState([
+  const [holdingsData] = useState<HoldingDataType[]>([
     {
-      HoldingId: 'a12',
-      HoldingName: 'rcom',
-      Invested: '$2,789.00',
-      HoldingType: 'Bonds',
-      ProfitOrLoss: {
-        PorL: 'Profit',
-        Value: '$150.55',
-        HoldingPercentage: '15.8',
-        StockValue: '7.89',
-        StockPercentage: '0.28',
-      },
+      holdingId: 'a12',
+      holdingName: 'rcom',
+      investmentAmount: 2789.0,
+      holdingType: 'Bonds',
+      holdingAmount: 2900.0,
+      holdingChange: 111.0,
+      holdingPercentChange: 15.8,
+      oneDayChange: 20.0,
+      oneDayPercentChange: -0.28,
     },
     {
-      HoldingId: 'b34',
-      HoldingName: 'indigo',
-      Invested: '$2,789.00',
-      HoldingType: 'Royalties',
-      ProfitOrLoss: {
-        PorL: 'Loss',
-        Value: '$150.55',
-        HoldingPercentage: '15.8',
-        StockValue: '7.89',
-        StockPercentage: '0.28',
-      },
+      holdingId: 'b34',
+      holdingName: 'indigo',
+      investmentAmount: 2789.0,
+      holdingType: 'Royalties',
+      holdingAmount: 2500.0,
+      holdingChange: -111.0,
+      holdingPercentChange: 15.8,
+      oneDayChange: 20.0,
+      oneDayPercentChange: -0.28,
     },
     {
-      HoldingId: 'c56',
-      HoldingName: 'bit coin',
-      Invested: '$2,789.00',
-      HoldingType: 'Stocks',
-      ProfitOrLoss: {
-        PorL: 'Profit',
-        Value: '$150.55',
-        HoldingPercentage: '15.8',
-        StockValue: '7.89',
-        StockPercentage: '0.28',
-      },
+      holdingId: 'c56',
+      holdingName: 'bit coin',
+      investmentAmount: 2789.0,
+      holdingType: 'Stocks',
+      holdingAmount: 2900.0,
+      holdingChange: 111.0,
+      holdingPercentChange: 15.8,
+      oneDayChange: 20.0,
+      oneDayPercentChange: -0.28,
     },
     {
-      HoldingId: 'd78',
-      HoldingName: 'uti assets',
-      Invested: '$2,789.00',
-      HoldingType: 'Bonds',
-      ProfitOrLoss: {
-        PorL: 'Loss',
-        Value: '$150.55',
-        HoldingPercentage: '15.8',
-        StockValue: '7.89',
-        StockPercentage: '0.28',
-      },
+      holdingId: 'd78',
+      holdingName: 'uti assets',
+      investmentAmount: 2789.0,
+      holdingType: 'Bonds',
+      holdingAmount: 2900.0,
+      holdingChange: 111.0,
+      holdingPercentChange: 15.8,
+      oneDayChange: 20.0,
+      oneDayPercentChange: -0.28,
     },
     {
-      HoldingId: 'e90',
-      HoldingName: 'ibulhsgfin',
-      Invested: '$2,789.00',
-      HoldingType: 'Bonds',
-      ProfitOrLoss: {
-        PorL: 'Profit',
-        Value: '$150.55',
-        HoldingPercentage: '15.8',
-        StockValue: '7.89',
-        StockPercentage: '0.28',
-      },
+      holdingId: 'e90',
+      holdingName: 'ibulhsgfin',
+      investmentAmount: 2789.0,
+      holdingType: 'Bonds',
+      holdingAmount: 2900.0,
+      holdingChange: 111.0,
+      holdingPercentChange: 15.8,
+      oneDayChange: 20.0,
+      oneDayPercentChange: -0.28,
     },
   ]);
-  const [overallData, setOverAllData] = useState({
-    Current: '$280,977.10',
-    Invested: '$240,977.10',
-    ProfitOrLoss: {
-      PorL: 'Loss',
-      Value: '43,097.10',
-      Percentage: '1.67',
-    },
-    TodayProfitOrLoss: {
-      PorL: 'Loss',
-      Value: '23,097.10',
-      Percentage: '1.67',
-    },
-  });
 
-  const history = useHistory();
-  const selectHolding = () => {
-    history.push('/holdingsummary');
-  };
+  const [overallData] = useState({
+    holdingAmount: 280977.1,
+    investmentAmount: 240977.1,
+    holdingChange: 40000,
+    holdingPercentChange: 15.8,
+    oneDayChange: 2000,
+    oneDayPercentChange: 1.67,
+  });
 
   return (
     <IonPage>
@@ -149,13 +141,16 @@ const Portfolio: FC = () => {
                       </div>
                       <div>
                         <IonText color="light">
-                          <p className="text-lg">{overallData.Current}</p>
+                          <p className="text-lg">
+                            {currencyFormatter(overallData.holdingAmount)}
+                          </p>
                         </IonText>
                       </div>
                       <div>
                         <IonText>
                           <p className="text-xs text-gray-300">
-                            Invested: {overallData.Invested}
+                            Invested:{' '}
+                            {currencyFormatter(overallData.investmentAmount)}
                           </p>
                         </IonText>
                       </div>
@@ -176,31 +171,31 @@ const Portfolio: FC = () => {
                       </div>
                       <div className="flex flex-col">
                         <div className="mr-1">
-                          {overallData.ProfitOrLoss.PorL === 'Profit' ? (
+                          {overallData.holdingChange > 0 ? (
                             <IonText class={PortfolioSummaryStyles.profit_text}>
                               <p className="text-lg">
-                                +{overallData.ProfitOrLoss.Value}
+                                +{currencyFormatter(overallData.holdingChange)}
                               </p>
                             </IonText>
                           ) : (
                             <IonText class={PortfolioSummaryStyles.loss_text}>
                               <p className="text-lg">
-                                -{overallData.ProfitOrLoss.Value}
+                                -{currencyFormatter(overallData.holdingChange)}
                               </p>
                             </IonText>
                           )}
                         </div>
                         <div>
-                          {overallData.ProfitOrLoss.PorL === 'Profit' ? (
+                          {overallData.holdingChange > 0 ? (
                             <IonText class={PortfolioSummaryStyles.profit_text}>
                               <p className="text-sm">
-                                ({overallData.ProfitOrLoss.Percentage}%)
+                                ({overallData.holdingPercentChange}%)
                               </p>
                             </IonText>
                           ) : (
                             <IonText class={PortfolioSummaryStyles.loss_text}>
                               <p className="text-sm">
-                                ({overallData.ProfitOrLoss.Percentage}%)
+                                ({overallData.holdingPercentChange}%)
                               </p>
                             </IonText>
                           )}
@@ -226,31 +221,31 @@ const Portfolio: FC = () => {
                     <IonCol class="p-0">
                       <div className="flex flex-row items-center">
                         <div className="mr-1">
-                          {overallData.TodayProfitOrLoss.PorL === 'Profit' ? (
+                          {overallData.oneDayChange > 0 ? (
                             <IonText class={PortfolioSummaryStyles.profit_text}>
                               <p className="text-sm font-bold">
-                                +{overallData.TodayProfitOrLoss.Value}
+                                +{currencyFormatter(overallData.oneDayChange)}
                               </p>
                             </IonText>
                           ) : (
                             <IonText class={PortfolioSummaryStyles.loss_text}>
                               <p className="text-sm font-bold">
-                                -{overallData.TodayProfitOrLoss.Value}
+                                -{currencyFormatter(overallData.oneDayChange)}
                               </p>
                             </IonText>
                           )}
                         </div>
                         <div>
-                          {overallData.TodayProfitOrLoss.PorL === 'Profit' ? (
+                          {overallData.oneDayChange > 0 ? (
                             <IonText class={PortfolioSummaryStyles.profit_text}>
                               <p className="text-sm font-bold">
-                                ({overallData.TodayProfitOrLoss.Percentage}%)
+                                ({overallData.oneDayPercentChange}%)
                               </p>
                             </IonText>
                           ) : (
                             <IonText class={PortfolioSummaryStyles.loss_text}>
                               <p className="text-sm font-bold">
-                                ({overallData.TodayProfitOrLoss.Percentage}%)
+                                ({overallData.oneDayPercentChange}%)
                               </p>
                             </IonText>
                           )}
@@ -296,88 +291,8 @@ const Portfolio: FC = () => {
             </div>
           </div>
           <IonList class={PortfolioSummaryStyles.holdings_list}>
-            {holdingsData.map((data, index) => (
-              <IonItem
-                class={PortfolioSummaryStyles.holdings_list_item}
-                key={data.HoldingId}
-                onClick={selectHolding}
-              >
-                <div className="w-full p-4 pt-3">
-                  <IonGrid class="p-0">
-                    <IonRow>
-                      <IonCol class="pl-0 pb-0">
-                        <IonText color="secondary">
-                          <p className="text-lg uppercase font-bold">
-                            {data.HoldingName}
-                          </p>
-                        </IonText>
-                        <IonText color="light">
-                          <p className="text-sm">
-                            Invested:&nbsp;{data.Invested}
-                          </p>
-                        </IonText>
-                        <IonText color="medium">
-                          <p className="text-sm">{data.HoldingType}</p>
-                        </IonText>
-                      </IonCol>
-                      <IonCol class="pb-0" />
-                      <IonCol class="pr-0 pb-0">
-                        <IonText>
-                          {data.ProfitOrLoss.PorL === 'Profit' ? (
-                            <p
-                              className={`text-sm text-right ${PortfolioSummaryStyles.profit_text}`}
-                            >
-                              +{data.ProfitOrLoss.HoldingPercentage}%
-                            </p>
-                          ) : (
-                            <p
-                              className={`text-sm text-right ${PortfolioSummaryStyles.loss_text}`}
-                            >
-                              -{data.ProfitOrLoss.HoldingPercentage}%
-                            </p>
-                          )}
-                        </IonText>
-                        <IonText>
-                          {data.ProfitOrLoss.PorL === 'Profit' ? (
-                            <p
-                              className={`${PortfolioSummaryStyles.profit_text} text-lg font-bold text-right`}
-                            >
-                              {data.ProfitOrLoss.Value}
-                            </p>
-                          ) : (
-                            <p
-                              className={`${PortfolioSummaryStyles.loss_text} text-lg font-bold text-right`}
-                            >
-                              {data.ProfitOrLoss.Value}
-                            </p>
-                          )}
-                        </IonText>
-                        <h6 className="text-sm text-right flex justify-end">
-                          <IonText color="medium">
-                            {data.ProfitOrLoss.PorL === 'Profit' ? '+' : '-'}
-                            {data.ProfitOrLoss.StockValue}&nbsp;
-                          </IonText>
-                          <IonText>
-                            {data.ProfitOrLoss.PorL === 'Profit' ? (
-                              <p
-                                className={`${PortfolioSummaryStyles.profit_text} text-sm font-bold text-right`}
-                              >
-                                ({data.ProfitOrLoss.StockPercentage}%)
-                              </p>
-                            ) : (
-                              <p
-                                className={`${PortfolioSummaryStyles.loss_text} text-sm font-bold text-right`}
-                              >
-                                ({data.ProfitOrLoss.StockPercentage}%)
-                              </p>
-                            )}
-                          </IonText>
-                        </h6>
-                      </IonCol>
-                    </IonRow>
-                  </IonGrid>
-                </div>
-              </IonItem>
+            {holdingsData.map((data) => (
+              <HoldingCard key={data.holdingId} holdingData={data} />
             ))}
           </IonList>
         </div>

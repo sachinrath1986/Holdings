@@ -1,0 +1,15 @@
+.holdings_list_item {
+  --background: transparent;
+  --padding-start: 0;
+  --inner-border-width: 0 0 0.0625rem 0;
+  --border-color: #7f7f7f;
+  --inner-padding-end: 0;
+}
+
+.profit_text {
+  color: var(--profit-text-color);
+}
+
+.loss_text {
+  color: var(--loss-text-color);
+}
