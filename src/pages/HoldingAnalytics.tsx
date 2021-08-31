@@ -9,7 +9,7 @@ import {
   IonItem,
 } from '@ionic/react';
 import { chevronForwardOutline } from 'ionicons/icons';
-import HoldingAnalyticsStyles from '../theme/styles.module.css';
+import HoldingAnalyticsStyles from './HoldingAnalytics.module.css';
 
 const HoldingAnalytics: React.FC = () => {
   const [overViewData, setOverViewData] = useState({

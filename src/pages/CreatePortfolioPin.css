@@ -14,6 +14,6 @@
   outline: none;
 }
 
-.otp-div > div:first-child {
+.otp-div>div:first-child {
   justify-content: space-between;
 }

@@ -1,0 +1,15 @@
+.screen_bg {
+  --background: var(--screen-bg);
+}
+
+.data_container {
+  background: var(--data-container-bg);
+}
+
+.profit_text {
+  color: var(--profit-text-color);
+}
+
+.loss_text {
+  color: var(--loss-text-color);
+}

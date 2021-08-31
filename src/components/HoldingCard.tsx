@@ -20,7 +20,7 @@ const HoldingCard: FC<{ holdingData: HoldingDataType }> = ({ holdingData }) => {
         <IonGrid class="p-0">
           <IonRow>
             <IonCol class="pl-0 pb-0">
-              <IonText color="secondary">
+              <IonText color="primary">
                 <p className="text-lg uppercase font-bold">
                   {holdingData.holdingName}
                 </p>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IonText, IonGrid, IonRow, IonCol, IonIcon } from '@ionic/react';
 import { arrowDownOutline, arrowUpOutline } from 'ionicons/icons';
-import HoldingOverViewStyles from '../theme/styles.module.css';
+import HoldingOverViewStyles from './HoldingOverView.module.css';
 
 const HoldingOverView: React.FC = () => {
   const [overViewData, setOverViewData] = useState({

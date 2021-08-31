@@ -13,14 +13,17 @@ import {
   IonHeader,
   IonIcon,
 } from '@ionic/react';
-import { alertCircle, chevronForwardOutline } from 'ionicons/icons';
+import {
+  alertCircle,
+  chevronForwardOutline,
+  arrowDownOutline,
+  arrowUpOutline,
+} from 'ionicons/icons';
 // Custom Components
 import SideMenuBar from '../components/SideMenuBar';
-
-// CSS Files
-import PortfolioSummaryStyles from '../theme/styles.module.css';
 import HoldingCard from '../components/HoldingCard';
 import { currencyFormatter } from '../utils/currency';
+import PortfolioSummaryStyles from './PortfolioSummary.module.css';
 
 export type HoldingDataType = {
   holdingId: string;
@@ -106,7 +109,7 @@ const Portfolio: FC = () => {
     <IonPage>
       <SideMenuBar />
       <IonHeader class={PortfolioSummaryStyles.header_bg}>
-        <div className="w-full p-4 flex flexx-row items-center justify-between">
+        <div className="w-full p-4 pl-2 pr-2 flex flexx-row items-center justify-between">
           <IonButtons slot="start">
             <IonMenuButton color="light" />
           </IonButtons>
@@ -117,7 +120,7 @@ const Portfolio: FC = () => {
         </div>
       </IonHeader>
       <IonContent fullscreen class={PortfolioSummaryStyles.screen_bg} id="main">
-        <div className="mt-6">
+        <div className="mt-2">
           <div className="p-4 pt-0">
             <div
               className={`px-5 py-3 pt-0 w-full rounded-xl mb-3 ${PortfolioSummaryStyles.data_container}`}
@@ -141,7 +144,7 @@ const Portfolio: FC = () => {
                       </div>
                       <div>
                         <IonText color="light">
-                          <p className="text-lg">
+                          <p className="text-xl">
                             {currencyFormatter(overallData.holdingAmount)}
                           </p>
                         </IonText>
@@ -155,7 +158,7 @@ const Portfolio: FC = () => {
                         </IonText>
                       </div>
                     </IonCol>
-                    <IonCol class="p-0">
+                    <IonCol class="p-0 pl-4">
                       <div className="flex flex-row items-center">
                         <div className="mr-1">
                           <IonText color="light">
@@ -171,34 +174,48 @@ const Portfolio: FC = () => {
                       </div>
                       <div className="flex flex-col">
                         <div className="mr-1">
-                          {overallData.holdingChange > 0 ? (
-                            <IonText class={PortfolioSummaryStyles.profit_text}>
-                              <p className="text-lg">
+                          <IonText>
+                            {overallData.holdingChange > 0 ? (
+                              <p
+                                className={`${PortfolioSummaryStyles.profit_text} text-lg`}
+                              >
                                 +{currencyFormatter(overallData.holdingChange)}
                               </p>
-                            </IonText>
-                          ) : (
-                            <IonText class={PortfolioSummaryStyles.loss_text}>
-                              <p className="text-lg">
+                            ) : (
+                              <p
+                                className={`${PortfolioSummaryStyles.loss_text} text-lg`}
+                              >
                                 -{currencyFormatter(overallData.holdingChange)}
                               </p>
-                            </IonText>
-                          )}
+                            )}
+                          </IonText>
                         </div>
                         <div>
-                          {overallData.holdingChange > 0 ? (
-                            <IonText class={PortfolioSummaryStyles.profit_text}>
-                              <p className="text-sm">
+                          <IonText>
+                            {overallData.holdingChange > 0 ? (
+                              <p
+                                className={`${PortfolioSummaryStyles.profit_text} text-sm`}
+                              >
+                                (
+                                <IonIcon
+                                  icon={arrowUpOutline}
+                                  class="text-sm"
+                                />
                                 ({overallData.holdingPercentChange}%)
                               </p>
-                            </IonText>
-                          ) : (
-                            <IonText class={PortfolioSummaryStyles.loss_text}>
-                              <p className="text-sm">
+                            ) : (
+                              <p
+                                className={`${PortfolioSummaryStyles.loss_text} text-sm`}
+                              >
+                                (
+                                <IonIcon
+                                  icon={arrowDownOutline}
+                                  class="text-sm"
+                                />
                                 ({overallData.holdingPercentChange}%)
                               </p>
-                            </IonText>
-                          )}
+                            )}
+                          </IonText>
                         </div>
                       </div>
                     </IonCol>
@@ -218,33 +235,45 @@ const Portfolio: FC = () => {
                         </IonText>
                       </div>
                     </IonCol>
-                    <IonCol class="p-0">
+                    <IonCol class="p-0 pl-4">
                       <div className="flex flex-row items-center">
                         <div className="mr-1">
-                          {overallData.oneDayChange > 0 ? (
-                            <IonText class={PortfolioSummaryStyles.profit_text}>
-                              <p className="text-sm font-bold">
+                          <IonText>
+                            {overallData.oneDayChange > 0 ? (
+                              <p
+                                className={`text-sm font-bold ${PortfolioSummaryStyles.profit_text}`}
+                              >
                                 +{currencyFormatter(overallData.oneDayChange)}
                               </p>
-                            </IonText>
-                          ) : (
-                            <IonText class={PortfolioSummaryStyles.loss_text}>
-                              <p className="text-sm font-bold">
+                            ) : (
+                              <p
+                                className={`text-sm font-bold ${PortfolioSummaryStyles.loss_text}`}
+                              >
                                 -{currencyFormatter(overallData.oneDayChange)}
                               </p>
-                            </IonText>
-                          )}
+                            )}
+                          </IonText>
                         </div>
                         <div>
                           {overallData.oneDayChange > 0 ? (
                             <IonText class={PortfolioSummaryStyles.profit_text}>
                               <p className="text-sm font-bold">
+                                (
+                                <IonIcon
+                                  icon={arrowUpOutline}
+                                  class="text-sm"
+                                />
                                 ({overallData.oneDayPercentChange}%)
                               </p>
                             </IonText>
                           ) : (
                             <IonText class={PortfolioSummaryStyles.loss_text}>
                               <p className="text-sm font-bold">
+                                (
+                                <IonIcon
+                                  icon={arrowDownOutline}
+                                  class="text-sm"
+                                />
                                 ({overallData.oneDayPercentChange}%)
                               </p>
                             </IonText>

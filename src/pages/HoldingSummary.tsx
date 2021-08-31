@@ -23,8 +23,7 @@ import {
 import { useHistory } from 'react-router';
 import HoldingOverView from './HoldingOverView';
 import HoldingAnalytics from './HoldingAnalytics';
-import HoldingSummaryStyles from '../theme/styles.module.css';
-import './HoldingSummary.css';
+import HoldingSummaryStyles from './HoldingSummary.module.css';
 
 const HoldingSummary: React.FC = () => {
   const [holdingData, setHoldingData] = useState({
@@ -160,7 +159,7 @@ const HoldingSummary: React.FC = () => {
               </IonRow>
             </IonGrid>
           </div>
-          <div className="p-4 pt-2 pb-2">
+          <div className="p-4 pt-0 pb-2">
             <IonSegment
               mode="md"
               onIonChange={handleTabChange}
@@ -169,19 +168,19 @@ const HoldingSummary: React.FC = () => {
             >
               <IonSegmentButton
                 value="Overview"
-                class="tab_btn no_ripple holding-segment-btn"
+                class={HoldingSummaryStyles.tab_btn}
               >
                 <IonLabel class="normal-case text-lg">Overview</IonLabel>
               </IonSegmentButton>
               <IonSegmentButton
                 value="Analytics"
-                class="tab_btn no_ripple holding-segment-btn"
+                class={HoldingSummaryStyles.tab_btn}
               >
                 <IonLabel class="normal-case text-lg">Analytics</IonLabel>
               </IonSegmentButton>
               <IonSegmentButton
                 value="Statements"
-                class="tab_btn no_ripple holding-segment-btn"
+                class={HoldingSummaryStyles.tab_btn}
               >
                 <IonLabel class="normal-case text-lg">Statements</IonLabel>
               </IonSegmentButton>
