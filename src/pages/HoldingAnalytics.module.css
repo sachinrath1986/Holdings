@@ -1,18 +1,18 @@
 .holdings_analytics_list {
-	--background: transparent;
-	--padding-start: 0;
-	--inner-border-width: 0 0 0.0625rem 0;
-	--border-color: #7f7f7f;
-	--inner-padding-end: 0;
-	background: transparent;
+  --background: transparent;
+  --padding-start: 0;
+  --inner-border-width: 0 0 0.0625rem 0;
+  --border-color: #7f7f7f;
+  --inner-padding-end: 0;
+  background: transparent;
 }
 
 .holdings_analytics_list_item {
-	border-bottom: 0.0625rem solid #7f7f7f;
-	--background: transparent;
-	--inner-border-width: 0 0 0 0;
+  border-bottom: 0.0625rem solid #7f7f7f;
+  --background: transparent;
+  --inner-border-width: 0 0 0 0;
 }
 
 .data_container {
-	background: var(--data-container-bg);
+  background: var(--data-container-bg);
 }
