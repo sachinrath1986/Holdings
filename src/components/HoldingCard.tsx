@@ -21,17 +21,17 @@ const HoldingCard: FC<{ holdingData: HoldingDataType }> = ({ holdingData }) => {
           <IonRow>
             <IonCol class="pl-0 pb-0">
               <IonText color="primary">
-                <p className="text-lg uppercase font-bold">
+                <p className="text-lg uppercase font-semibold">
                   {holdingData.holdingName}
                 </p>
               </IonText>
               <IonText color="light">
-                <p className="text-sm">
+                <p className="text-base">
                   Invested:&nbsp;{holdingData.investmentAmount}
                 </p>
               </IonText>
               <IonText color="medium">
-                <p className="text-sm">{holdingData.holdingType}</p>
+                <p className="text-base">{holdingData.holdingType}</p>
               </IonText>
             </IonCol>
             <IonCol class="pb-0" />
@@ -56,7 +56,7 @@ const HoldingCard: FC<{ holdingData: HoldingDataType }> = ({ holdingData }) => {
                   <p
                     className={`${HoldingCardStyles.profit_text} text-lg font-bold text-right`}
                   >
-                    {holdingData.holdingChange}
+                    +{holdingData.holdingChange}
                   </p>
                 ) : (
                   <p

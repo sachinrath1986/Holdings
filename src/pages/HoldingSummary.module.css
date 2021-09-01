@@ -20,3 +20,7 @@
 .loss_text {
   color: var(--loss-text-color);
 }
+
+.text_3_5xl{
+  font-size: 2.125rem;;
+}

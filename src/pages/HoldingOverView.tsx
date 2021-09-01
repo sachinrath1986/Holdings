@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IonText, IonGrid, IonRow, IonCol, IonIcon } from '@ionic/react';
-import { arrowDownOutline, arrowUpOutline } from 'ionicons/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import HoldingOverViewStyles from './HoldingOverView.module.css';
 
 const HoldingOverView: React.FC = () => {
@@ -34,7 +35,7 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class="pl-0 pt-0">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-gray-500">Invested</h2>
+                    <h2 className="text-sm text-white text-opacity-50">Invested</h2>
                   </IonText>
                 </div>
                 <div>
@@ -46,7 +47,7 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class=" pl-4 pt-0">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-gray-500">Current</h2>
+                    <h2 className="text-sm text-white text-opacity-50">Current</h2>
                   </IonText>
                 </div>
                 <div>
@@ -58,7 +59,7 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class="pl-0">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-gray-500">P&#38;L</h2>
+                    <h2 className="text-sm text-white text-opacity-50">P&#38;L</h2>
                   </IonText>
                 </div>
                 <div>
@@ -82,7 +83,7 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class="pl-4">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-gray-500">
+                    <h2 className="text-sm text-white text-opacity-50">
                       Day&lsquo;s P&#38;L
                     </h2>
                   </IonText>
@@ -96,7 +97,7 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class="pl-0">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-gray-500">Avg.price</h2>
+                    <h2 className="text-sm text-white text-opacity-50">Avg.price</h2>
                   </IonText>
                 </div>
                 <div>
@@ -108,7 +109,7 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class="pl-4">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-gray-500">Qty.</h2>
+                    <h2 className="text-sm text-white text-opacity-50">Qty.</h2>
                   </IonText>
                 </div>
                 <div>
@@ -127,7 +128,7 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class="pl-0 pt-0">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-gray-500">Open</h2>
+                    <h2 className="text-sm text-white text-opacity-50">Open</h2>
                   </IonText>
                 </div>
                 <div>
@@ -139,7 +140,7 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class=" pl-4 pt-0">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-gray-500">High</h2>
+                    <h2 className="text-sm text-white text-opacity-50">High</h2>
                   </IonText>
                 </div>
                 <div>
@@ -151,7 +152,7 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class="pl-0">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-gray-500">Low</h2>
+                    <h2 className="text-sm text-white text-opacity-50">Low</h2>
                   </IonText>
                 </div>
                 <div>
@@ -163,7 +164,7 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class="pl-4">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-gray-500">Prev. close</h2>
+                    <h2 className="text-sm text-white text-opacity-50">Prev. close</h2>
                   </IonText>
                 </div>
                 <div>
@@ -181,7 +182,7 @@ const HoldingOverView: React.FC = () => {
       >
         <div className="mb-3">
           <IonText>
-            <h2 className="text-lg text-gray-500">52 Week low/high</h2>
+            <h2 className="text-lg text-white text-opacity-40">52 Week low/high</h2>
           </IonText>
         </div>
         <IonGrid class="p-0">
@@ -189,14 +190,14 @@ const HoldingOverView: React.FC = () => {
             <IonCol class="pl-0 pt-0">
               <div>
                 <IonText>
-                  <h2 className="text-sm text-gray-500">Low</h2>
+                  <h2 className="text-sm text-white text-opacity-50">Low</h2>
                 </IonText>
               </div>
               <div>
                 <IonText>
                   <p className={`text-lg ${HoldingOverViewStyles.loss_text}`}>
                     {overViewData.WeekLowOrHigh.Low}
-                    <IonIcon icon={arrowDownOutline} />
+                    <FontAwesomeIcon icon={faArrowDown} className="text-sm ml-2"/>
                   </p>
                 </IonText>
               </div>
@@ -204,14 +205,14 @@ const HoldingOverView: React.FC = () => {
             <IonCol class="pl-4 pt-0">
               <div>
                 <IonText>
-                  <h2 className="text-sm text-gray-500">High</h2>
+                  <h2 className="text-sm text-white text-opacity-50">High</h2>
                 </IonText>
               </div>
               <div>
                 <IonText>
                   <p className={`text-lg ${HoldingOverViewStyles.profit_text}`}>
                     {overViewData.WeekLowOrHigh.High}
-                    <IonIcon icon={arrowUpOutline} />
+                    <FontAwesomeIcon icon={faArrowUp} className="text-sm ml-2"/>
                   </p>
                 </IonText>
               </div>
