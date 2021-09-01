@@ -15,7 +15,8 @@ import { useHistory } from 'react-router';
 import styles from './LoginPage.module.css';
 
 const SIGN_IN_MSG = `Let's sign you in`;
-const TERMS_MSG = "By creating or logging into an account you agree to our Terms and Conditions and Privacy policies."
+const TERMS_MSG =
+  'By creating or logging into an account you agree to our Terms and Conditions and Privacy policies.';
 
 const Login: React.FC = () => {
   const history = useHistory();
@@ -59,9 +60,7 @@ const Login: React.FC = () => {
               <IonCheckbox className={styles['terms-check']} />
             </IonCol>
             <IonCol size="11" className={styles['label-col']}>
-              <IonLabel>
-                {TERMS_MSG}
-              </IonLabel>
+              <IonLabel>{TERMS_MSG}</IonLabel>
             </IonCol>
           </IonRow>
         </IonGrid>

@@ -1,9 +1,9 @@
 import { useState, FC } from 'react';
 import { IonContent, IonPage, IonText, IonButton } from '@ionic/react';
-import OtpInput from 'react-otp-input';
 import { useHistory } from 'react-router';
+import OtpInput from 'react-otp-input';
 import Avatar from '../components/Avatar';
-import CreatePortfolioPinStyles from '../theme/styles.module.css';
+import CreatePortfolioPinStyles from './CreatePortfolioPin.module.css';
 import './CreatePortfolioPin.css';
 
 const CreatePin: FC = () => {

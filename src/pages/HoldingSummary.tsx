@@ -20,11 +20,12 @@ import {
   arrowBackOutline,
   arrowDownOutline,
 } from 'ionicons/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router';
 import HoldingOverView from './HoldingOverView';
 import HoldingAnalytics from './HoldingAnalytics';
-import HoldingSummaryStyles from '../theme/styles.module.css';
-import './HoldingSummary.css';
+import HoldingSummaryStyles from './HoldingSummary.module.css';
 
 const HoldingSummary: React.FC = () => {
   const [holdingData, setHoldingData] = useState({
@@ -59,7 +60,7 @@ const HoldingSummary: React.FC = () => {
               <div className="mr-1">
                 <IonIcon
                   icon={arrowBackOutline}
-                  class="text-sm"
+                  class="text-xl"
                   color="light"
                 />
               </div>
@@ -72,15 +73,13 @@ const HoldingSummary: React.FC = () => {
           </IonButton>
           <div className="flex flex-row items-center">
             <div className="mr-1">
-              <IonIcon
-                icon={arrowDownOutline}
-                class="text-sm"
-                color="primary"
-              />
+              <IonText color="primary">
+                <FontAwesomeIcon icon={faDownload} className="text-sm" />
+              </IonText>
             </div>
             <div>
               <IonText color="primary">
-                <p className="text-lg">Download</p>
+                <p className="text-base">Download</p>
               </IonText>
             </div>
           </div>
@@ -91,35 +90,42 @@ const HoldingSummary: React.FC = () => {
           <div className="p-4 pb-0 flex flex-row items-center">
             <div className="mr-1">
               <IonText color="light">
-                <h2 className="text-xl uppercase">{holdingData.HoldingName}</h2>
+                <h2 className="text-lg tracking-wider uppercase">
+                  {holdingData.HoldingName}
+                </h2>
               </IonText>
             </div>
             <div className="flex">
-              <IonIcon icon={alertCircle} class="text-gray-500 text-xl" />
+              <IonIcon
+                icon={alertCircle}
+                class="text-white text-opacity-50 text-base"
+              />
             </div>
           </div>
           <div className="p-4 pb-0 pt-0 holding-data-container">
             <IonGrid class="p-0">
               <IonRow>
                 <IonCol class="pt-0">
-                  <div className="flex flex-row items-center h-full">
-                    <div className="mr-1">
+                  <div className="flex flex-row items-baseline h-full">
+                    <div className="mr-2">
                       <IonText color="light">
-                        <h1 className="text-3xl uppercase font-bold">
+                        <h1
+                          className={`uppercase font-bold ${HoldingSummaryStyles.text_3_5xl}`}
+                        >
                           {holdingData.ProfitOrLoss.Value}
                         </h1>
                       </IonText>
                     </div>
                     <div>
                       {holdingData.ProfitOrLoss.PorL === 'Profit' ? (
-                        <IonIcon
-                          icon={trendingUpOutline}
-                          class={`text-2xl ${HoldingSummaryStyles.profit_text}`}
+                        <FontAwesomeIcon
+                          icon={faChartLine}
+                          className={`text-2xl ${HoldingSummaryStyles.profit_text}`}
                         />
                       ) : (
-                        <IonIcon
-                          icon={trendingDownOutline}
-                          class={`text-2xl ${HoldingSummaryStyles.loss_text}`}
+                        <FontAwesomeIcon
+                          icon={faChartLine}
+                          className={`text-2xl ${HoldingSummaryStyles.loss_text}`}
                         />
                       )}
                     </div>
@@ -160,7 +166,7 @@ const HoldingSummary: React.FC = () => {
               </IonRow>
             </IonGrid>
           </div>
-          <div className="p-4 pt-2 pb-2">
+          <div className="p-4 pt-0 pb-2">
             <IonSegment
               mode="md"
               onIonChange={handleTabChange}
@@ -169,19 +175,19 @@ const HoldingSummary: React.FC = () => {
             >
               <IonSegmentButton
                 value="Overview"
-                class="tab_btn no_ripple holding-segment-btn"
+                class={HoldingSummaryStyles.tab_btn}
               >
                 <IonLabel class="normal-case text-lg">Overview</IonLabel>
               </IonSegmentButton>
               <IonSegmentButton
                 value="Analytics"
-                class="tab_btn no_ripple holding-segment-btn"
+                class={HoldingSummaryStyles.tab_btn}
               >
                 <IonLabel class="normal-case text-lg">Analytics</IonLabel>
               </IonSegmentButton>
               <IonSegmentButton
                 value="Statements"
-                class="tab_btn no_ripple holding-segment-btn"
+                class={HoldingSummaryStyles.tab_btn}
               >
                 <IonLabel class="normal-case text-lg">Statements</IonLabel>
               </IonSegmentButton>
