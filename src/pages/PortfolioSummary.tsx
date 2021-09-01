@@ -13,6 +13,8 @@ import {
   IonMenuButton,
   IonHeader,
   IonIcon,
+  IonImg,
+  IonButton,
 } from '@ionic/react';
 import { useHistory } from 'react-router';
 import { alertCircle, chevronForwardOutline } from 'ionicons/icons';
@@ -21,6 +23,7 @@ import SideMenuBar from '../components/SideMenuBar';
 
 // CSS Files
 import PortfolioSummaryStyles from '../theme/styles.module.css';
+import bellIcon from '../images/notification-bell.png';
 
 const Portfolio: FC = () => {
   const [holdingsData, setHoldingsData] = useState([
@@ -110,6 +113,10 @@ const Portfolio: FC = () => {
     history.push('/holdingsummary');
   };
 
+  const openNotifications = () => {
+    history.push('/alerts');
+  };
+
   return (
     <IonPage>
       <SideMenuBar />
@@ -121,7 +128,9 @@ const Portfolio: FC = () => {
           <IonText color="light">
             <h1 className="font-semibold text-xl">Portfolio</h1>
           </IonText>
-          <div />
+          <IonButton fill="clear" onClick={() => openNotifications()}>
+            <IonImg src={bellIcon} />
+          </IonButton>
         </div>
       </IonHeader>
       <IonContent fullscreen class={PortfolioSummaryStyles.screen_bg} id="main">
