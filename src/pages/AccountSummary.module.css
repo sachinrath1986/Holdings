@@ -13,3 +13,7 @@
 .loss_text {
   color: var(--loss-text-color);
 }
+
+.text_1_5xl{
+  font-size: 1.375rem;;
+}
