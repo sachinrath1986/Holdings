@@ -9,6 +9,7 @@ import {
   IonItem,
 } from '@ionic/react';
 import { chevronForwardOutline } from 'ionicons/icons';
+import LineChart from '../components/LineChart';
 import HoldingAnalyticsStyles from '../theme/styles.module.css';
 
 const HoldingAnalytics: React.FC = () => {
@@ -33,7 +34,7 @@ const HoldingAnalytics: React.FC = () => {
   });
   return (
     <div>
-      <div className="h-52" />
+      <LineChart />
       <div className="p-4">
         <div
           className={`px-5 py-4 w-full rounded-xl mb-4 ${HoldingAnalyticsStyles.data_container}`}

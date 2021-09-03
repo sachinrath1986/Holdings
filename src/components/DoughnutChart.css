@@ -1,0 +1,26 @@
+.inner-content {
+  top: 50%;
+  left: 20%;
+  height: 80px;
+  width: 75px;
+  transform: translate(-10%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-content .main-content {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 500;
+  color: #c4c7ce;
+  line-height: 35px;
+}
+
+.inner-content .sub-content {
+  text-align: center;
+  font-size: 15px;
+  color: grey;
+  line-height: 15px;
+}

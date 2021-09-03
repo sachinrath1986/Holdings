@@ -18,6 +18,7 @@ import { useHistory } from 'react-router';
 import { alertCircle, chevronForwardOutline } from 'ionicons/icons';
 // Custom Components
 import SideMenuBar from '../components/SideMenuBar';
+import DoughnutChart from '../components/DoughnutChart';
 
 // CSS Files
 import PortfolioSummaryStyles from '../theme/styles.module.css';
@@ -262,8 +263,8 @@ const Portfolio: FC = () => {
               </div>
             </div>
           </div>
-          <div className="p-4">
-            <div className="h-40" />
+          <div className="px-4">
+            <DoughnutChart />
           </div>
           <div className="p-4 pb-1">
             <div className="flex flex-row items-center justify-between">
