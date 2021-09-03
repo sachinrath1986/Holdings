@@ -203,7 +203,7 @@ const Transaction: FC = () => {
                   <div className="w-full p-4 pt-2 pb-2">
                     <IonGrid class="p-0">
                       <IonRow class="p-0">
-                        <IonCol size="5">
+                        <IonCol size="5" class="pl-0">
                           <IonText color="success" class={`p-2 py-1 ${TransactionStyles.transaction_type_bg}`}>
                             <span className="text-sm font-bold uppercase tracking-wide">{data.transactionType}</span>
                           </IonText>
@@ -214,7 +214,7 @@ const Transaction: FC = () => {
                             <p className="text-sm text-white text-opacity-50">Qty: {data.quantity}</p>
                           </IonText>
                         </IonCol>
-                        <IonCol size="7">
+                        <IonCol size="7" class="pr-0">
                           <IonText>
                             <p className="text-base text-white text-opacity-40 text-right">{data.transactionDate}</p>
                           </IonText>

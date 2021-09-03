@@ -64,7 +64,7 @@ const SideMenuBar: FC = () => {
             <img src={documentIcon} alt="" />
             <span>Documents &#38; Reports</span>
           </IonItem>
-          <IonItem class={styles['menu-list-item']} onClick={() => backToSummary()}>
+          <IonItem class={styles['menu-list-item']} onClick={() => goToTransactions()}>
             <img src={transactionsIcon} alt="" />
             <span>Transactions</span>
             <span className={styles['transaction-num']}>12</span>

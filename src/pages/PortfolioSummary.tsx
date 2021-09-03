@@ -108,7 +108,7 @@ const Portfolio: FC = () => {
   return (
     <IonPage>
       <SideMenuBar />
-      <IonHeader class={`${PortfolioSummaryStyles.header_bg} h-16`}>
+      <IonHeader class={`${PortfolioSummaryStyles.header_bg}`}>
         <div className="w-full p-4 pl-2 pr-2 flex flexx-row items-center justify-between">
           <IonButtons slot="start">
             <IonMenuButton color="light" />
