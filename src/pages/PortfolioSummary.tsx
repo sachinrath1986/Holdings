@@ -129,6 +129,7 @@ const Portfolio: FC = () => {
           </IonText>
           <IonButton fill="clear" onClick={() => openNotifications()}>
             <IonImg src={bellIcon} />
+            <span className={PortfolioSummaryStyles.notifNum}>2</span>
           </IonButton>
         </div>
       </IonHeader>

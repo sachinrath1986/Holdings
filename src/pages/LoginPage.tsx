@@ -70,14 +70,14 @@ const Login: React.FC = () => {
         </IonButton>
       </form>
 
-      <div className={styles['foot-note']}>
+      {/* <div className={styles['foot-note']}>
         <IonText>
           <span>Not registered yet?&nbsp;</span>
         </IonText>
         <IonText className={styles['create-account']} onClick={doRegister}>
           <span>Create an account.</span>
         </IonText>
-      </div>
+      </div> */}
     </IonPage>
   );
 };

@@ -26,9 +26,14 @@ const SideMenuBar: FC = () => {
     history.push('/accountsummary');
   };
   return (
-    <IonMenu side="start" type="overlay" content-id="main">
+    <IonMenu
+      side="start"
+      type="overlay"
+      content-id="main"
+      class={styles['side-menu']}
+    >
       <IonContent class={styles['menu-content']}>
-        <IonGrid>
+        <IonGrid class="p-0">
           <IonRow class={styles['profile-row']}>
             <IonCol size="3" class={styles['profile-image-col']}>
               <img src={profileImage} alt="" />
@@ -45,7 +50,9 @@ const SideMenuBar: FC = () => {
               class={styles['arrow-btn-col']}
               onClick={() => backToSummary()}
             >
-              <img src={rightArrowIcon} alt="" />
+              <div>
+                <img src={rightArrowIcon} alt="" />
+              </div>
             </IonCol>
           </IonRow>
         </IonGrid>

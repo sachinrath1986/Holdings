@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import {
   IonText,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonIcon,
   IonList,
   IonItem,
   IonPage,
@@ -14,7 +10,6 @@ import {
   IonImg,
 } from '@ionic/react';
 import { useHistory } from 'react-router';
-// import { arrowBackOutline } from 'ionicons/icons';
 import backArrow from '../images/white-arrow-back.png';
 import PageStyles from './AlertNotifications.module.css';
 
@@ -72,7 +67,11 @@ const searchNotifs = (key: string, notifs: any) => {
   for (let i = 0; i < notifs.length; i += 1) {
     if (notifs[i].holding.toLowerCase().indexOf(lowerCaseKey) > -1) {
       filteredNotifs.push(notifs[i]);
-    } else if (notifs[i].remark[0].toLowerCase().indexOf(lowerCaseKey) > -1) {
+    } else if (notifs[i].status.length === 1) {
+      if (notifs[i].status[0].toLowerCase().indexOf(lowerCaseKey) > -1) {
+        filteredNotifs.push(notifs[i]);
+      }
+    } else if (notifs[i].status[1].toLowerCase().indexOf(lowerCaseKey) > -1) {
       filteredNotifs.push(notifs[i]);
     }
   }
@@ -89,15 +88,23 @@ const AlertNotifications: React.FC = () => {
     <IonPage>
       <IonHeader class={`p-4 ${PageStyles.pageHeader} pl-0`}>
         <div className="flex flex-row items-center">
-          <IonButton fill="clear" class="p-0 m-0" onClick={() => handleBack()}>
-            <IonImg src={backArrow} alt="" />
+          <div className={PageStyles.backBtnTxt}>
+            <IonButton
+              fill="clear"
+              class="p-0 m-0"
+              onClick={() => handleBack()}
+            >
+              <IonImg src={backArrow} alt="" />
+              <IonText color="light">
+                <span>Back</span>
+              </IonText>
+            </IonButton>
+          </div>
+          <div className={PageStyles.headerTxt}>
             <IonText color="light">
-              <span className={PageStyles.backBtnTxt}>Back</span>
+              <span>Notifications</span>
             </IonText>
-          </IonButton>
-          <IonText color="light" class={PageStyles.headerTxt}>
-            <span>Notifications</span>
-          </IonText>
+          </div>
         </div>
       </IonHeader>
       <IonContent class={PageStyles.pageContent}>

@@ -1,13 +1,18 @@
+ion-menu.side-menu {
+  --width: 19.75rem;
+}
+
 ion-content.menu-content {
   --background: #12203f;
 }
 
 .menu-list {
   background: transparent;
+  padding-top: 1rem;
 }
 
 ion-row.profile-row {
-  padding-top: 0.625rem;
+  padding-top: 1.5rem;
 }
 
 .menu-list-item {
@@ -27,9 +32,19 @@ ion-row.profile-row {
 }
 
 .menu-list-item img {
-  position: relative;
-  top: -1px;
-  margin: 0 0.5rem 0 0.8rem;
+  margin: 0 0.75rem 0 1.125rem;
+}
+
+ion-item.menu-list-item:nth-child(1) img {
+  margin-right: 0.5625rem;
+}
+
+ion-item.menu-list-item:nth-child(4) img {
+  margin-right: 1.0625rem;
+}
+
+ion-item.menu-list-item:nth-child(7) img {
+  margin-right: 0.6875rem;
 }
 
 .menu-list .menu-list-item:last-child {
@@ -44,12 +59,18 @@ ion-col.profile-info-col {
 .profile-image-col {
   align-self: center;
   padding-top: 0.6rem;
-  padding-left: 0.5rem;
+  padding-left: 1.125rem;
+  padding-right: 0;
 }
 
 .profile-image-col img {
   border-radius: 5px;
   height: 4rem;
+}
+
+.profile-info-col {
+  padding-right: 0;
+  padding-left: 1.125rem;
 }
 
 .profile-info-col span {
@@ -76,4 +97,18 @@ span.email-and-id {
   right: 1rem;
   color: #f1f3f6;
   letter-spacing: 0.18px;
+}
+
+.arrow-btn-col {
+  padding-right: 1rem;
+}
+
+.arrow-btn-col div {
+  position: relative;
+  height: 100%;
+}
+
+.arrow-btn-col img {
+  position: absolute;
+  right: 0;
 }
