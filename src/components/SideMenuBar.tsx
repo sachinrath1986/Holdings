@@ -20,12 +20,17 @@ import logoutIcon from '../images/logout.png'
 import profileImage from '../images/profile-image.jpg'
 import rightArrowIcon from '../images/right-arrow-blue.png'
 
-const SideMenuBar: FC = () =>  {
+const SideMenuBar: FC = () => {
   const history = useHistory();
   const backToSummary = () => {
     history.push('/accountsummary');
   }
- return (
+
+  const goToTransactions = () => {
+    history.push('/transactions');
+  }
+
+  return (
     <IonMenu side="start" type='overlay' content-id="main">
       <IonContent class={styles['menu-content']}>
         <IonGrid>
@@ -50,39 +55,39 @@ const SideMenuBar: FC = () =>  {
           </IonRow>
         </IonGrid>
         <IonList class={styles['menu-list']}>
-          
-              <IonItem class={styles['menu-list-item']}>
-                <img src={homeIcon} alt="" />
-                <span>Dashboard</span>
-              </IonItem>
-              <IonItem class={styles['menu-list-item']}>
-                <img src={documentIcon} alt="" />
-                <span>Documents &#38; Reports</span>
-              </IonItem>
-              <IonItem class={styles['menu-list-item']}>
-                <img src={transactionsIcon} alt="" />
-                <span>Transactions</span>
-                <span className={styles['transaction-num']}>12</span>
-              </IonItem>
-              <IonItem class={styles['menu-list-item']}>
-                <img src={profileIcon} alt="" />
-                <span>Profile</span>
-              </IonItem>
-              <IonItem class={styles['menu-list-item']}>
-                <img src={settingsIcon} alt="" />
-                <span>Settings</span>
-              </IonItem>
-              <IonItem class={styles['menu-list-item']}>
-                <img src={helpIcon} alt="" />
-                <span>Help</span>
-              </IonItem>
-              <IonItem class={styles['menu-list-item']}>
-                <img src={logoutIcon} alt="" />
-                <span>Logout</span>
-              </IonItem>
+
+          <IonItem class={styles['menu-list-item']}>
+            <img src={homeIcon} alt="" />
+            <span>Dashboard</span>
+          </IonItem>
+          <IonItem class={styles['menu-list-item']}>
+            <img src={documentIcon} alt="" />
+            <span>Documents &#38; Reports</span>
+          </IonItem>
+          <IonItem class={styles['menu-list-item']} onClick={() => backToSummary()}>
+            <img src={transactionsIcon} alt="" />
+            <span>Transactions</span>
+            <span className={styles['transaction-num']}>12</span>
+          </IonItem>
+          <IonItem class={styles['menu-list-item']}>
+            <img src={profileIcon} alt="" />
+            <span>Profile</span>
+          </IonItem>
+          <IonItem class={styles['menu-list-item']}>
+            <img src={settingsIcon} alt="" />
+            <span>Settings</span>
+          </IonItem>
+          <IonItem class={styles['menu-list-item']}>
+            <img src={helpIcon} alt="" />
+            <span>Help</span>
+          </IonItem>
+          <IonItem class={styles['menu-list-item']}>
+            <img src={logoutIcon} alt="" />
+            <span>Logout</span>
+          </IonItem>
         </IonList>
       </IonContent>
-      </IonMenu>
+    </IonMenu>
   )
- }
+}
 export default SideMenuBar

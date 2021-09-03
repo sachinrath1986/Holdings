@@ -82,6 +82,10 @@ http://ionicframework.com/docs/theming/ */
   --profit-text-color: #14ea14;
   --loss-text-color: #fd5019;
   --ion-font-family: sfpro;
+  --searchbar-bg:#1b2456;
+  --transaction-type-bg:#1C4C51;
+  --success-text-color:#14ea14;
+  --process-text-color:#FF991F;
 }
 
 @media (prefers-color-scheme: dark) {

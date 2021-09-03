@@ -16,8 +16,6 @@ import {
 import {
   alertCircle,
   chevronForwardOutline,
-  arrowDownOutline,
-  arrowUpOutline,
 } from 'ionicons/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
@@ -110,7 +108,7 @@ const Portfolio: FC = () => {
   return (
     <IonPage>
       <SideMenuBar />
-      <IonHeader class={PortfolioSummaryStyles.header_bg}>
+      <IonHeader class={`${PortfolioSummaryStyles.header_bg} h-16`}>
         <div className="w-full p-4 pl-2 pr-2 flex flexx-row items-center justify-between">
           <IonButtons slot="start">
             <IonMenuButton color="light" />
