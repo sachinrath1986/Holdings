@@ -6,6 +6,7 @@ import CreatePin from './pages/CreatePortfolioPin';
 import AccountSummary from './pages/AccountSummary';
 import PortfolioSummary from './pages/PortfolioSummary';
 import HoldingSummary from './pages/HoldingSummary';
+import Transactions from './pages/Transactions';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -50,6 +51,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/holdingsummary">
           <HoldingSummary />
+        </Route>
+        <Route exact path="/transactions">
+          <Transactions />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
