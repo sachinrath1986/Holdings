@@ -25,6 +25,9 @@ const SideMenuBar: FC = () =>  {
   const backToSummary = () => {
     history.push('/accountsummary');
   }
+  const navigateToSettings =() =>{
+    history.push('/settings');
+  }
  return (
     <IonMenu side="start" type='overlay' content-id="main">
       <IonContent class={styles['menu-content']}>
@@ -68,7 +71,7 @@ const SideMenuBar: FC = () =>  {
                 <img src={profileIcon} alt="" />
                 <span>Profile</span>
               </IonItem>
-              <IonItem class={styles['menu-list-item']}>
+              <IonItem class={styles['menu-list-item']} onClick={navigateToSettings}>
                 <img src={settingsIcon} alt="" />
                 <span>Settings</span>
               </IonItem>
