@@ -11,18 +11,17 @@
     background:var(--screen-bg);
     color:var(--settings-text);
    font-weight: bold;
-   border-bottom: 1px solid var(--settings-text);
+   border-bottom: 0.0625rem solid var(--settings-text);
 }
 .settings_list_item{
    background:var(--screen-bg) ;
    color:white;
-   border-bottom: 1px solid var(--settings-text);
+   border-bottom: 0.0625rem solid var(--settings-text);
    width: 100%;
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 10px;
-   padding-left: 10px;
+   padding: 0.625rem;
 }
 .settings_option_list_item{
     display: flex;
