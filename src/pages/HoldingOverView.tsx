@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonText, IonGrid, IonRow, IonCol, IonIcon } from '@ionic/react';
+import { IonText, IonGrid, IonRow, IonCol } from '@ionic/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import HoldingOverViewStyles from './HoldingOverView.module.css';
