@@ -31,6 +31,17 @@
   --inner-padding-end: 0;
 }
 
-.text_1_5xl{
-  font-size: 1.375rem;;
+.text_1_5xl {
+  font-size: 1.375rem;
+}
+
+.notifNum {
+  padding: 2px 4px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 0.625rem;
+  background-color: #ff0000;
+  position: absolute;
+  right: -4px;
+  top: 2px;
 }

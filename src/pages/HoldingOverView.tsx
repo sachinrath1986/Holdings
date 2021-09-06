@@ -35,7 +35,9 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class="pl-0 pt-0">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-white text-opacity-50">Invested</h2>
+                    <h2 className="text-sm text-white text-opacity-50">
+                      Invested
+                    </h2>
                   </IonText>
                 </div>
                 <div>
@@ -47,7 +49,9 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class=" pl-4 pt-0">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-white text-opacity-50">Current</h2>
+                    <h2 className="text-sm text-white text-opacity-50">
+                      Current
+                    </h2>
                   </IonText>
                 </div>
                 <div>
@@ -59,7 +63,9 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class="pl-0">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-white text-opacity-50">P&#38;L</h2>
+                    <h2 className="text-sm text-white text-opacity-50">
+                      P&#38;L
+                    </h2>
                   </IonText>
                 </div>
                 <div>
@@ -97,7 +103,9 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class="pl-0">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-white text-opacity-50">Avg.price</h2>
+                    <h2 className="text-sm text-white text-opacity-50">
+                      Avg.price
+                    </h2>
                   </IonText>
                 </div>
                 <div>
@@ -164,7 +172,9 @@ const HoldingOverView: React.FC = () => {
               <IonCol size="6" class="pl-4">
                 <div>
                   <IonText>
-                    <h2 className="text-sm text-white text-opacity-50">Prev. close</h2>
+                    <h2 className="text-sm text-white text-opacity-50">
+                      Prev. close
+                    </h2>
                   </IonText>
                 </div>
                 <div>
@@ -182,7 +192,9 @@ const HoldingOverView: React.FC = () => {
       >
         <div className="mb-3">
           <IonText>
-            <h2 className="text-lg text-white text-opacity-40">52 Week low/high</h2>
+            <h2 className="text-lg text-white text-opacity-40">
+              52 Week low/high
+            </h2>
           </IonText>
         </div>
         <IonGrid class="p-0">
@@ -197,7 +209,10 @@ const HoldingOverView: React.FC = () => {
                 <IonText>
                   <p className={`text-lg ${HoldingOverViewStyles.loss_text}`}>
                     {overViewData.WeekLowOrHigh.Low}
-                    <FontAwesomeIcon icon={faArrowDown} className="text-sm ml-2"/>
+                    <FontAwesomeIcon
+                      icon={faArrowDown}
+                      className="text-sm ml-2"
+                    />
                   </p>
                 </IonText>
               </div>
@@ -212,7 +227,10 @@ const HoldingOverView: React.FC = () => {
                 <IonText>
                   <p className={`text-lg ${HoldingOverViewStyles.profit_text}`}>
                     {overViewData.WeekLowOrHigh.High}
-                    <FontAwesomeIcon icon={faArrowUp} className="text-sm ml-2"/>
+                    <FontAwesomeIcon
+                      icon={faArrowUp}
+                      className="text-sm ml-2"
+                    />
                   </p>
                 </IonText>
               </div>

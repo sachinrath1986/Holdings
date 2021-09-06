@@ -9,6 +9,7 @@ import {
   IonItem,
 } from '@ionic/react';
 import { chevronForwardOutline } from 'ionicons/icons';
+import LineChart from '../components/LineChart';
 import HoldingAnalyticsStyles from './HoldingAnalytics.module.css';
 
 const HoldingAnalytics: React.FC = () => {
@@ -33,7 +34,7 @@ const HoldingAnalytics: React.FC = () => {
   });
   return (
     <div>
-      <div className="h-52" />
+      <LineChart />
       <div className="p-4">
         <div
           className={`px-5 py-4 w-full rounded-xl mb-4 ${HoldingAnalyticsStyles.data_container}`}
@@ -44,7 +45,9 @@ const HoldingAnalytics: React.FC = () => {
                 <IonCol size="6" class="pl-0 pt-0">
                   <div>
                     <IonText>
-                      <h2 className="text-base text-white text-opacity-50">Open</h2>
+                      <h2 className="text-base text-white text-opacity-50">
+                        Open
+                      </h2>
                     </IonText>
                   </div>
                   <div>
@@ -56,7 +59,9 @@ const HoldingAnalytics: React.FC = () => {
                 <IonCol size="6" class=" pl-4 pt-0">
                   <div>
                     <IonText>
-                      <h2 className="text-base text-white text-opacity-50">High</h2>
+                      <h2 className="text-base text-white text-opacity-50">
+                        High
+                      </h2>
                     </IonText>
                   </div>
                   <div>
@@ -68,7 +73,9 @@ const HoldingAnalytics: React.FC = () => {
                 <IonCol size="6" class="pl-0">
                   <div>
                     <IonText>
-                      <h2 className="text-base text-white text-opacity-50">Low</h2>
+                      <h2 className="text-base text-white text-opacity-50">
+                        Low
+                      </h2>
                     </IonText>
                   </div>
                   <div>
@@ -80,7 +87,9 @@ const HoldingAnalytics: React.FC = () => {
                 <IonCol size="6" class="pl-4">
                   <div>
                     <IonText>
-                      <h2 className="text-base text-white text-opacity-50">Prev. close</h2>
+                      <h2 className="text-base text-white text-opacity-50">
+                        Prev. close
+                      </h2>
                     </IonText>
                   </div>
                   <div>

@@ -7,6 +7,7 @@ import AccountSummary from './pages/AccountSummary';
 import PortfolioSummary from './pages/PortfolioSummary';
 import HoldingSummary from './pages/HoldingSummary';
 import Settings from './pages/Settings';
+import AlertNotifications from './pages/AlertNotifications';
 import Transactions from './pages/Transactions';
 
 /* Core CSS required for Ionic components to work properly */
@@ -55,6 +56,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/settings">
           <Settings />
+        </Route>
+        <Route exact path="/alerts">
+          <AlertNotifications />
         </Route>
         <Route exact path="/transactions">
           <Transactions />

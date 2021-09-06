@@ -12,7 +12,10 @@ import {
   IonMenuButton,
   IonHeader,
   IonIcon,
+  IonImg,
+  IonButton,
 } from '@ionic/react';
+import { useHistory } from 'react-router';
 import {
   alertCircle,
   chevronForwardOutline,
@@ -21,9 +24,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 // Custom Components
 import SideMenuBar from '../components/SideMenuBar';
+import DoughnutChart from '../components/DoughnutChart';
 import HoldingCard from '../components/HoldingCard';
 import { currencyFormatter } from '../utils/currency';
 import PortfolioSummaryStyles from './PortfolioSummary.module.css';
+import bellIcon from '../images/notification-bell.png';
 
 export type HoldingDataType = {
   holdingId: string;
@@ -105,6 +110,11 @@ const Portfolio: FC = () => {
     oneDayPercentChange: 1.67,
   });
 
+  const history = useHistory();
+  const openNotifications = () => {
+    history.push('/alerts');
+  };
+
   return (
     <IonPage>
       <SideMenuBar />
@@ -116,7 +126,10 @@ const Portfolio: FC = () => {
           <IonText color="light">
             <h1 className="font-semibold text-xl">Portfolio</h1>
           </IonText>
-          <div />
+          <IonButton fill="clear" onClick={() => openNotifications()}>
+            <IonImg src={bellIcon} />
+            <span className={PortfolioSummaryStyles.notifNum}>2</span>
+          </IonButton>
         </div>
       </IonHeader>
       <IonContent fullscreen class={PortfolioSummaryStyles.screen_bg} id="main">
@@ -132,7 +145,9 @@ const Portfolio: FC = () => {
                       <div className="flex flex-row items-center">
                         <div className="mr-1">
                           <IonText>
-                            <h2 className="text-sm text-white text-opacity-40">Current</h2>
+                            <h2 className="text-sm text-white text-opacity-40">
+                              Current
+                            </h2>
                           </IonText>
                         </div>
                         <div className="flex">
@@ -162,7 +177,9 @@ const Portfolio: FC = () => {
                       <div className="flex flex-row items-center">
                         <div className="mr-1">
                           <IonText>
-                            <h2 className="text-sm text-white text-opacity-40">P&#38;L</h2>
+                            <h2 className="text-sm text-white text-opacity-40">
+                              P&#38;L
+                            </h2>
                           </IonText>
                         </div>
                         <div className="flex">
@@ -197,7 +214,10 @@ const Portfolio: FC = () => {
                                 className={`${PortfolioSummaryStyles.profit_text} text-base`}
                               >
                                 (
-                                <FontAwesomeIcon icon={faArrowUp} className="text-sm"/>
+                                <FontAwesomeIcon
+                                  icon={faArrowUp}
+                                  className="text-sm"
+                                />
                                 &nbsp;{overallData.holdingPercentChange}%)
                               </p>
                             ) : (
@@ -205,7 +225,10 @@ const Portfolio: FC = () => {
                                 className={`${PortfolioSummaryStyles.loss_text} text-base`}
                               >
                                 (
-                                <FontAwesomeIcon icon={faArrowDown} className="text-sm"/>
+                                <FontAwesomeIcon
+                                  icon={faArrowDown}
+                                  className="text-sm"
+                                />
                                 &nbsp;{overallData.holdingPercentChange}%)
                               </p>
                             )}
@@ -253,7 +276,10 @@ const Portfolio: FC = () => {
                             <IonText class={PortfolioSummaryStyles.profit_text}>
                               <p className="text-sm font-semibold">
                                 (
-                                <FontAwesomeIcon icon={faArrowUp} className="text-xs"/>
+                                <FontAwesomeIcon
+                                  icon={faArrowUp}
+                                  className="text-xs"
+                                />
                                 &nbsp;{overallData.oneDayPercentChange}%)
                               </p>
                             </IonText>
@@ -261,7 +287,10 @@ const Portfolio: FC = () => {
                             <IonText class={PortfolioSummaryStyles.loss_text}>
                               <p className="text-sm font-semibold">
                                 (
-                                <FontAwesomeIcon icon={faArrowDown} className="text-xs"/>
+                                <FontAwesomeIcon
+                                  icon={faArrowDown}
+                                  className="text-xs"
+                                />
                                 &nbsp;{overallData.oneDayPercentChange}%)
                               </p>
                             </IonText>
@@ -274,8 +303,8 @@ const Portfolio: FC = () => {
               </div>
             </div>
           </div>
-          <div className="p-4">
-            <div className="h-40" />
+          <div className="px-4">
+            <DoughnutChart />
           </div>
           <div className="p-4 pb-1">
             <div className="flex flex-row items-center justify-between">
@@ -288,13 +317,18 @@ const Portfolio: FC = () => {
                   </IonText>
                 </div>
                 <div>
-                  <IonIcon icon={alertCircle} class="text-white text-opacity-50 text-xs" />
+                  <IonIcon
+                    icon={alertCircle}
+                    class="text-white text-opacity-50 text-xs"
+                  />
                 </div>
               </div>
               <div className="flex flex-row items-start">
                 <div>
                   <IonText color="secondary">
-                    <h2 className="text-sm tracking-wider">View all Holdings</h2>
+                    <h2 className="text-sm tracking-wider">
+                      View all Holdings
+                    </h2>
                   </IonText>
                 </div>
                 <div>
