@@ -24,6 +24,9 @@ const SideMenuBar: FC = () => {
   const history = useHistory();
   const backToSummary = () => {
     history.push('/accountsummary');
+  }
+  const navigateToSettings =() =>{
+    history.push('/settings');
   };
 
   const goToTransactions = () => {
@@ -82,7 +85,7 @@ const SideMenuBar: FC = () => {
             <img src={profileIcon} alt="" />
             <span>Profile</span>
           </IonItem>
-          <IonItem class={styles['menu-list-item']}>
+          <IonItem class={styles['menu-list-item']} onClick={navigateToSettings}>
             <img src={settingsIcon} alt="" />
             <span>Settings</span>
           </IonItem>

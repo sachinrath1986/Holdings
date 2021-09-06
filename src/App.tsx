@@ -6,6 +6,7 @@ import CreatePin from './pages/CreatePortfolioPin';
 import AccountSummary from './pages/AccountSummary';
 import PortfolioSummary from './pages/PortfolioSummary';
 import HoldingSummary from './pages/HoldingSummary';
+import Settings from './pages/Settings';
 import AlertNotifications from './pages/AlertNotifications';
 import Transactions from './pages/Transactions';
 
@@ -52,6 +53,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/holdingsummary">
           <HoldingSummary />
+        </Route>
+        <Route exact path="/settings">
+          <Settings />
         </Route>
         <Route exact path="/alerts">
           <AlertNotifications />
