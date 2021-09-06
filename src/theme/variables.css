@@ -76,17 +76,17 @@ http://ionicframework.com/docs/theming/ */
   --white: #fff;
   --btn-blue: #007fe4;
   --otp-input-bg: #262d52;
-  --screen-bg: #020b3f;
+  --screen-bg: #12203f;
   --summary-nav-tab-bg: #121c52;
   --data-container-bg: #171f49;
   --profit-text-color: #14ea14;
   --loss-text-color: #fd5019;
   --settings-text:#687185;
   --ion-font-family: sfpro;
-  --searchbar-bg:#1b2456;
-  --transaction-type-bg:#1C4C51;
-  --success-text-color:#14ea14;
-  --process-text-color:#FF991F;
+  --searchbar-bg: #1b2456;
+  --transaction-type-bg: #1c4c51;
+  --success-text-color: #14ea14;
+  --process-text-color: #ff991f;
 }
 
 @media (prefers-color-scheme: dark) {

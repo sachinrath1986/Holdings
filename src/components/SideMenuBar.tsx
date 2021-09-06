@@ -20,7 +20,11 @@ import logoutIcon from '../images/logout.png';
 import profileImage from '../images/profile-image.jpg';
 import rightArrowIcon from '../images/right-arrow-blue.png';
 
-const SideMenuBar: FC = () => {
+type SideMenuProps = {
+  contentId: string;
+};
+
+const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
   const history = useHistory();
   const backToSummary = () => {
     history.push('/accountsummary');
@@ -33,11 +37,15 @@ const SideMenuBar: FC = () => {
     history.push('/transactions');
   };
 
+  const goToPortfolioSummary = () => {
+    history.push('/portfoliosummary');
+  };
+
   return (
     <IonMenu
       side="start"
       type="overlay"
-      content-id="main"
+      contentId={contentId}
       class={styles['side-menu']}
     >
       <IonContent class={styles['menu-content']}>
@@ -65,7 +73,10 @@ const SideMenuBar: FC = () => {
           </IonRow>
         </IonGrid>
         <IonList class={styles['menu-list']}>
-          <IonItem class={styles['menu-list-item']}>
+          <IonItem
+            class={styles['menu-list-item']}
+            onClick={() => goToPortfolioSummary()}
+          >
             <img src={homeIcon} alt="" />
             <span>Dashboard</span>
           </IonItem>

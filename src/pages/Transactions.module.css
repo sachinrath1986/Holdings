@@ -6,6 +6,10 @@
   background: var(--screen-bg);
 }
 
+ion-header.header_bg::after {
+  content: none;
+}
+
 .data_container {
   background: var(--data-container-bg);
 }
