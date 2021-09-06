@@ -16,10 +16,7 @@ import {
   IonButton,
 } from '@ionic/react';
 import { useHistory } from 'react-router';
-import {
-  alertCircle,
-  chevronForwardOutline,
-} from 'ionicons/icons';
+import { alertCircle, chevronForwardOutline } from 'ionicons/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 // Custom Components
@@ -116,7 +113,7 @@ const Portfolio: FC = () => {
 
   return (
     <IonPage>
-      <SideMenuBar />
+      <SideMenuBar contentId="main" />
       <IonHeader class={`${PortfolioSummaryStyles.header_bg}`}>
         <div className="w-full p-4 pl-2 pr-2 flex flexx-row items-center justify-between">
           <IonButtons slot="start">

@@ -10,8 +10,17 @@ import {
   IonImg,
 } from '@ionic/react';
 import { useHistory } from 'react-router';
+import SearchBar from '../components/SearchBar';
 import backArrow from '../images/white-arrow-back.png';
 import PageStyles from './AlertNotifications.module.css';
+
+type AlertDataType = {
+  holding: string;
+  status: string[];
+  remark: string[];
+  time: string;
+  seen: boolean;
+};
 
 const alerts = [
   {
@@ -61,29 +70,39 @@ const alerts = [
   },
 ];
 
-const searchNotifs = (key: string, notifs: any) => {
-  const lowerCaseKey = key.toLocaleLowerCase();
-  const filteredNotifs = [];
-  for (let i = 0; i < notifs.length; i += 1) {
-    if (notifs[i].holding.toLowerCase().indexOf(lowerCaseKey) > -1) {
-      filteredNotifs.push(notifs[i]);
-    } else if (notifs[i].status.length === 1) {
-      if (notifs[i].status[0].toLowerCase().indexOf(lowerCaseKey) > -1) {
-        filteredNotifs.push(notifs[i]);
-      }
-    } else if (notifs[i].status[1].toLowerCase().indexOf(lowerCaseKey) > -1) {
-      filteredNotifs.push(notifs[i]);
-    }
-  }
-  return filteredNotifs;
-};
-
 const AlertNotifications: React.FC = () => {
-  const [alertsArr, setAlertsArr] = useState(alerts);
+  const [alertsArr, setAlertsArr] = useState<AlertDataType[]>(alerts);
   const history = useHistory();
   const handleBack = () => {
     history.push('/portfoliosummary');
   };
+
+  const searchNotifs = (key: string) => {
+    if (key.length >= 3) {
+      const lowerCaseKey = key.toLowerCase();
+      const filteredNotifs = [];
+      for (let i = 0; i < alerts.length; i += 1) {
+        if (alerts[i].holding.toLowerCase().indexOf(lowerCaseKey) > -1) {
+          filteredNotifs.push(alerts[i]);
+        } else if (alerts[i].status.length === 1) {
+          if (alerts[i].status[0].toLowerCase().indexOf(lowerCaseKey) > -1) {
+            filteredNotifs.push(alerts[i]);
+          }
+        } else if (
+          alerts[i].status[1].toLowerCase().indexOf(lowerCaseKey) > -1
+        ) {
+          filteredNotifs.push(alerts[i]);
+        }
+      }
+      setAlertsArr(filteredNotifs);
+    } else {
+      setAlertsArr(alerts);
+    }
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  const handleFilter = () => {};
+
   return (
     <IonPage>
       <IonHeader class={`p-4 ${PageStyles.pageHeader} pl-0`}>
@@ -108,6 +127,14 @@ const AlertNotifications: React.FC = () => {
         </div>
       </IonHeader>
       <IonContent class={PageStyles.pageContent}>
+        <div className="p-4">
+          <SearchBar
+            onSearchChange={searchNotifs}
+            placeholder="Search"
+            onClickFilter={handleFilter}
+          />
+        </div>
+
         <IonList class={PageStyles.alertList}>
           {alertsArr.map((item, index) => (
             <IonItem
