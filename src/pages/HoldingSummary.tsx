@@ -14,11 +14,8 @@ import {
   IonButton,
 } from '@ionic/react';
 import {
-  trendingUpOutline,
   alertCircle,
-  trendingDownOutline,
   arrowBackOutline,
-  arrowDownOutline,
 } from 'ionicons/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faChartLine } from '@fortawesome/free-solid-svg-icons';
@@ -55,7 +52,7 @@ const HoldingSummary: React.FC = () => {
     <IonPage>
       <IonHeader class={`p-4 ${HoldingSummaryStyles.header_bg} pl-0`}>
         <div className="flex flex-row items-center justify-between">
-          <IonButton fill="clear" class="h-4 p-0 m-0" onClick={handleBack}>
+          <IonButton fill="clear" class="h-4 p-0 m-0 normal-case" onClick={handleBack}>
             <div className="flex flex-row items-center">
               <div className="mr-1">
                 <IonIcon

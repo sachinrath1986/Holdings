@@ -1,0 +1,64 @@
+.screen_bg {
+  --background: var(--screen-bg);
+}
+
+.header_bg {
+  background: var(--screen-bg);
+}
+
+.data_container {
+  background: var(--data-container-bg);
+}
+
+.profit_text {
+  color: var(--profit-text-color);
+}
+
+.loss_text {
+  color: var(--loss-text-color);
+}
+
+.success_text {
+  color: var(--success-text-color);
+}
+
+.process_text {
+  color: var(--process-text-color);
+}
+
+.transaction_list {
+  background: transparent;
+}
+
+.transaction_list_item {
+  --background: transparent;
+  --padding-start: 0;
+  --inner-border-width: 0 0 0.0625rem 0;
+  --border-color: #8b93a73d;
+  --inner-padding-end: 0;
+}
+
+.text_1_5xl {
+  font-size: 1.375rem;
+}
+
+.transaction_type_bg {
+  background: var(--transaction-type-bg);
+}
+
+.category_list {
+  background: transparent;
+  /* border-top: 0.0625rem solid #7f7f7f; */
+}
+
+.category_list_item {
+  --background: transparent;
+  --padding-start: 0.25rem;
+  --inner-border-width: 0 0 0 0;
+  --border-color: #7f7f7f;
+  --inner-padding-end: 0;
+  border-top: 0.0625rem solid #7f7f7f;
+  --padding-top: 0.25rem;
+  --padding-bottom: 0.25rem;
+  --min-height: auto;
+}

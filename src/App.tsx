@@ -7,6 +7,7 @@ import AccountSummary from './pages/AccountSummary';
 import PortfolioSummary from './pages/PortfolioSummary';
 import HoldingSummary from './pages/HoldingSummary';
 import AlertNotifications from './pages/AlertNotifications';
+import Transactions from './pages/Transactions';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -54,6 +55,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/alerts">
           <AlertNotifications />
+        </Route>
+        <Route exact path="/transactions">
+          <Transactions />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
