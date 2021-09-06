@@ -1,37 +1,55 @@
+ion-menu.side-menu {
+  --width: 19.75rem;
+}
+
 ion-content.menu-content {
-  --background: #020c46ef;
+  --background: #12203f;
 }
 
 .menu-list {
   background: transparent;
+  padding-top: 1rem;
 }
 
 ion-row.profile-row {
-  padding-top: 0.625rem;
+  padding-top: 1.5rem;
 }
 
 .menu-list-item {
   --background: transparent;
   --padding-start: 0;
-  --color: #ffffffe3;
-  --border-color: #7f7f7f77;
+  --color: #f1f3f6;
+  --border-color: #8b93a7;
   --min-height: 4rem;
+  font-size: 1.125rem;
+  letter-spacing: 0.2px;
 }
 
 .menu-list-item:active {
-  --color: #5f5ffb;
-  --border-color: #000b4ab3;
-  --background: #000b4ab3; 
+  --color: #009eff;
+  --border-color: #1e2b48;
+  --background: #1e2b48;
 }
 
 .menu-list-item img {
-  position: relative;
-  top: -1px;
-  margin: 0 0.5rem 0 0.8rem;;
+  margin: 0 0.75rem 0 1.125rem;
+}
+
+ion-item.menu-list-item:nth-child(1) img {
+  margin-right: 0.5625rem;
+}
+
+ion-item.menu-list-item:nth-child(4) img {
+  margin-right: 1.0625rem;
+}
+
+ion-item.menu-list-item:nth-child(7) img {
+  margin-right: 0.6875rem;
 }
 
 .menu-list .menu-list-item:last-child {
-  --color: #ffffff3f;
+  --color: #6a7487;
+  font-weight: 600;
 }
 
 ion-col.profile-info-col {
@@ -41,7 +59,8 @@ ion-col.profile-info-col {
 .profile-image-col {
   align-self: center;
   padding-top: 0.6rem;
-  padding-left: 0.5rem;
+  padding-left: 1.125rem;
+  padding-right: 0;
 }
 
 .profile-image-col img {
@@ -49,24 +68,47 @@ ion-col.profile-info-col {
   height: 4rem;
 }
 
+.profile-info-col {
+  padding-right: 0;
+  padding-left: 1.125rem;
+}
+
 .profile-info-col span {
   display: block;
 }
 
 .profile-info-col span:first-child {
-  color: #ffffffe3;
-  font-size: 1.4rem;
+  color: #ffffff;
+  font-size: 1.25rem;
+  letter-spacing: 0.22px;
 }
 
 span.email-and-id {
-  color: #ffffff8a;
-  font-size: 0.9rem;
+  color: #787f91;
+  font-size: 0.875rem;
+  letter-spacing: 0.15px;
 }
 
 .transaction-num {
-  background-color: #ff5722;
+  background-color: #fe530a;
   border-radius: 1rem;
   padding: 0 5px;
   position: absolute;
   right: 1rem;
+  color: #f1f3f6;
+  letter-spacing: 0.18px;
+}
+
+.arrow-btn-col {
+  padding-right: 1rem;
+}
+
+.arrow-btn-col div {
+  position: relative;
+  height: 100%;
+}
+
+.arrow-btn-col img {
+  position: absolute;
+  right: 0;
 }

@@ -1,10 +1,5 @@
 import { useState, FC } from 'react';
-import {
-  IonContent,
-  IonPage,
-  IonText,
-  IonButton,
-} from '@ionic/react';
+import { IonContent, IonPage, IonText, IonButton } from '@ionic/react';
 import { useHistory } from 'react-router';
 import OtpInput from 'react-otp-input';
 import Avatar from '../components/Avatar';
@@ -28,7 +23,7 @@ const CreatePin: FC = () => {
   const history = useHistory();
   const doLogin = () => {
     history.push('/accountsummary');
-  }
+  };
 
   return (
     <IonPage>
