@@ -24,6 +24,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 // Custom Components
 import SideMenuBar from '../components/SideMenuBar';
+import DoughnutChart from '../components/DoughnutChart';
 import HoldingCard from '../components/HoldingCard';
 import { currencyFormatter } from '../utils/currency';
 import PortfolioSummaryStyles from './PortfolioSummary.module.css';
@@ -302,8 +303,8 @@ const Portfolio: FC = () => {
               </div>
             </div>
           </div>
-          <div className="p-4">
-            <div className="h-40" />
+          <div className="px-4">
+            <DoughnutChart />
           </div>
           <div className="p-4 pb-1">
             <div className="flex flex-row items-center justify-between">
