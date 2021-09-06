@@ -44,7 +44,9 @@ const HoldingAnalytics: React.FC = () => {
                 <IonCol size="6" class="pl-0 pt-0">
                   <div>
                     <IonText>
-                      <h2 className="text-base text-white text-opacity-50">Open</h2>
+                      <h2 className="text-base text-white text-opacity-50">
+                        Open
+                      </h2>
                     </IonText>
                   </div>
                   <div>
@@ -56,7 +58,9 @@ const HoldingAnalytics: React.FC = () => {
                 <IonCol size="6" class=" pl-4 pt-0">
                   <div>
                     <IonText>
-                      <h2 className="text-base text-white text-opacity-50">High</h2>
+                      <h2 className="text-base text-white text-opacity-50">
+                        High
+                      </h2>
                     </IonText>
                   </div>
                   <div>
@@ -68,7 +72,9 @@ const HoldingAnalytics: React.FC = () => {
                 <IonCol size="6" class="pl-0">
                   <div>
                     <IonText>
-                      <h2 className="text-base text-white text-opacity-50">Low</h2>
+                      <h2 className="text-base text-white text-opacity-50">
+                        Low
+                      </h2>
                     </IonText>
                   </div>
                   <div>
@@ -80,7 +86,9 @@ const HoldingAnalytics: React.FC = () => {
                 <IonCol size="6" class="pl-4">
                   <div>
                     <IonText>
-                      <h2 className="text-base text-white text-opacity-50">Prev. close</h2>
+                      <h2 className="text-base text-white text-opacity-50">
+                        Prev. close
+                      </h2>
                     </IonText>
                   </div>
                   <div>

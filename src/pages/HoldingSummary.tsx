@@ -87,11 +87,16 @@ const HoldingSummary: React.FC = () => {
           <div className="p-4 pb-0 flex flex-row items-center">
             <div className="mr-1">
               <IonText color="light">
-                <h2 className="text-lg tracking-wider uppercase">{holdingData.HoldingName}</h2>
+                <h2 className="text-lg tracking-wider uppercase">
+                  {holdingData.HoldingName}
+                </h2>
               </IonText>
             </div>
             <div className="flex">
-              <IonIcon icon={alertCircle} class="text-white text-opacity-50 text-base" />
+              <IonIcon
+                icon={alertCircle}
+                class="text-white text-opacity-50 text-base"
+              />
             </div>
           </div>
           <div className="p-4 pb-0 pt-0 holding-data-container">
@@ -101,16 +106,24 @@ const HoldingSummary: React.FC = () => {
                   <div className="flex flex-row items-baseline h-full">
                     <div className="mr-2">
                       <IonText color="light">
-                        <h1 className={`uppercase font-bold ${HoldingSummaryStyles.text_3_5xl}`}>
+                        <h1
+                          className={`uppercase font-bold ${HoldingSummaryStyles.text_3_5xl}`}
+                        >
                           {holdingData.ProfitOrLoss.Value}
                         </h1>
                       </IonText>
                     </div>
                     <div>
                       {holdingData.ProfitOrLoss.PorL === 'Profit' ? (
-                        <FontAwesomeIcon icon={faChartLine} className={`text-2xl ${HoldingSummaryStyles.profit_text}`} />
+                        <FontAwesomeIcon
+                          icon={faChartLine}
+                          className={`text-2xl ${HoldingSummaryStyles.profit_text}`}
+                        />
                       ) : (
-                        <FontAwesomeIcon icon={faChartLine} className={`text-2xl ${HoldingSummaryStyles.loss_text}`} />
+                        <FontAwesomeIcon
+                          icon={faChartLine}
+                          className={`text-2xl ${HoldingSummaryStyles.loss_text}`}
+                        />
                       )}
                     </div>
                   </div>
