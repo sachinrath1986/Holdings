@@ -32,6 +32,9 @@ import './theme/variables.css';
 /* Theme tailwind */
 import './theme/tailwind.css';
 
+/* Theme App */
+import './theme/app.css';
+
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
