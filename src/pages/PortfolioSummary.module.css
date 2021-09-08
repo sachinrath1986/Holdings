@@ -40,12 +40,12 @@ ion-header.header_bg::after {
 }
 
 .notifNum {
-  padding: 2px 4px;
-  border-radius: 50%;
-  color: #ffffff;
+  background-color: #fe530a;
+  right: -6px;
+  top: 0;
   font-size: 0.625rem;
-  background-color: #ff0000;
-  position: absolute;
-  right: -0.25rem;
-  top: 0.5rem;
+}
+
+.holding_name_text {
+  color: var(--holding-name-text);
 }

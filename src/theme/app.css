@@ -1,0 +1,8 @@
+@font-face {
+  font-family: sfpro;
+  src: url('../fonts/SFProDisplay-Regular.ttf');
+}
+
+body{
+  font-family:sfpro;
+}
