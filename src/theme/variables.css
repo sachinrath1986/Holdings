@@ -89,6 +89,7 @@ http://ionicframework.com/docs/theming/ */
   --success-text-color: #14ea14;
   --process-text-color: #ff991f;
   --portfolio-id-text:#009EFF;
+  --holding-name-text:#009EFF;
 }
 
 @media (prefers-color-scheme: dark) {

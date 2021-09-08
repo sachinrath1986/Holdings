@@ -25,7 +25,8 @@ import DoughnutChart from '../components/DoughnutChart';
 import HoldingCard from '../components/HoldingCard';
 import { currencyFormatter } from '../utils/currency';
 import PortfolioSummaryStyles from './PortfolioSummary.module.css';
-import bellIcon from '../images/notification-bell.png';
+import BellIcon from '../images/notification-bell.png';
+import NextIcon from '../images/next_arrow.png';
 
 export type HoldingDataType = {
   holdingId: string;
@@ -50,7 +51,7 @@ const Portfolio: FC = () => {
       holdingChange: 111.0,
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
-      oneDayPercentChange: -0.28,
+      oneDayPercentChange: 3.28,
     },
     {
       holdingId: 'b34',
@@ -59,8 +60,8 @@ const Portfolio: FC = () => {
       holdingType: 'Royalties',
       holdingAmount: 2500.0,
       holdingChange: -111.0,
-      holdingPercentChange: 15.8,
-      oneDayChange: 20.0,
+      holdingPercentChange: -15.8,
+      oneDayChange: -20.0,
       oneDayPercentChange: -0.28,
     },
     {
@@ -72,7 +73,7 @@ const Portfolio: FC = () => {
       holdingChange: 111.0,
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
-      oneDayPercentChange: -0.28,
+      oneDayPercentChange: 1.28,
     },
     {
       holdingId: 'd78',
@@ -80,10 +81,10 @@ const Portfolio: FC = () => {
       investmentAmount: 2789.0,
       holdingType: 'Bonds',
       holdingAmount: 2900.0,
-      holdingChange: 111.0,
-      holdingPercentChange: 15.8,
-      oneDayChange: 20.0,
-      oneDayPercentChange: -0.28,
+      holdingChange: -111.0,
+      holdingPercentChange: -15.8,
+      oneDayChange: -20.0,
+      oneDayPercentChange: -2.28,
     },
     {
       holdingId: 'e90',
@@ -94,7 +95,7 @@ const Portfolio: FC = () => {
       holdingChange: 111.0,
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
-      oneDayPercentChange: -0.28,
+      oneDayPercentChange: 0.28,
     },
   ]);
 
@@ -118,14 +119,14 @@ const Portfolio: FC = () => {
       <IonHeader class={`${PortfolioSummaryStyles.header_bg}`}>
         <div className="w-full p-4 pl-2 pr-2 flex flexx-row items-center justify-between">
           <IonButtons slot="start">
-            <IonMenuButton color="light" />
+            <IonMenuButton color="light" class="h-8"/>
           </IonButtons>
           <IonText color="light">
-            <h1 className="font-semibold text-xl">Portfolio</h1>
+            <h1 className="font-bold text-xl tracking-wider">Portfolio</h1>
           </IonText>
-          <IonButton fill="clear" onClick={() => openNotifications()}>
-            <IonImg src={bellIcon} />
-            <span className={PortfolioSummaryStyles.notifNum}>2</span>
+          <IonButton fill="clear" onClick={() => openNotifications()} class="m-0 h-8">
+            <IonImg src={BellIcon} class="w-6" />
+            <span className={`${PortfolioSummaryStyles.notifNum} flex items-center justify-center absolute h-4 rounded-3xl text-white w-4`}>2</span>
           </IonButton>
         </div>
       </IonHeader>
@@ -193,13 +194,13 @@ const Portfolio: FC = () => {
                               <p
                                 className={`${PortfolioSummaryStyles.profit_text} text-lg`}
                               >
-                                +{currencyFormatter(overallData.holdingChange)}
+                                +{overallData.holdingChange}
                               </p>
                             ) : (
                               <p
                                 className={`${PortfolioSummaryStyles.loss_text} text-lg`}
                               >
-                                -{currencyFormatter(overallData.holdingChange)}
+                                {overallData.holdingChange}
                               </p>
                             )}
                           </IonText>
@@ -250,20 +251,20 @@ const Portfolio: FC = () => {
                       </div>
                     </IonCol>
                     <IonCol class="p-0 pl-4">
-                      <div className="flex flex-row items-center">
+                      <div className="flex flex-row items-center tracking-wider">
                         <div className="mr-1">
                           <IonText>
                             {overallData.oneDayChange > 0 ? (
                               <p
                                 className={`text-sm font-semibold ${PortfolioSummaryStyles.profit_text}`}
                               >
-                                +{currencyFormatter(overallData.oneDayChange)}
+                                +{overallData.oneDayChange}
                               </p>
                             ) : (
                               <p
                                 className={`text-sm font-semibold ${PortfolioSummaryStyles.loss_text}`}
                               >
-                                -{currencyFormatter(overallData.oneDayChange)}
+                                {overallData.oneDayChange}
                               </p>
                             )}
                           </IonText>
@@ -320,20 +321,16 @@ const Portfolio: FC = () => {
                   />
                 </div>
               </div>
-              <div className="flex flex-row items-start">
-                <div>
-                  <IonText color="secondary">
-                    <h2 className="text-sm tracking-wider">
+              <div className="flex flex-row items-center">
+                <div className="mr-1">
+                  <IonText class={PortfolioSummaryStyles.holding_name_text}>
+                    <h2 className="text-sm tracking-wide">
                       View all Holdings
                     </h2>
                   </IonText>
                 </div>
                 <div>
-                  <IonIcon
-                    icon={chevronForwardOutline}
-                    class="text-sm font-bold"
-                    color="secondary"
-                  />
+                  <IonImg src={NextIcon} class="w-2" />
                 </div>
               </div>
             </div>
