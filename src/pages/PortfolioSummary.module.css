@@ -46,6 +46,6 @@ ion-header.header_bg::after {
   font-size: 0.625rem;
   background-color: #ff0000;
   position: absolute;
-  right: -4px;
-  top: 2px;
+  right: -0.25rem;
+  top: 0.5rem;
 }

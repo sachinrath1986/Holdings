@@ -8,7 +8,7 @@ ion-content.menu-content {
 
 .menu-list {
   background: transparent;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 
 ion-row.profile-row {
@@ -20,7 +20,7 @@ ion-row.profile-row {
   --padding-start: 0;
   --color: #f1f3f6;
   --border-color: #8b93a7;
-  --min-height: 4rem;
+  --min-height: 4.5rem;
   font-size: 1.125rem;
   letter-spacing: 0.2px;
 }
@@ -101,6 +101,7 @@ span.email-and-id {
 
 .arrow-btn-col {
   padding-right: 1rem;
+  padding-top: 1rem;
 }
 
 .arrow-btn-col div {

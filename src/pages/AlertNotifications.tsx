@@ -105,7 +105,7 @@ const AlertNotifications: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader class={`p-4 ${PageStyles.pageHeader} pl-0`}>
+      <IonHeader class={`p-4 ${PageStyles.pageHeader} pl-0 pb-1`}>
         <div className="flex flex-row items-center">
           <div className={PageStyles.backBtnTxt}>
             <IonButton
@@ -127,7 +127,7 @@ const AlertNotifications: React.FC = () => {
         </div>
       </IonHeader>
       <IonContent class={PageStyles.pageContent}>
-        <div className="p-4">
+        <div className={PageStyles.searchContainer}>
           <SearchBar
             onSearchChange={searchNotifs}
             placeholder="Search"
