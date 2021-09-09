@@ -50,12 +50,8 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
     >
       <IonContent class={styles['menu-content']}>
         <IonGrid class="p-0">
-          <IonRow class={styles['profile-row']}>
-            <IonCol
-              size="3"
-              class={styles['profile-image-col']}
-              onClick={() => goToPortfolioSummary()}
-            >
+          <IonRow class={styles['profile-row']} onClick={() => backToSummary()}>
+            <IonCol size="3" class={styles['profile-image-col']}>
               <img src={profileImage} alt="" />
             </IonCol>
             <IonCol
@@ -69,11 +65,7 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
               </span>
               <span className={styles['email-and-id']}>MS12345</span>
             </IonCol>
-            <IonCol
-              size="2"
-              class={styles['arrow-btn-col']}
-              onClick={() => backToSummary()}
-            >
+            <IonCol size="2" class={styles['arrow-btn-col']}>
               <div>
                 <img src={rightArrowIcon} alt="" />
               </div>

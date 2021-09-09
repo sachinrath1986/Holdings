@@ -10,6 +10,7 @@ import {
   IonImg
 } from '@ionic/react';
 import { alertCircle } from 'ionicons/icons';
+// eslint-disable-next-line
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowDown,
