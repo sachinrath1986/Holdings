@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line
 import { Doughnut } from 'react-chartjs-2';
 import './DoughnutChart.css';
 

@@ -113,20 +113,32 @@ const Portfolio: FC = () => {
     history.push('/alerts');
   };
 
+  const navigateToAllHoldings = () => {
+    history.push('/holdings');
+  };
+
   return (
     <IonPage>
       <SideMenuBar contentId="main" />
       <IonHeader class={`${PortfolioSummaryStyles.header_bg}`}>
         <div className="w-full p-4 pl-2 pr-2 flex flexx-row items-center justify-between">
           <IonButtons slot="start">
-            <IonMenuButton color="light" class="h-8"/>
+            <IonMenuButton color="light" class="h-8" />
           </IonButtons>
           <IonText color="light">
             <h1 className="font-bold text-xl tracking-wider">Portfolio</h1>
           </IonText>
-          <IonButton fill="clear" onClick={() => openNotifications()} class="m-0 h-8">
+          <IonButton
+            fill="clear"
+            onClick={() => openNotifications()}
+            class="m-0 h-8"
+          >
             <IonImg src={BellIcon} class="w-6" />
-            <span className={`${PortfolioSummaryStyles.notifNum} flex items-center justify-center absolute h-4 rounded-3xl text-white w-4`}>2</span>
+            <span
+              className={`${PortfolioSummaryStyles.notifNum} flex items-center justify-center absolute h-4 rounded-3xl text-white w-4`}
+            >
+              2
+            </span>
           </IonButton>
         </div>
       </IonHeader>
@@ -321,16 +333,17 @@ const Portfolio: FC = () => {
                   />
                 </div>
               </div>
-              <div className="flex flex-row items-center">
-                <div className="mr-1">
-                  <IonText class={PortfolioSummaryStyles.holding_name_text}>
-                    <h2 className="text-sm tracking-wide">
-                      View all Holdings
-                    </h2>
-                  </IonText>
-                </div>
+              <div className="flex flex-row items-start">
                 <div>
-                  <IonImg src={NextIcon} class="w-2" />
+                  <IonButton
+                    fill="clear"
+                    onClick={navigateToAllHoldings}
+                    color="secondary"
+                    className="capitalize tracking-wider"
+                  >
+                    View all Holdings
+                    <IonImg src={NextIcon} class="w-2" />
+                  </IonButton>
                 </div>
               </div>
             </div>
