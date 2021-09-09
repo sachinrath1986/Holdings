@@ -17,6 +17,16 @@
   background: var(--data-container-bg);
 }
 
+.chartDuration {
+  color: #ffffff;
+}
+
+.activeDuration {
+  border-radius: 7px;
+  background-color: #009eff;
+  padding: 0.3125rem;
+}
+
 .analytics_statement_header_text{
   color: var(--analytics-statement-header-text);
 }

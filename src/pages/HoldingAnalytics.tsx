@@ -24,6 +24,8 @@ export type HoldingAnalyticsDataType = {
   cashFlow:number;
 };
 
+const chartDuration = ['1M', '6M', 'YTD', '1Y', '5Y', 'All'];
+
 const HoldingAnalytics: React.FC = () => {
   const [overViewData] = useState<HoldingAnalyticsDataType>({
     open: 268.89,
@@ -37,6 +39,18 @@ const HoldingAnalytics: React.FC = () => {
   return (
     <div>
       <LineChart />
+      <div
+        className={`flex justify-between items-center p-4 ${HoldingAnalyticsStyles.chartDuration}`}
+      >
+        {chartDuration.map((item, index) => (
+          <span
+            key={item}
+            className={index === 1 ? HoldingAnalyticsStyles.activeDuration : ''}
+          >
+            {item}
+          </span>
+        ))}
+      </div>
       <div className="p-4">
         <div
           className={`px-5 py-4 w-full rounded-xl mb-4 ${HoldingAnalyticsStyles.data_container}`}
