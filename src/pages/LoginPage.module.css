@@ -1,8 +1,8 @@
 :root {
   --white: #ffffff;
-  --bkgrd-blue: #12125a;
-  --txt-grey: #afaeaedc;
-  --btn-blue: #007fe4e0;
+  --bkgrd-blue: #12203f;
+  --txt-grey: #8b93a7;
+  --btn-blue: #009eff;
 }
 
 ion-app div.login-page {
@@ -13,7 +13,7 @@ ion-app div.login-page {
 
 ion-avatar.logo {
   background: var(--white);
-  margin-bottom: 1rem;
+  margin-bottom: 1.125rem;
   width: 4rem;
   height: 4rem;
 }
@@ -25,20 +25,21 @@ ion-avatar.logo {
 }
 
 .header h2 {
-  margin: 0.3rem 0;
+  margin: 0;
   font-weight: bold;
   font-size: 1.875rem;
 }
 
 form.login-form {
   color: var(--txt-grey);
-  margin-top: 1.5rem;
+  margin-top: 1.875rem;
 }
 
 ion-label.input-label {
   display: block;
-  margin-bottom: 0.3rem;
-  font-size: 0.875rem;
+  margin-bottom: 0.625rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
 }
 
 ion-input.input {
@@ -47,13 +48,13 @@ ion-input.input {
   --padding-end: 1rem;
   --padding-start: 1rem;
   --padding-top: 1rem;
-  border: 1px solid var(--txt-grey);
+  border: 1px solid #ffffffbf;
   --background: var(--bkgrd-blue);
   border-radius: 0.625rem;
   display: block;
-  margin-bottom: 1.25rem;
-  --placeholder-opacity: 0.3;
-  --placeholder-font-weight: normal;
+  margin-bottom: 1rem;
+  --placeholder-color: var(--txt-grey);
+  height: 3.75rem;
 }
 
 .foot-note {
@@ -69,10 +70,13 @@ ion-button.login-btn {
   --color: var(--white);
   display: block;
   --background: var(--btn-blue);
-  --border-radius: 5px;
-  margin: 1.8rem 0 0 0;
-  height: 3rem;
-  text-transform: uppercase;
+  --border-radius: 8px;
+  margin: 2.25rem 0 0 0;
+  height: 3.375rem;
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 ion-text.create-account {
@@ -80,8 +84,8 @@ ion-text.create-account {
 }
 
 ion-checkbox.terms-check {
-  --size: 1.125rem;
-  --border-radius: 5px;
+  --size: 1.25rem;
+  --border-radius: 4px;
   --background: var(--bkgrd-blue);
   --background-checked: var(--btn-blue);
   --checkmark-color: var(--white);
@@ -100,4 +104,10 @@ ion-grid.terms-check-grid {
 ion-col.checkbox-col,
 ion-col.label-col {
   padding-inline-start: initial;
+}
+
+ion-col.label-col {
+  opacity: 0.3;
+  color: var(--white);
+  font-size: 0.875rem;
 }

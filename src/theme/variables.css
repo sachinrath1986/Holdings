@@ -72,21 +72,24 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
   /* Custom variables */
   --white: #fff;
   --btn-blue: #007fe4;
   --otp-input-bg: #262d52;
   --screen-bg: #12203f;
   --summary-nav-tab-bg: #121c52;
-  --data-container-bg: #171f49;
-  --profit-text-color: #14ea14;
-  --loss-text-color: #fd5019;
-  --settings-text: #687185;
+  --data-container-bg: #b2b2b20d;
+  --profit-text-color: #00ff00;
+  --loss-text-color: #de350b;
+  --settings-text: #8b93a7;
   --ion-font-family: sfpro;
   --searchbar-bg: #1b2456;
   --transaction-type-bg: #1c4c51;
   --success-text-color: #14ea14;
   --process-text-color: #ff991f;
+  --portfolio-id-text: #009eff;
+  --holding-name-text: #009eff;
 }
 
 @media (prefers-color-scheme: dark) {

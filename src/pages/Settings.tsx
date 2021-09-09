@@ -17,7 +17,13 @@ import {
 // Custom Components
 import SideMenuBar from '../components/SideMenuBar';
 import SettingsSummaryStyles from './Settings.module.css';
-import rightArrowIcon from '../images/right-arrow-blue.png';
+import rightArrowIcon from '../images/next_arrow.png';
+import faceIdIcon from '../images/face_id.png';
+import darkModeIcon from '../images/dark_mode.png';
+import notificationIcon from '../images/bell_ico.png';
+import languageIcon from '../images/language_ico.png';
+import documentIcon from '../images/document.png';
+import helpIcon from '../images/help.png';
 
 const Portfolio: FC = () => (
   <IonPage className={SettingsSummaryStyles.header_bg}>
@@ -40,22 +46,23 @@ const Portfolio: FC = () => (
         </IonListHeader>
 
         <div className={SettingsSummaryStyles.settings_list_item}>
-          <IonLabel>Facebook</IonLabel>
+
+          <IonLabel className={SettingsSummaryStyles.settings_label}><img src={faceIdIcon} alt="" className="mr-3" /> Face ID</IonLabel>
           <IonToggle slot="end" checked />
         </div>
 
         <div className={SettingsSummaryStyles.settings_list_item}>
-          <IonLabel>Dark theme</IonLabel>
+          <IonLabel className={SettingsSummaryStyles.settings_label}><img src={darkModeIcon} alt="" className="mr-3" />Dark theme</IonLabel>
           <IonToggle slot="end" checked />
         </div>
         <div className={SettingsSummaryStyles.settings_list_item}>
-          <IonLabel>Notifications</IonLabel>
+          <IonLabel className={SettingsSummaryStyles.settings_label}><img src={notificationIcon} alt="" className="mr-3" />Notifications</IonLabel>
           <IonLabel className={SettingsSummaryStyles.settings_option_list_item}>
             ON <img src={rightArrowIcon} alt="" />
           </IonLabel>
         </div>
         <div className={SettingsSummaryStyles.settings_list_item}>
-          <IonLabel>Language</IonLabel>
+          <IonLabel className={SettingsSummaryStyles.settings_label}><img src={languageIcon} alt="" className="mr-3" />Language</IonLabel>
           <IonLabel className={SettingsSummaryStyles.settings_option_list_item}>
             English <img src={rightArrowIcon} alt="" />
           </IonLabel>
@@ -67,16 +74,16 @@ const Portfolio: FC = () => (
           <IonLabel>OTHERS</IonLabel>
         </IonListHeader>
         <div className={SettingsSummaryStyles.settings_list_item}>
-          <IonLabel>About us</IonLabel>
-          <img src={rightArrowIcon} alt="" />
+          <IonLabel className={SettingsSummaryStyles.settings_label}><img src={helpIcon} alt="" className="mr-3" />About us</IonLabel>
+          <img src={rightArrowIcon} alt="" className={SettingsSummaryStyles.setting_next_arrow_img} />
         </div>
         <div className={SettingsSummaryStyles.settings_list_item}>
-          <IonLabel>Privacy Policy</IonLabel>
-          <img src={rightArrowIcon} alt="" />
+          <IonLabel className={SettingsSummaryStyles.settings_label}><img src={documentIcon} alt="" className="mr-3" />Privacy Policy</IonLabel>
+          <img src={rightArrowIcon} alt="" className={SettingsSummaryStyles.setting_next_arrow_img} />
         </div>
         <div className={SettingsSummaryStyles.settings_list_item}>
-          <IonLabel>Terms & Conditions</IonLabel>
-          <img src={rightArrowIcon} alt="" />
+          <IonLabel className={SettingsSummaryStyles.settings_label}><img src={documentIcon} alt="" className="mr-3" />Terms & Conditions</IonLabel>
+          <img src={rightArrowIcon} alt="" className={SettingsSummaryStyles.setting_next_arrow_img} />
         </div>
       </IonList>
     </IonContent>

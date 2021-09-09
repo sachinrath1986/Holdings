@@ -26,7 +26,7 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
       value={searchText}
       placeholder={placeholder}
       onIonChange={handleSearchChange}
-      class={`searchbar_container flex-row-reverse p-0 rounded-lg h-12 ${SearchBarStyle.searchbar}`}
+      class={`searchbar_container flex-row-reverse p-0 h-12 ${SearchBarStyle.searchbar}`}
     >
       <div className="flex justify-end pr-4">
         <IonIcon

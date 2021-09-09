@@ -23,8 +23,31 @@
   align-items: center;
   padding: 0.625rem;
 }
+.settings_list_item {
+  background: var(--screen-bg);
+  color: white;
+  border-bottom: 0.0625rem solid var(--settings-text);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
 .settings_option_list_item {
   display: flex;
   align-items: center;
   font-weight: lighter;
+}
+.settings_option_list_item img {
+  width: 0.625rem;
+  margin-left: 0.5rem;
+}
+.setting_next_arrow_img {
+  width: 0.625rem;
+  margin-left: 0.5rem;
+}
+.settings_label {
+  display: flex;
+  width: 12.5rem;
+  height: 1.25rem;
 }

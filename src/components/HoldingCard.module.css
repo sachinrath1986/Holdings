@@ -13,3 +13,7 @@
 .loss_text {
   color: var(--loss-text-color);
 }
+
+.holding_name_text{
+  color: var(--holding-name-text);
+}

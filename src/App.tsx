@@ -34,6 +34,9 @@ import './theme/tailwind.css';
 import './App.css';
 import AllHoldings from './pages/AllHoldings';
 
+/* Theme App */
+import './theme/app.css';
+
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>

@@ -7,6 +7,7 @@ import {
   IonCol,
   IonRow,
   IonIcon,
+  IonImg
 } from '@ionic/react';
 import { alertCircle } from 'ionicons/icons';
 // eslint-disable-next-line
@@ -14,54 +15,50 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowDown,
   faArrowUp,
-  faLongArrowAltRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router';
 import Avatar from '../components/Avatar';
+import { currencyFormatter } from '../utils/currency';
+import RightArrow from '../images/navigate-right-long-arrow.png';
 import AccountSummaryStyles from './AccountSummary.module.css';
 
+export type PortfolioDataType = {
+  portfolioId: string
+  holdingAmount: number,
+  investmentAmount: number,
+  holdingChange: number,
+  holdingPercentChange: number,
+  oneDayChange: number,
+  oneDayPercentChange: number,
+};
+
 const AccountSummary: FC = () => {
-  // State variables
-  const [portfolios, setPortfolios] = useState([
+  const [portfolios] = useState<PortfolioDataType[]>([
     {
-      PortfolioId: 'MS98765',
-      Current: '$480,977.10',
-      Invested: '$440,977',
-      ProfitOrLoss: {
-        PorL: 'Profit',
-        Value: '43,097.10',
-        Percentage: '1.67',
-      },
-      TodayProfitOrLoss: {
-        PorL: 'Profit',
-        Value: '23,097.10',
-        Percentage: '1.67',
-      },
+      portfolioId: 'MS98765',
+      holdingAmount: 280977.1,
+      investmentAmount: 240977.1,
+      holdingChange: 40000,
+      holdingPercentChange: 15.8,
+      oneDayChange: 2000,
+      oneDayPercentChange: 1.67,
     },
     {
-      PortfolioId: 'MS12345',
-      Current: '$280,977.10',
-      Invested: '$240,977',
-      ProfitOrLoss: {
-        PorL: 'Loss',
-        Value: '43,097.10',
-        Percentage: '1.67',
-      },
-      TodayProfitOrLoss: {
-        PorL: 'Loss',
-        Value: '23,097.10',
-        Percentage: '1.67',
-      },
+      portfolioId: 'MS12345',
+      holdingAmount: 280977.1,
+      investmentAmount: 240977.1,
+      holdingChange: -40000,
+      holdingPercentChange: -15.8,
+      oneDayChange: -2000,
+      oneDayPercentChange: -1.67,
     },
   ]);
-  const [overallData, setOverAllData] = useState({
-    Invested: '$430,977.10',
-    Current: '$480,977.10',
-    ProfitOrLoss: {
-      PorL: 'Profit',
-      Value: '43,097.10',
-      Percentage: '0.67',
-    },
+
+  const [summaryData] = useState({
+    holdingAmount: 280977.1,
+    investmentAmount: 240977.1,
+    holdingChange: 40000,
+    holdingPercentChange: 15.8,
   });
 
   const history = useHistory();
@@ -73,22 +70,24 @@ const AccountSummary: FC = () => {
     <IonPage>
       <IonContent class={AccountSummaryStyles.screen_bg}>
         <div className="p-4 flex flex-col items-center justify-center">
-          <div className="mb-4">
-            <Avatar />
-          </div>
-          <div className="mb-4">
-            <IonText color="light">
-              <h1 className="font-semibold text-xl tracking-widest">
-                Your Account Summary
-              </h1>
-            </IonText>
-          </div>
-          <div className="mb-2">
-            <IonText>
-              <h2 className="text-white text-sm text-opacity-50">
-                All numbers in thousands. Currency USD
-              </h2>
-            </IonText>
+          <div className="p-4 pb-3 pt-0 flex flex-col items-center justify-center">
+            <div className="mb-6">
+              <Avatar />
+            </div>
+            <div className="mb-4">
+              <IonText color="light">
+                <h1 className="font-semibold text-xl tracking-widest">
+                  Your Account Summary
+                </h1>
+              </IonText>
+            </div>
+            <div>
+              <IonText>
+                <h2 className="text-white text-sm text-opacity-50">
+                  All numbers in thousands. Currency USD
+                </h2>
+              </IonText>
+            </div>
           </div>
           <div
             className={`w-full px-6 py-3 w-full rounded-xl ${AccountSummaryStyles.data_container}`}
@@ -115,7 +114,7 @@ const AccountSummary: FC = () => {
                     <div>
                       <IonText color="light">
                         <p className={AccountSummaryStyles.text_1_5xl}>
-                          {overallData.Invested}
+                          {currencyFormatter(summaryData.investmentAmount)}
                         </p>
                       </IonText>
                     </div>
@@ -139,7 +138,7 @@ const AccountSummary: FC = () => {
                     <div>
                       <IonText color="light">
                         <p className={AccountSummaryStyles.text_1_5xl}>
-                          {overallData.Current}
+                          {currencyFormatter(summaryData.holdingAmount)}
                         </p>
                       </IonText>
                     </div>
@@ -163,47 +162,45 @@ const AccountSummary: FC = () => {
                   <IonCol class="p-0 flex">
                     <div className="flex flex-row items-center flex-wrap justify-end w-full">
                       <div className="mr-1">
-                        <IonText>
-                          {overallData.ProfitOrLoss.PorL === 'Profit' ? (
+                        <IonText class="text-lg">
+                          {summaryData.holdingChange > 0 ? (
                             <p
-                              className={`text-lg ${AccountSummaryStyles.profit_text}`}
+                              className={AccountSummaryStyles.profit_text}
                             >
-                              +{overallData.ProfitOrLoss.Value}
+                              +{summaryData.holdingChange}
                             </p>
                           ) : (
                             <p
-                              className={`text-lg ${AccountSummaryStyles.loss_text}`}
+                              className={AccountSummaryStyles.loss_text}
                             >
-                              -{overallData.ProfitOrLoss.Value}
+                              {summaryData.holdingChange}
                             </p>
                           )}
                         </IonText>
                       </div>
                       <div>
-                        <IonText>
-                          {overallData.ProfitOrLoss.PorL === 'Profit' ? (
+                        <IonText class="text-lg">
+                          {summaryData.holdingChange > 0 ? (
                             <p
-                              className={`text-lg ${AccountSummaryStyles.profit_text}`}
+                              className={AccountSummaryStyles.profit_text}
                             >
                               (
-                              {/* <IonIcon icon={arrowUpOutline} class="text-sm" /> */}
                               <FontAwesomeIcon
                                 icon={faArrowUp}
                                 className="text-sm"
                               />
-                              &nbsp;{overallData.ProfitOrLoss.Percentage})
+                              &nbsp;{summaryData.holdingPercentChange})
                             </p>
                           ) : (
                             <p
-                              className={`text-lg ${AccountSummaryStyles.loss_text}`}
+                              className={AccountSummaryStyles.loss_text}
                             >
                               (
-                              {/* <IonIcon icon={arrowDownOutline} class="text-sm" /> */}
                               <FontAwesomeIcon
                                 icon={faArrowDown}
                                 className="text-sm"
                               />
-                              &nbsp;{overallData.ProfitOrLoss.Percentage})
+                              &nbsp;{summaryData.holdingPercentChange.toString().replace('-', '')})
                             </p>
                           )}
                         </IonText>
@@ -238,7 +235,7 @@ const AccountSummary: FC = () => {
                   <IonCol
                     size="12"
                     class="p-0"
-                    key={data.PortfolioId}
+                    key={data.portfolioId}
                     onClick={selectPortfolio}
                   >
                     <div
@@ -246,17 +243,18 @@ const AccountSummary: FC = () => {
                     >
                       <div className="pb-3 flex flex-row justify-between items-center">
                         <div>
-                          <IonText color="secondary">
-                            <h2 className="text-xl">{data.PortfolioId}</h2>
+                          <IonText class={AccountSummaryStyles.portfolio_id_text}>
+                            <h2 className="text-xl">{data.portfolioId}</h2>
                           </IonText>
                         </div>
                         <div className="flex">
-                          <IonText color="secondary">
+                          <IonImg src={RightArrow} alt="Navigate_Arrow" class="w-5" />
+                          {/* <IonText color="secondary">
                             <FontAwesomeIcon
                               icon={faLongArrowAltRight}
                               className="text-lg"
                             />
-                          </IonText>
+                          </IonText> */}
                         </div>
                       </div>
                       <div className="h-px w-full bg-gray-500" />
@@ -284,14 +282,15 @@ const AccountSummary: FC = () => {
                                   <p
                                     className={AccountSummaryStyles.text_1_5xl}
                                   >
-                                    {data.Current}
+                                    {currencyFormatter(data.holdingAmount)}
                                   </p>
                                 </IonText>
                               </div>
                               <div>
                                 <IonText>
                                   <p className="text-sm text-white text-opacity-70">
-                                    Invested: {data.Invested}
+                                    Invested:{' '}
+                                    {currencyFormatter(data.investmentAmount)}
                                   </p>
                                 </IonText>
                               </div>
@@ -314,45 +313,45 @@ const AccountSummary: FC = () => {
                               </div>
                               <div className="flex flex-col">
                                 <div className="mr-1">
-                                  <IonText>
-                                    {data.ProfitOrLoss.PorL === 'Profit' ? (
+                                  <IonText class="text-lg">
+                                    {data.holdingChange > 0 ? (
                                       <p
-                                        className={`${AccountSummaryStyles.profit_text} text-lg font-semibold`}
+                                        className={AccountSummaryStyles.profit_text}
                                       >
-                                        +{data.ProfitOrLoss.Value}
+                                        +{data.holdingChange}
                                       </p>
                                     ) : (
                                       <p
-                                        className={`${AccountSummaryStyles.loss_text} text-lg font-semibold`}
+                                        className={AccountSummaryStyles.loss_text}
                                       >
-                                        -{data.ProfitOrLoss.Value}
+                                        {data.holdingChange}
                                       </p>
                                     )}
                                   </IonText>
                                 </div>
                                 <div>
-                                  <IonText>
-                                    {data.ProfitOrLoss.PorL === 'Profit' ? (
+                                  <IonText class="text-base">
+                                    {data.holdingChange > 0 ? (
                                       <p
-                                        className={`${AccountSummaryStyles.profit_text} text-base font-semibold`}
+                                        className={AccountSummaryStyles.profit_text}
                                       >
                                         (
                                         <FontAwesomeIcon
                                           icon={faArrowUp}
-                                          className="text-xs"
+                                          className="text-sm"
                                         />
-                                        &nbsp;{data.ProfitOrLoss.Percentage}%)
+                                        &nbsp;{data.holdingPercentChange}%)
                                       </p>
                                     ) : (
                                       <p
-                                        className={`${AccountSummaryStyles.loss_text} text-base font-semibold`}
+                                        className={AccountSummaryStyles.loss_text}
                                       >
                                         (
                                         <FontAwesomeIcon
                                           icon={faArrowDown}
-                                          className="text-xs"
+                                          className="text-sm"
                                         />
-                                        &nbsp;{data.ProfitOrLoss.Percentage}%)
+                                        &nbsp;{data.holdingPercentChange.toString().replace('-', '')}%)
                                       </p>
                                     )}
                                   </IonText>
@@ -378,47 +377,48 @@ const AccountSummary: FC = () => {
                             <IonCol class="p-0 pl-4">
                               <div className="flex flex-row items-center w-full flex-wrap">
                                 <div className="mr-1 flex">
-                                  <IonText>
-                                    {data.TodayProfitOrLoss.PorL ===
-                                    'Profit' ? (
+                                  <IonText class="text-sm font-semibold">
+                                    {data.oneDayChange > 0 ? (
                                       <p
-                                        className={`${AccountSummaryStyles.profit_text} text-sm font-semibold`}
+                                        className={AccountSummaryStyles.profit_text}
                                       >
-                                        +{data.TodayProfitOrLoss.Value}
+                                        +{data.oneDayChange}
                                       </p>
                                     ) : (
                                       <p
-                                        className={`${AccountSummaryStyles.loss_text} text-sm font-semibold`}
+                                        className={AccountSummaryStyles.loss_text}
                                       >
-                                        -{data.TodayProfitOrLoss.Value}
+                                        {data.oneDayChange}
                                       </p>
                                     )}
                                   </IonText>
                                 </div>
                                 <div>
-                                  {data.TodayProfitOrLoss.PorL === 'Profit' ? (
-                                    <p
-                                      className={`${AccountSummaryStyles.profit_text} text-sm font-semibold`}
-                                    >
-                                      (
-                                      <FontAwesomeIcon
-                                        icon={faArrowUp}
-                                        className="text-xs"
-                                      />
-                                      &nbsp;{data.TodayProfitOrLoss.Percentage})
-                                    </p>
-                                  ) : (
-                                    <p
-                                      className={`${AccountSummaryStyles.loss_text} text-sm font-semibold`}
-                                    >
-                                      (
-                                      <FontAwesomeIcon
-                                        icon={faArrowDown}
-                                        className="text-xs"
-                                      />
-                                      &nbsp;{data.TodayProfitOrLoss.Percentage})
-                                    </p>
-                                  )}
+                                  <IonText class="text-sm font-semibold">
+                                    {data.oneDayChange > 0 ? (
+                                      <p
+                                        className={AccountSummaryStyles.profit_text}
+                                      >
+                                        (
+                                        <FontAwesomeIcon
+                                          icon={faArrowUp}
+                                          className="text-xs"
+                                        />
+                                        &nbsp;{data.oneDayPercentChange}%)
+                                      </p>
+                                    ) : (
+                                      <p
+                                        className={AccountSummaryStyles.loss_text}
+                                      >
+                                        (
+                                        <FontAwesomeIcon
+                                          icon={faArrowDown}
+                                          className="text-xs"
+                                        />
+                                        &nbsp;{data.oneDayPercentChange.toString().replace('-', '')}%)
+                                      </p>
+                                    )}
+                                  </IonText>
                                 </div>
                               </div>
                             </IonCol>
