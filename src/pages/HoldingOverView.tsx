@@ -3,27 +3,38 @@ import { IonText, IonGrid, IonRow, IonCol } from '@ionic/react';
 // eslint-disable-next-line
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { currencyFormatter } from '../utils/currency';
 import HoldingOverViewStyles from './HoldingOverView.module.css';
 
+export type HoldingOverviewDataType = {
+  investmentAmount: number;
+  holdingAmount: number;
+  holdingChange: number;
+  oneDayChange: number;
+  averagePrice: number;
+  quantity: string;
+  open: number;
+  low: number;
+  high: number;
+  previousClose: number;
+  fiftyTwoWeekLow: number;
+  fiftyTwoWeekHigh: number;
+};
+
 const HoldingOverView: React.FC = () => {
-  const [overViewData, setOverViewData] = useState({
-    Invested: '$234,56.10',
-    Current: '$534,56.10',
-    ProfitOrLoss: {
-      PorL: 'Profit',
-      Value: '5194.40',
-    },
-    DayProfitOrLoss: '$513.80',
-    AveragePrice: '$268.89',
-    Quantity: 'T1:549',
-    Open: '$268.89',
-    High: '$250.00',
-    Low: '$236.89',
-    PreviousClose: '$263.60',
-    WeekLowOrHigh: {
-      Low: '$51,800.00',
-      High: '$57,800.00',
-    },
+  const [overViewData] = useState<HoldingOverviewDataType>({
+    investmentAmount: 23456.10,
+    holdingAmount: 53456.10,
+    holdingChange: 534.55,
+    oneDayChange: 513.80,
+    averagePrice: 268.89,
+    quantity: 'T1:549',
+    open: 268.89,
+    high: 250.00,
+    low: 236.89,
+    previousClose: 263.60,
+    fiftyTwoWeekLow: 51800.00,
+    fiftyTwoWeekHigh: 57800.00,
   });
   return (
     <div className="p-4">
@@ -43,7 +54,7 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{overViewData.Invested}</p>
+                    <p className="text-lg">{currencyFormatter(overViewData.investmentAmount)}</p>
                   </IonText>
                 </div>
               </IonCol>
@@ -57,7 +68,7 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{overViewData.Current}</p>
+                    <p className="text-lg">{currencyFormatter(overViewData.holdingAmount)}</p>
                   </IonText>
                 </div>
               </IonCol>
@@ -71,17 +82,17 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText>
-                    {overViewData.ProfitOrLoss.PorL === 'Profit' ? (
+                    {overViewData.holdingChange > 0 ? (
                       <p
                         className={`text-lg ${HoldingOverViewStyles.profit_text}`}
                       >
-                        +{overViewData.ProfitOrLoss.Value}
+                        +{overViewData.holdingChange}
                       </p>
                     ) : (
                       <p
                         className={`text-lg ${HoldingOverViewStyles.loss_text}`}
                       >
-                        -{overViewData.ProfitOrLoss.Value}
+                        {overViewData.holdingChange}
                       </p>
                     )}
                   </IonText>
@@ -97,7 +108,7 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{overViewData.DayProfitOrLoss}</p>
+                    <p className="text-lg">{currencyFormatter(overViewData.oneDayChange)}</p>
                   </IonText>
                 </div>
               </IonCol>
@@ -111,7 +122,7 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{overViewData.AveragePrice}</p>
+                    <p className="text-lg">{currencyFormatter(overViewData.averagePrice)}</p>
                   </IonText>
                 </div>
               </IonCol>
@@ -123,7 +134,7 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{overViewData.Quantity}</p>
+                    <p className="text-lg">{overViewData.quantity}</p>
                   </IonText>
                 </div>
               </IonCol>
@@ -142,7 +153,7 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{overViewData.Open}</p>
+                    <p className="text-lg">{currencyFormatter(overViewData.open)}</p>
                   </IonText>
                 </div>
               </IonCol>
@@ -154,7 +165,7 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{overViewData.High}</p>
+                    <p className="text-lg">{currencyFormatter(overViewData.high)}</p>
                   </IonText>
                 </div>
               </IonCol>
@@ -166,7 +177,7 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{overViewData.Low}</p>
+                    <p className="text-lg">{currencyFormatter(overViewData.low)}</p>
                   </IonText>
                 </div>
               </IonCol>
@@ -180,7 +191,7 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{overViewData.PreviousClose}</p>
+                    <p className="text-lg">{currencyFormatter(overViewData.previousClose)}</p>
                   </IonText>
                 </div>
               </IonCol>
@@ -209,7 +220,7 @@ const HoldingOverView: React.FC = () => {
               <div>
                 <IonText>
                   <p className={`text-lg ${HoldingOverViewStyles.loss_text}`}>
-                    {overViewData.WeekLowOrHigh.Low}
+                    {currencyFormatter(overViewData.fiftyTwoWeekLow)}
                     <FontAwesomeIcon
                       icon={faArrowDown}
                       className="text-sm ml-2"
@@ -227,7 +238,7 @@ const HoldingOverView: React.FC = () => {
               <div>
                 <IonText>
                   <p className={`text-lg ${HoldingOverViewStyles.profit_text}`}>
-                    {overViewData.WeekLowOrHigh.High}
+                    {currencyFormatter(overViewData.fiftyTwoWeekHigh)}
                     <FontAwesomeIcon
                       icon={faArrowUp}
                       className="text-sm ml-2"

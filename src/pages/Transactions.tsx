@@ -15,15 +15,16 @@ import {
   IonItem,
   IonRadioGroup,
   IonRadio,
+  IonImg
 } from '@ionic/react';
 import { alertCircle } from 'ionicons/icons';
+import { useHistory } from 'react-router';
 // Custom Components
 import SideMenuBar from '../components/SideMenuBar';
 import SearchBar from '../components/SearchBar';
 import { currencyFormatter } from '../utils/currency';
 import TransactionStyles from './Transactions.module.css';
-// 124310503341
-// CICAgOCynlyNDA
+import homeIcon from '../images/home_2x.png';
 
 export type TransactionDataType = {
   transactionId: string;
@@ -140,18 +141,25 @@ const Transaction: FC = () => {
     setShowPopOver(!showPopover);
   };
 
+  const history = useHistory();
+  const navigatetoHome = () => {
+    history.push('/accountsummary');
+  };
+
   return (
     <IonPage>
       <SideMenuBar contentId="transactions" />
       <IonHeader class={TransactionStyles.header_bg}>
-        <div className="w-full p-4 pl-2 pr-2 flex flexx-row items-center justify-between">
+        <div className="w-full p-4 pl-2 flex flexx-row items-center justify-between">
           <IonButtons slot="start">
             <IonMenuButton color="light" />
           </IonButtons>
           <IonText color="light">
-            <h1 className="font-semibold text-xl">Transactions</h1>
+            <h1 className="font-semibold text-xl tracking-wider">Transactions</h1>
           </IonText>
-          <div />
+          <div>
+            <IonImg src={homeIcon} onClick={() => navigatetoHome()} class="w-6" />
+          </div>
         </div>
       </IonHeader>
       <IonContent

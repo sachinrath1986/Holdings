@@ -46,6 +46,7 @@ ion-header.header_bg::after {
   font-size: 0.625rem;
 }
 
-.holding_name_text {
+.view_all_holdings_btn {
   color: var(--holding-name-text);
+  --padding-end: 0;
 }
