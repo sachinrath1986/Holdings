@@ -25,7 +25,7 @@ ion-row.profile-row {
   letter-spacing: 0.2px;
 }
 
-.menu-list-item:active {
+.activeItem {
   --color: #009eff;
   --border-color: #1e2b48;
   --background: #1e2b48;
