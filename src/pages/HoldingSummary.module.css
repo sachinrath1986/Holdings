@@ -6,7 +6,15 @@
   --padding-start: 0;
   --padding-end: 0;
   --ripple-color: transparent;
-  --color: white;
+  --color: #8e95a3;
+  min-height: auto;
+  min-width: auto;
+  height: 1.875rem;
+  border: 0;
+  background: none;
+  flex: initial;
+  --color-checked:#009eff;
+  font-weight: 600;
 }
 
 .header_bg {
@@ -23,4 +31,12 @@
 
 .text_3_5xl {
   font-size: 2.125rem;
+}
+
+.download_text {
+  color: var(--download-text);
+}
+
+.back_btn{
+  --padding-start:0
 }

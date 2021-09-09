@@ -7,30 +7,32 @@ import {
   IonIcon,
   IonList,
   IonItem,
+  IonImg
 } from '@ionic/react';
-import { chevronForwardOutline } from 'ionicons/icons';
 import LineChart from '../components/LineChart';
+import { currencyFormatter } from '../utils/currency';
 import HoldingAnalyticsStyles from './HoldingAnalytics.module.css';
+import NextIcon from '../images/next_arrow.png';
+
+export type HoldingAnalyticsDataType = {
+  open: number;
+  low: number;
+  high: number;
+  previousClose: number;
+  incomeStatements:number;
+  balanceSheet:number;
+  cashFlow:number;
+};
 
 const HoldingAnalytics: React.FC = () => {
-  const [overViewData, setOverViewData] = useState({
-    Invested: '$234,56.10',
-    Current: '$534,56.10',
-    ProfitOrLoss: {
-      PorL: 'Profit',
-      Value: '5194.40',
-    },
-    DayProfitOrLoss: '$513.80',
-    AveragePrice: '$268.89',
-    Quantity: 'T1:549',
-    Open: '$268.89',
-    High: '$250.00',
-    Low: '$236.89',
-    PreviousClose: '$263.60',
-    WeekLowOrHigh: {
-      Low: '$51,800.00',
-      High: '$57,800.00',
-    },
+  const [overViewData] = useState<HoldingAnalyticsDataType>({
+    open: 268.89,
+    high: 250.00,
+    low: 236.89,
+    previousClose: 263.60,
+    incomeStatements:264890,
+    balanceSheet:364890,
+    cashFlow:464890
   });
   return (
     <div>
@@ -52,7 +54,7 @@ const HoldingAnalytics: React.FC = () => {
                   </div>
                   <div>
                     <IonText color="light">
-                      <p className="text-lg">{overViewData.Open}</p>
+                      <p className="text-lg">{currencyFormatter(overViewData.open)}</p>
                     </IonText>
                   </div>
                 </IonCol>
@@ -66,7 +68,7 @@ const HoldingAnalytics: React.FC = () => {
                   </div>
                   <div>
                     <IonText color="light">
-                      <p className="text-lg">{overViewData.High}</p>
+                      <p className="text-lg">{currencyFormatter(overViewData.high)}</p>
                     </IonText>
                   </div>
                 </IonCol>
@@ -80,7 +82,7 @@ const HoldingAnalytics: React.FC = () => {
                   </div>
                   <div>
                     <IonText color="light">
-                      <p className="text-lg">{overViewData.Low}</p>
+                      <p className="text-lg">{currencyFormatter(overViewData.low)}</p>
                     </IonText>
                   </div>
                 </IonCol>
@@ -94,7 +96,7 @@ const HoldingAnalytics: React.FC = () => {
                   </div>
                   <div>
                     <IonText color="light">
-                      <p className="text-lg">{overViewData.PreviousClose}</p>
+                      <p className="text-lg">{currencyFormatter(overViewData.previousClose)}</p>
                     </IonText>
                   </div>
                 </IonCol>
@@ -108,18 +110,18 @@ const HoldingAnalytics: React.FC = () => {
           <IonItem class={HoldingAnalyticsStyles.holdings_analytics_list_item}>
             <div className="flex flex-row justify-between items-center w-full">
               <div>
-                <IonText color="primary">
-                  <h3 className="text-lg">Income Statements</h3>
+                <IonText class={HoldingAnalyticsStyles.analytics_statement_header_text}>
+                  <h3 className="text-lg font-semibold">Income Statements</h3>
                 </IonText>
               </div>
               <div className="flex flex-row items-center">
-                <div className="mr-1">
+                <div className="mr-2">
                   <IonText color="light">
-                    <h3 className="text-lg">$21,34,980</h3>
+                    <h3 className="text-lg">{currencyFormatter(overViewData.incomeStatements)}</h3>
                   </IonText>
                 </div>
                 <div className="mr-1">
-                  <IonIcon icon={chevronForwardOutline} color="primary" />
+                  <IonImg src={NextIcon} class="w-2" />
                 </div>
               </div>
             </div>
@@ -127,18 +129,18 @@ const HoldingAnalytics: React.FC = () => {
           <IonItem class={HoldingAnalyticsStyles.holdings_analytics_list_item}>
             <div className="flex flex-row justify-between items-center w-full">
               <div>
-                <IonText color="primary">
-                  <h3 className="text-lg">Balance Sheet</h3>
+                <IonText class={HoldingAnalyticsStyles.analytics_statement_header_text}>
+                  <h3 className="text-lg font-semibold">Balance Sheet</h3>
                 </IonText>
               </div>
               <div className="flex flex-row items-center">
-                <div className="mr-1">
+                <div className="mr-2">
                   <IonText color="light">
-                    <h3 className="text-lg">$21,34,980</h3>
+                    <h3 className="text-lg">{currencyFormatter(overViewData.balanceSheet)}</h3>
                   </IonText>
                 </div>
                 <div className="mr-1">
-                  <IonIcon icon={chevronForwardOutline} color="primary" />
+                  <IonImg src={NextIcon} class="w-2" />
                 </div>
               </div>
             </div>
@@ -146,18 +148,18 @@ const HoldingAnalytics: React.FC = () => {
           <IonItem class={HoldingAnalyticsStyles.holdings_analytics_list_item}>
             <div className="flex flex-row justify-between items-center w-full">
               <div>
-                <IonText color="primary">
-                  <h3 className="text-lg">Cash Flow</h3>
+                <IonText class={HoldingAnalyticsStyles.analytics_statement_header_text}>
+                  <h3 className="text-lg font-semibold">Cash Flow</h3>
                 </IonText>
               </div>
               <div className="flex flex-row items-center">
-                <div className="mr-1">
+                <div className="mr-2">
                   <IonText color="light">
-                    <h3 className="text-lg">$21,34,980</h3>
+                    <h3 className="text-lg">{currencyFormatter(overViewData.cashFlow)}</h3>
                   </IonText>
                 </div>
                 <div className="mr-1">
-                  <IonIcon icon={chevronForwardOutline} color="primary" />
+                  <IonImg src={NextIcon} class="w-2" />
                 </div>
               </div>
             </div>

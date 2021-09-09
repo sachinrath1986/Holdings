@@ -12,28 +12,34 @@ import {
   IonSegmentButton,
   IonLabel,
   IonButton,
+  IonImg
 } from '@ionic/react';
-import { alertCircle, arrowBackOutline } from 'ionicons/icons';
+import {
+  alertCircle,
+} from 'ionicons/icons';
 // eslint-disable-next-line
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router';
 import HoldingOverView from './HoldingOverView';
 import HoldingAnalytics from './HoldingAnalytics';
+import { currencyFormatter } from '../utils/currency';
 import HoldingSummaryStyles from './HoldingSummary.module.css';
+import ChartLineUpImg from '../images/chart_line_up.png';
+import BackArrowImg from '../images/white-arrow-back.png';
+import DownloadImg from '../images/Download_Icon_Blue.png';
+
+export type HoldingDetailDataType = {
+  holdingName: string;
+  holdingAmount: number;
+  oneDayChange: number;
+  oneDayPercentChange: number;
+};
 
 const HoldingSummary: React.FC = () => {
-  const [holdingData, setHoldingData] = useState({
-    HoldingName: 'rcom',
-    ProfitOrLoss: {
-      PorL: 'Profit',
-      Value: '$270.55',
-    },
-    TodayData: {
-      PorL: 'Profit',
-      Value: '7.89',
-      Percentage: '0.68',
-    },
+  const [holdingData] = useState<HoldingDetailDataType>({
+    holdingName: 'rcom',
+    holdingAmount: 270.55,
+    oneDayChange: 7.89,
+    oneDayPercentChange: 0.68
   });
   const [tab, setTab] = useState('Overview');
 
@@ -48,20 +54,16 @@ const HoldingSummary: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader class={`p-4 ${HoldingSummaryStyles.header_bg} pl-0`}>
+      <IonHeader class={`p-4 ${HoldingSummaryStyles.header_bg} pl-3`}>
         <div className="flex flex-row items-center justify-between">
           <IonButton
             fill="clear"
-            class="h-4 p-0 m-0 normal-case"
+            class={`h-4 p-0 m-0 normal-case ${HoldingSummaryStyles.back_btn}`}
             onClick={handleBack}
           >
             <div className="flex flex-row items-center">
               <div className="mr-1">
-                <IonIcon
-                  icon={arrowBackOutline}
-                  class="text-xl"
-                  color="light"
-                />
+                <IonImg src={BackArrowImg} class="w-6" alt="NavigateBack" />
               </div>
               <div>
                 <IonText color="light">
@@ -72,12 +74,10 @@ const HoldingSummary: React.FC = () => {
           </IonButton>
           <div className="flex flex-row items-center">
             <div className="mr-1">
-              <IonText color="primary">
-                <FontAwesomeIcon icon={faDownload} className="text-sm" />
-              </IonText>
+              <IonImg src={DownloadImg} class="w-3" alt="DownloadImg" />
             </div>
             <div>
-              <IonText color="primary">
+              <IonText class={HoldingSummaryStyles.download_text}>
                 <p className="text-base">Download</p>
               </IonText>
             </div>
@@ -90,7 +90,7 @@ const HoldingSummary: React.FC = () => {
             <div className="mr-1">
               <IonText color="light">
                 <h2 className="text-lg tracking-wider uppercase">
-                  {holdingData.HoldingName}
+                  {holdingData.holdingName}
                 </h2>
               </IonText>
             </div>
@@ -109,23 +109,17 @@ const HoldingSummary: React.FC = () => {
                     <div className="mr-2">
                       <IonText color="light">
                         <h1
-                          className={`uppercase font-bold ${HoldingSummaryStyles.text_3_5xl}`}
+                          className={`uppercase font-bold tracking-wider ${HoldingSummaryStyles.text_3_5xl}`}
                         >
-                          {holdingData.ProfitOrLoss.Value}
+                          {currencyFormatter(holdingData.holdingAmount)}
                         </h1>
                       </IonText>
                     </div>
                     <div>
-                      {holdingData.ProfitOrLoss.PorL === 'Profit' ? (
-                        <FontAwesomeIcon
-                          icon={faChartLine}
-                          className={`text-2xl ${HoldingSummaryStyles.profit_text}`}
-                        />
+                      {holdingData.oneDayChange > 0 ? (
+                        <IonImg src={ChartLineUpImg} class="w-6 h-6" alt="ChartLineUp" />
                       ) : (
-                        <FontAwesomeIcon
-                          icon={faChartLine}
-                          className={`text-2xl ${HoldingSummaryStyles.loss_text}`}
-                        />
+                        <IonImg src={ChartLineUpImg} class="w-6 h-6" alt="ChartLineDown" />
                       )}
                     </div>
                   </div>
@@ -140,21 +134,21 @@ const HoldingSummary: React.FC = () => {
                       </IonText>
                     </div>
                     <div className="flex flex-row items-center">
-                      <div className="mr-1">
-                        <IonText>
-                          {holdingData.TodayData.PorL === 'Profit' ? (
+                      <div>
+                        <IonText class="tracking-widest">
+                          {holdingData.oneDayChange > 0 ? (
                             <p
                               className={`text-sm font-bold ${HoldingSummaryStyles.profit_text}`}
                             >
-                              +{holdingData.TodayData.Value}&nbsp;(
-                              {holdingData.TodayData.Percentage}%)
+                              +{holdingData.oneDayChange}
+                              ({holdingData.oneDayPercentChange}%)
                             </p>
                           ) : (
                             <p
                               className={`text-sm font-bold ${HoldingSummaryStyles.loss_text}`}
                             >
-                              -{holdingData.TodayData.Value}&nbsp;(
-                              {holdingData.TodayData.Percentage}%)
+                              {holdingData.oneDayChange}
+                              ({holdingData.oneDayPercentChange}%)
                             </p>
                           )}
                         </IonText>
@@ -165,30 +159,31 @@ const HoldingSummary: React.FC = () => {
               </IonRow>
             </IonGrid>
           </div>
-          <div className="p-4 pt-0 pb-2">
+          <div className="p-4 pb-2">
             <IonSegment
               mode="md"
               onIonChange={handleTabChange}
               value={tab}
               swipeGesture={false}
+              class="justify-between"
             >
               <IonSegmentButton
                 value="Overview"
-                class={HoldingSummaryStyles.tab_btn}
+                class={`${HoldingSummaryStyles.tab_btn} holding-tab`}
               >
-                <IonLabel class="normal-case text-lg">Overview</IonLabel>
+                <IonLabel class="normal-case text-lg pl-1 pr-1 m-0 tab_label">Overview</IonLabel>
               </IonSegmentButton>
               <IonSegmentButton
                 value="Analytics"
-                class={HoldingSummaryStyles.tab_btn}
+                class={`${HoldingSummaryStyles.tab_btn} holding-tab`}
               >
-                <IonLabel class="normal-case text-lg">Analytics</IonLabel>
+                <IonLabel class="normal-case text-lg m-0 pl-1 pr-1 tab_label">Analytics</IonLabel>
               </IonSegmentButton>
               <IonSegmentButton
                 value="Statements"
-                class={HoldingSummaryStyles.tab_btn}
+                class={`${HoldingSummaryStyles.tab_btn} holding-tab`}
               >
-                <IonLabel class="normal-case text-lg">Statements</IonLabel>
+                <IonLabel class="normal-case text-lg m-0 pl-1 pr-1 tab_label">Statements</IonLabel>
               </IonSegmentButton>
             </IonSegment>
           </div>

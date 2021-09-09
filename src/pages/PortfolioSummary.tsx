@@ -16,7 +16,7 @@ import {
   IonButton,
 } from '@ionic/react';
 import { useHistory } from 'react-router';
-import { alertCircle, chevronForwardOutline } from 'ionicons/icons';
+import { alertCircle } from 'ionicons/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 // Custom Components
@@ -121,7 +121,7 @@ const Portfolio: FC = () => {
     <IonPage>
       <SideMenuBar contentId="main" />
       <IonHeader class={`${PortfolioSummaryStyles.header_bg}`}>
-        <div className="w-full p-4 pl-2 pr-2 flex flexx-row items-center justify-between">
+        <div className="w-full p-4 pl-2 pr-2 flex flex-row items-center justify-between">
           <IonButtons slot="start">
             <IonMenuButton color="light" class="h-8" />
           </IonButtons>
@@ -135,8 +135,7 @@ const Portfolio: FC = () => {
           >
             <IonImg src={BellIcon} class="w-6" />
             <span
-              className={`${PortfolioSummaryStyles.notifNum} flex items-center justify-center absolute h-4 rounded-3xl text-white w-4`}
-            >
+              className={`${PortfolioSummaryStyles.notifNum} flex items-center justify-center absolute h-4 rounded-3xl text-white w-4`}>
               2
             </span>
           </IonButton>
@@ -316,7 +315,7 @@ const Portfolio: FC = () => {
           <div className="px-4">
             <DoughnutChart />
           </div>
-          <div className="p-4 pb-1">
+          <div className="p-4 pb-0">
             <div className="flex flex-row items-center justify-between">
               <div className="flex flex-row items-center">
                 <div className="mr-1">
@@ -333,16 +332,16 @@ const Portfolio: FC = () => {
                   />
                 </div>
               </div>
-              <div className="flex flex-row items-start">
+              <div className="flex flex-row items-center">
                 <div>
                   <IonButton
                     fill="clear"
                     onClick={navigateToAllHoldings}
                     color="secondary"
-                    className="capitalize tracking-wider"
+                    class={`capitalize tracking-wider m-0 text-sm mb-1 ${PortfolioSummaryStyles.view_all_holdings_btn}`}
                   >
                     View all Holdings
-                    <IonImg src={NextIcon} class="w-2" />
+                    <IonImg src={NextIcon} class="w-2 ml-1" />
                   </IonButton>
                 </div>
               </div>

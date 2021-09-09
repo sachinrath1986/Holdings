@@ -16,3 +16,7 @@
 .data_container {
   background: var(--data-container-bg);
 }
+
+.analytics_statement_header_text{
+  color: var(--analytics-statement-header-text);
+}
