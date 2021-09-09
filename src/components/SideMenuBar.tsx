@@ -24,6 +24,12 @@ type SideMenuProps = {
   contentId: string;
 };
 
+type RouteCheck = {
+  dashboard: boolean;
+  transactions: boolean;
+  settings: boolean;
+};
+
 const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
   const history = useHistory();
   const backToSummary = () => {
@@ -39,6 +45,12 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
 
   const goToPortfolioSummary = () => {
     history.push('/portfoliosummary');
+  };
+
+  const routeCheck: RouteCheck = {
+    dashboard: window.location.pathname === '/portfoliosummary',
+    transactions: window.location.pathname === '/transactions',
+    settings: window.location.pathname === '/settings',
   };
 
   return (
@@ -81,7 +93,11 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
           </IonRow>
         </IonGrid>
         <IonList class={styles['menu-list']}>
-          <IonItem class={styles['menu-list-item']}>
+          <IonItem
+            class={`${styles['menu-list-item']} ${
+              routeCheck.dashboard ? styles.activeItem : ''
+            }`}
+          >
             <img src={homeIcon} alt="" />
             <span>Dashboard</span>
           </IonItem>
@@ -90,7 +106,9 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
             <span>Documents &#38; Reports</span>
           </IonItem>
           <IonItem
-            class={styles['menu-list-item']}
+            class={`${styles['menu-list-item']} ${
+              routeCheck.transactions ? styles.activeItem : ''
+            }`}
             onClick={() => goToTransactions()}
           >
             <img src={transactionsIcon} alt="" />
@@ -102,7 +120,9 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
             <span>Profile</span>
           </IonItem>
           <IonItem
-            class={styles['menu-list-item']}
+            class={`${styles['menu-list-item']} ${
+              routeCheck.settings ? styles.activeItem : ''
+            }`}
             onClick={navigateToSettings}
           >
             <img src={settingsIcon} alt="" />
