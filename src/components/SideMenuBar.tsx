@@ -28,8 +28,8 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
   const history = useHistory();
   const backToSummary = () => {
     history.push('/accountsummary');
-  }
-  const navigateToSettings =() =>{
+  };
+  const navigateToSettings = () => {
     history.push('/settings');
   };
 
@@ -50,7 +50,7 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
     >
       <IonContent class={styles['menu-content']}>
         <IonGrid class="p-0">
-          <IonRow class={styles['profile-row']}>
+          <IonRow class={styles['profile-row']} onClick={() => backToSummary()}>
             <IonCol size="3" class={styles['profile-image-col']}>
               <img src={profileImage} alt="" />
             </IonCol>
@@ -61,11 +61,7 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
               </span>
               <span className={styles['email-and-id']}>MS12345</span>
             </IonCol>
-            <IonCol
-              size="2"
-              class={styles['arrow-btn-col']}
-              onClick={() => backToSummary()}
-            >
+            <IonCol size="2" class={styles['arrow-btn-col']}>
               <div>
                 <img src={rightArrowIcon} alt="" />
               </div>
@@ -96,7 +92,10 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
             <img src={profileIcon} alt="" />
             <span>Profile</span>
           </IonItem>
-          <IonItem class={styles['menu-list-item']} onClick={navigateToSettings}>
+          <IonItem
+            class={styles['menu-list-item']}
+            onClick={navigateToSettings}
+          >
             <img src={settingsIcon} alt="" />
             <span>Settings</span>
           </IonItem>

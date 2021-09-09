@@ -81,7 +81,7 @@ http://ionicframework.com/docs/theming/ */
   --data-container-bg: #171f49;
   --profit-text-color: #14ea14;
   --loss-text-color: #fd5019;
-  --settings-text:#687185;
+  --settings-text: #687185;
   --ion-font-family: sfpro;
   --searchbar-bg: #1b2456;
   --transaction-type-bg: #1c4c51;
@@ -155,7 +155,7 @@ http://ionicframework.com/docs/theming/ */
    * -------------------------------------------
    */
   .ios body {
-    --ion-background-color: #000000;
+    --ion-background-color: ##12203f;
     --ion-background-color-rgb: 0, 0, 0;
     --ion-text-color: #ffffff;
     --ion-text-color-rgb: 255, 255, 255;
@@ -191,7 +191,7 @@ http://ionicframework.com/docs/theming/ */
    * -------------------------------------------
    */
   .md body {
-    --ion-background-color: #121212;
+    --ion-background-color: #12203f;
     --ion-background-color-rgb: 18, 18, 18;
     --ion-text-color: #ffffff;
     --ion-text-color-rgb: 255, 255, 255;

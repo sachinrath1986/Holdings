@@ -112,6 +112,10 @@ const Portfolio: FC = () => {
     history.push('/alerts');
   };
 
+  const navigateToAllHoldings = () => {
+    history.push('/holdings');
+  };
+
   return (
     <IonPage>
       <SideMenuBar contentId="main" />
@@ -322,18 +326,19 @@ const Portfolio: FC = () => {
               </div>
               <div className="flex flex-row items-start">
                 <div>
-                  <IonText color="secondary">
-                    <h2 className="text-sm tracking-wider">
-                      View all Holdings
-                    </h2>
-                  </IonText>
-                </div>
-                <div>
-                  <IonIcon
-                    icon={chevronForwardOutline}
-                    class="text-sm font-bold"
+                  <IonButton
+                    fill="clear"
+                    onClick={navigateToAllHoldings}
                     color="secondary"
-                  />
+                    className="capitalize tracking-wider"
+                  >
+                    View all Holdings
+                    <IonIcon
+                      icon={chevronForwardOutline}
+                      class="text-sm font-bold"
+                      color="secondary"
+                    />
+                  </IonButton>
                 </div>
               </div>
             </div>

@@ -31,6 +31,8 @@ import './theme/variables.css';
 
 /* Theme tailwind */
 import './theme/tailwind.css';
+import './App.css';
+import AllHoldings from './pages/AllHoldings';
 
 const App: React.FC = () => (
   <IonApp>
@@ -62,6 +64,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/transactions">
           <Transactions />
+        </Route>
+        <Route exact path="/holdings">
+          <AllHoldings />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

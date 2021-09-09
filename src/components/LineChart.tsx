@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+// eslint-disable-next-line
 import { Line, Chart } from 'react-chartjs-2';
 
 const data = (canvas: any) => {
