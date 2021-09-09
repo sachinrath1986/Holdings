@@ -17,8 +17,8 @@ import profileIcon from '../images/profile.png';
 import settingsIcon from '../images/settings.png';
 import helpIcon from '../images/help.png';
 import logoutIcon from '../images/logout.png';
-import profileImage from '../images/profile-image.jpg';
-import rightArrowIcon from '../images/right-arrow-blue.png';
+import profileImage from '../images/profile-image.png';
+import rightArrowIcon from '../images/blue-arrow.png';
 
 type SideMenuProps = {
   contentId: string;
@@ -28,8 +28,8 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
   const history = useHistory();
   const backToSummary = () => {
     history.push('/accountsummary');
-  }
-  const navigateToSettings =() =>{
+  };
+  const navigateToSettings = () => {
     history.push('/settings');
   };
 
@@ -51,10 +51,18 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
       <IonContent class={styles['menu-content']}>
         <IonGrid class="p-0">
           <IonRow class={styles['profile-row']}>
-            <IonCol size="3" class={styles['profile-image-col']}>
+            <IonCol
+              size="3"
+              class={styles['profile-image-col']}
+              onClick={() => goToPortfolioSummary()}
+            >
               <img src={profileImage} alt="" />
             </IonCol>
-            <IonCol size="7" class={styles['profile-info-col']}>
+            <IonCol
+              size="7"
+              class={styles['profile-info-col']}
+              onClick={() => goToPortfolioSummary()}
+            >
               <span>John Smith</span>
               <span className={styles['email-and-id']}>
                 john.smith@gmail.com
@@ -73,10 +81,7 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
           </IonRow>
         </IonGrid>
         <IonList class={styles['menu-list']}>
-          <IonItem
-            class={styles['menu-list-item']}
-            onClick={() => goToPortfolioSummary()}
-          >
+          <IonItem class={styles['menu-list-item']}>
             <img src={homeIcon} alt="" />
             <span>Dashboard</span>
           </IonItem>
@@ -96,7 +101,10 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
             <img src={profileIcon} alt="" />
             <span>Profile</span>
           </IonItem>
-          <IonItem class={styles['menu-list-item']} onClick={navigateToSettings}>
+          <IonItem
+            class={styles['menu-list-item']}
+            onClick={navigateToSettings}
+          >
             <img src={settingsIcon} alt="" />
             <span>Settings</span>
           </IonItem>

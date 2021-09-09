@@ -1,4 +1,6 @@
 .searchbar {
-  background: var(--searchbar-bg);
-  color: #a7acb7;
+  background: #1e2b48;
+  color: #787f91;
+  --box-shadow: none;
+  border-radius: 10px;
 }
