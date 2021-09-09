@@ -1,30 +1,30 @@
 .screen_bg {
-    --background: var(--screen-bg);
-    background-color: var(--background);
-  }
+  --background: var(--screen-bg);
+  background-color: var(--background);
+}
 
 .header_bg {
-    background: var(--screen-bg);
-  }
+  background: var(--screen-bg);
+}
 
-.settings_list_header{
-    background:var(--screen-bg);
-    color:var(--settings-text);
-   font-weight: bold;
-   border-bottom: 0.0625rem solid var(--settings-text);
+.settings_list_header {
+  background: var(--screen-bg);
+  color: var(--settings-text);
+  font-weight: bold;
+  border-bottom: 0.0625rem solid var(--settings-text);
 }
-.settings_list_item{
-   background:var(--screen-bg) ;
-   color:white;
-   border-bottom: 0.0625rem solid var(--settings-text);
-   width: 100%;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 0.625rem;
+.settings_list_item {
+  background: var(--screen-bg);
+  color: white;
+  border-bottom: 0.0625rem solid var(--settings-text);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625rem;
 }
-.settings_option_list_item{
-    display: flex;
-    align-items: center;
-    font-weight: lighter;
+.settings_option_list_item {
+  display: flex;
+  align-items: center;
+  font-weight: lighter;
 }
