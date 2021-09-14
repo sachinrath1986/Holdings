@@ -135,7 +135,8 @@ const Portfolio: FC = () => {
           >
             <IonImg src={BellIcon} class="w-6" />
             <span
-              className={`${PortfolioSummaryStyles.notifNum} flex items-center justify-center absolute h-4 rounded-3xl text-white w-4`}>
+              className={`${PortfolioSummaryStyles.notifNum} flex items-center justify-center absolute h-4 rounded-3xl text-white w-4`}
+            >
               2
             </span>
           </IonButton>

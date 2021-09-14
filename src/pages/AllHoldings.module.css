@@ -1,3 +1,4 @@
-.header_bg {
-  background: var(--screen-bg);
+.holdings_list {
+  background: transparent;
+  border-top: 0.0625rem solid #7f7f7f;
 }
