@@ -28,7 +28,11 @@ const HoldingCard: FC<{ holdingData: HoldingDataType }> = ({ holdingData }) => {
               </IonText>
               <IonText color="light">
                 <p className="text-base">
-                  Invested:&nbsp;{currencyFormatter(holdingData.investmentAmount).replace('-', '')}
+                  Invested:&nbsp;
+                  {currencyFormatter(holdingData.investmentAmount).replace(
+                    '-',
+                    ''
+                  )}
                 </p>
               </IonText>
               <IonText color="medium">
@@ -63,16 +67,17 @@ const HoldingCard: FC<{ holdingData: HoldingDataType }> = ({ holdingData }) => {
                   <p
                     className={`${HoldingCardStyles.loss_text} text-lg font-semibold text-right`}
                   >
-                    {currencyFormatter(holdingData.holdingChange).replace('-', '')}
+                    {currencyFormatter(holdingData.holdingChange).replace(
+                      '-',
+                      ''
+                    )}
                   </p>
                 )}
               </IonText>
               <h6 className="text-sm text-right flex justify-end tracking-widest">
                 <IonText>
                   {holdingData.oneDayChange > 0 ? (
-                    <p
-                      className="text-sm text-right text-white text-opacity-60"
-                    >
+                    <p className="text-sm text-right text-white text-opacity-60">
                       +{holdingData.oneDayChange}
                     </p>
                   ) : (
@@ -88,13 +93,21 @@ const HoldingCard: FC<{ holdingData: HoldingDataType }> = ({ holdingData }) => {
                     <p
                       className={`${HoldingCardStyles.profit_text} text-sm font-bold text-right`}
                     >
-                      ({holdingData.oneDayPercentChange.toString().replace('+', '')}%)
+                      (
+                      {holdingData.oneDayPercentChange
+                        .toString()
+                        .replace('+', '')}
+                      %)
                     </p>
                   ) : (
                     <p
                       className={`${HoldingCardStyles.loss_text} text-sm font-bold text-right`}
                     >
-                      ({holdingData.oneDayPercentChange.toString().replace('-', '')}%)
+                      (
+                      {holdingData.oneDayPercentChange
+                        .toString()
+                        .replace('-', '')}
+                      %)
                     </p>
                   )}
                 </IonText>

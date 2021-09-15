@@ -9,6 +9,8 @@ http://ionicframework.com/docs/theming/ */
 }
 
 :root {
+  --ion-background-color: #12203f;
+  --ion-font-family: sfpro;
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;

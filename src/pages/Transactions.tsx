@@ -15,7 +15,7 @@ import {
   IonItem,
   IonRadioGroup,
   IonRadio,
-  IonImg
+  IonImg,
 } from '@ionic/react';
 import { alertCircle } from 'ionicons/icons';
 import { useHistory } from 'react-router';
@@ -143,7 +143,7 @@ const Transaction: FC = () => {
 
   const history = useHistory();
   const navigatetoHome = () => {
-    history.push('/accountsummary');
+    history.push('/portfoliosummary');
   };
 
   return (
@@ -155,10 +155,16 @@ const Transaction: FC = () => {
             <IonMenuButton color="light" />
           </IonButtons>
           <IonText color="light">
-            <h1 className="font-semibold text-xl tracking-wider">Transactions</h1>
+            <h1 className="font-semibold text-xl tracking-wider">
+              Transactions
+            </h1>
           </IonText>
           <div>
-            <IonImg src={homeIcon} onClick={() => navigatetoHome()} class="w-6" />
+            <IonImg
+              src={homeIcon}
+              onClick={() => navigatetoHome()}
+              class="w-6"
+            />
           </div>
         </div>
       </IonHeader>
@@ -187,7 +193,6 @@ const Transaction: FC = () => {
             <div className="mt-1 relative">
               <SearchBar
                 onSearchChange={handleSearchChange}
-                placeholder="By Holding Name"
                 onClickFilter={handlePopover}
               />
               {showPopover === true ? (

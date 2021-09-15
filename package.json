@@ -8,7 +8,7 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "lint": "run-s prettier eslint",
-    "eslint": "eslint --fix --max-warnings 10 \"src/**/*.?(j|t)s?(x)\"",
+    "eslint": "eslint --fix --max-warnings 100 \"src/**/*.?(j|t)s?(x)\"",
     "prettier": "prettier --write . --ignore-unknown",
     "prepare": "husky install"
   },

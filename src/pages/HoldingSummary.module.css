@@ -13,7 +13,7 @@
   border: 0;
   background: none;
   flex: initial;
-  --color-checked:#009eff;
+  --color-checked: #009eff;
   font-weight: 600;
 }
 
@@ -35,8 +35,4 @@
 
 .download_text {
   color: var(--download-text);
-}
-
-.back_btn{
-  --padding-start:0
 }

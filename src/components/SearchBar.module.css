@@ -4,3 +4,7 @@
   --box-shadow: none;
   border-radius: 10px;
 }
+
+.searchbar_container .searchbar-input-container {
+  --background: transparent;
+}
