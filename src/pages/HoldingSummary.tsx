@@ -12,11 +12,9 @@ import {
   IonSegmentButton,
   IonLabel,
   IonButton,
-  IonImg
+  IonImg,
 } from '@ionic/react';
-import {
-  alertCircle,
-} from 'ionicons/icons';
+import { alertCircle } from 'ionicons/icons';
 // eslint-disable-next-line
 import { useHistory } from 'react-router';
 import HoldingOverView from './HoldingOverView';
@@ -26,6 +24,7 @@ import HoldingSummaryStyles from './HoldingSummary.module.css';
 import ChartLineUpImg from '../images/chart_line_up.png';
 import BackArrowImg from '../images/white-arrow-back.png';
 import DownloadImg from '../images/Download_Icon_Blue.png';
+import NavigateBack from '../components/NavigateBack';
 
 export type HoldingDetailDataType = {
   holdingName: string;
@@ -39,7 +38,7 @@ const HoldingSummary: React.FC = () => {
     holdingName: 'rcom',
     holdingAmount: 270.55,
     oneDayChange: 7.89,
-    oneDayPercentChange: 0.68
+    oneDayPercentChange: 0.68,
   });
   const [tab, setTab] = useState('Overview');
 
@@ -56,22 +55,7 @@ const HoldingSummary: React.FC = () => {
     <IonPage>
       <IonHeader class={`p-4 ${HoldingSummaryStyles.header_bg} pl-3`}>
         <div className="flex flex-row items-center justify-between">
-          <IonButton
-            fill="clear"
-            class={`h-4 p-0 m-0 normal-case ${HoldingSummaryStyles.back_btn}`}
-            onClick={handleBack}
-          >
-            <div className="flex flex-row items-center">
-              <div className="mr-1">
-                <IonImg src={BackArrowImg} class="w-6" alt="NavigateBack" />
-              </div>
-              <div>
-                <IonText color="light">
-                  <p className="text-lg">Back</p>
-                </IonText>
-              </div>
-            </div>
-          </IonButton>
+          <NavigateBack />
           <div className="flex flex-row items-center">
             <div className="mr-1">
               <IonImg src={DownloadImg} class="w-3" alt="DownloadImg" />
@@ -117,9 +101,17 @@ const HoldingSummary: React.FC = () => {
                     </div>
                     <div>
                       {holdingData.oneDayChange > 0 ? (
-                        <IonImg src={ChartLineUpImg} class="w-6 h-6" alt="ChartLineUp" />
+                        <IonImg
+                          src={ChartLineUpImg}
+                          class="w-6 h-6"
+                          alt="ChartLineUp"
+                        />
                       ) : (
-                        <IonImg src={ChartLineUpImg} class="w-6 h-6" alt="ChartLineDown" />
+                        <IonImg
+                          src={ChartLineUpImg}
+                          class="w-6 h-6"
+                          alt="ChartLineDown"
+                        />
                       )}
                     </div>
                   </div>
@@ -140,15 +132,15 @@ const HoldingSummary: React.FC = () => {
                             <p
                               className={`text-sm font-bold ${HoldingSummaryStyles.profit_text}`}
                             >
-                              +{holdingData.oneDayChange}
-                              ({holdingData.oneDayPercentChange}%)
+                              +{holdingData.oneDayChange}(
+                              {holdingData.oneDayPercentChange}%)
                             </p>
                           ) : (
                             <p
                               className={`text-sm font-bold ${HoldingSummaryStyles.loss_text}`}
                             >
-                              {holdingData.oneDayChange}
-                              ({holdingData.oneDayPercentChange}%)
+                              {holdingData.oneDayChange}(
+                              {holdingData.oneDayPercentChange}%)
                             </p>
                           )}
                         </IonText>
@@ -171,19 +163,25 @@ const HoldingSummary: React.FC = () => {
                 value="Overview"
                 class={`${HoldingSummaryStyles.tab_btn} holding-tab`}
               >
-                <IonLabel class="normal-case text-lg pl-1 pr-1 m-0 tab_label">Overview</IonLabel>
+                <IonLabel class="normal-case text-lg pl-1 pr-1 m-0 tab_label">
+                  Overview
+                </IonLabel>
               </IonSegmentButton>
               <IonSegmentButton
                 value="Analytics"
                 class={`${HoldingSummaryStyles.tab_btn} holding-tab`}
               >
-                <IonLabel class="normal-case text-lg m-0 pl-1 pr-1 tab_label">Analytics</IonLabel>
+                <IonLabel class="normal-case text-lg m-0 pl-1 pr-1 tab_label">
+                  Analytics
+                </IonLabel>
               </IonSegmentButton>
               <IonSegmentButton
                 value="Statements"
                 class={`${HoldingSummaryStyles.tab_btn} holding-tab`}
               >
-                <IonLabel class="normal-case text-lg m-0 pl-1 pr-1 tab_label">Statements</IonLabel>
+                <IonLabel class="normal-case text-lg m-0 pl-1 pr-1 tab_label">
+                  Statements
+                </IonLabel>
               </IonSegmentButton>
             </IonSegment>
           </div>

@@ -23,18 +23,18 @@ export type HoldingOverviewDataType = {
 
 const HoldingOverView: React.FC = () => {
   const [overViewData] = useState<HoldingOverviewDataType>({
-    investmentAmount: 23456.10,
-    holdingAmount: 53456.10,
+    investmentAmount: 23456.1,
+    holdingAmount: 53456.1,
     holdingChange: 534.55,
-    oneDayChange: 513.80,
+    oneDayChange: 513.8,
     averagePrice: 268.89,
     quantity: 'T1:549',
     open: 268.89,
-    high: 250.00,
+    high: 250.0,
     low: 236.89,
-    previousClose: 263.60,
-    fiftyTwoWeekLow: 51800.00,
-    fiftyTwoWeekHigh: 57800.00,
+    previousClose: 263.6,
+    fiftyTwoWeekLow: 51800.0,
+    fiftyTwoWeekHigh: 57800.0,
   });
   return (
     <div className="p-4">
@@ -54,7 +54,9 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{currencyFormatter(overViewData.investmentAmount)}</p>
+                    <p className="text-lg">
+                      {currencyFormatter(overViewData.investmentAmount)}
+                    </p>
                   </IonText>
                 </div>
               </IonCol>
@@ -68,7 +70,9 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{currencyFormatter(overViewData.holdingAmount)}</p>
+                    <p className="text-lg">
+                      {currencyFormatter(overViewData.holdingAmount)}
+                    </p>
                   </IonText>
                 </div>
               </IonCol>
@@ -108,7 +112,9 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{currencyFormatter(overViewData.oneDayChange)}</p>
+                    <p className="text-lg">
+                      {currencyFormatter(overViewData.oneDayChange)}
+                    </p>
                   </IonText>
                 </div>
               </IonCol>
@@ -122,7 +128,9 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{currencyFormatter(overViewData.averagePrice)}</p>
+                    <p className="text-lg">
+                      {currencyFormatter(overViewData.averagePrice)}
+                    </p>
                   </IonText>
                 </div>
               </IonCol>
@@ -153,7 +161,9 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{currencyFormatter(overViewData.open)}</p>
+                    <p className="text-lg">
+                      {currencyFormatter(overViewData.open)}
+                    </p>
                   </IonText>
                 </div>
               </IonCol>
@@ -165,7 +175,9 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{currencyFormatter(overViewData.high)}</p>
+                    <p className="text-lg">
+                      {currencyFormatter(overViewData.high)}
+                    </p>
                   </IonText>
                 </div>
               </IonCol>
@@ -177,7 +189,9 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{currencyFormatter(overViewData.low)}</p>
+                    <p className="text-lg">
+                      {currencyFormatter(overViewData.low)}
+                    </p>
                   </IonText>
                 </div>
               </IonCol>
@@ -191,7 +205,9 @@ const HoldingOverView: React.FC = () => {
                 </div>
                 <div>
                   <IonText color="light">
-                    <p className="text-lg">{currencyFormatter(overViewData.previousClose)}</p>
+                    <p className="text-lg">
+                      {currencyFormatter(overViewData.previousClose)}
+                    </p>
                   </IonText>
                 </div>
               </IonCol>

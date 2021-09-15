@@ -7,7 +7,7 @@ import {
   IonIcon,
   IonList,
   IonItem,
-  IonImg
+  IonImg,
 } from '@ionic/react';
 import LineChart from '../components/LineChart';
 import { currencyFormatter } from '../utils/currency';
@@ -19,9 +19,9 @@ export type HoldingAnalyticsDataType = {
   low: number;
   high: number;
   previousClose: number;
-  incomeStatements:number;
-  balanceSheet:number;
-  cashFlow:number;
+  incomeStatements: number;
+  balanceSheet: number;
+  cashFlow: number;
 };
 
 const chartDuration = ['1M', '6M', 'YTD', '1Y', '5Y', 'All'];
@@ -29,12 +29,12 @@ const chartDuration = ['1M', '6M', 'YTD', '1Y', '5Y', 'All'];
 const HoldingAnalytics: React.FC = () => {
   const [overViewData] = useState<HoldingAnalyticsDataType>({
     open: 268.89,
-    high: 250.00,
+    high: 250.0,
     low: 236.89,
-    previousClose: 263.60,
-    incomeStatements:264890,
-    balanceSheet:364890,
-    cashFlow:464890
+    previousClose: 263.6,
+    incomeStatements: 264890,
+    balanceSheet: 364890,
+    cashFlow: 464890,
   });
   return (
     <div>
@@ -68,7 +68,9 @@ const HoldingAnalytics: React.FC = () => {
                   </div>
                   <div>
                     <IonText color="light">
-                      <p className="text-lg">{currencyFormatter(overViewData.open)}</p>
+                      <p className="text-lg">
+                        {currencyFormatter(overViewData.open)}
+                      </p>
                     </IonText>
                   </div>
                 </IonCol>
@@ -82,7 +84,9 @@ const HoldingAnalytics: React.FC = () => {
                   </div>
                   <div>
                     <IonText color="light">
-                      <p className="text-lg">{currencyFormatter(overViewData.high)}</p>
+                      <p className="text-lg">
+                        {currencyFormatter(overViewData.high)}
+                      </p>
                     </IonText>
                   </div>
                 </IonCol>
@@ -96,7 +100,9 @@ const HoldingAnalytics: React.FC = () => {
                   </div>
                   <div>
                     <IonText color="light">
-                      <p className="text-lg">{currencyFormatter(overViewData.low)}</p>
+                      <p className="text-lg">
+                        {currencyFormatter(overViewData.low)}
+                      </p>
                     </IonText>
                   </div>
                 </IonCol>
@@ -110,7 +116,9 @@ const HoldingAnalytics: React.FC = () => {
                   </div>
                   <div>
                     <IonText color="light">
-                      <p className="text-lg">{currencyFormatter(overViewData.previousClose)}</p>
+                      <p className="text-lg">
+                        {currencyFormatter(overViewData.previousClose)}
+                      </p>
                     </IonText>
                   </div>
                 </IonCol>
@@ -124,14 +132,18 @@ const HoldingAnalytics: React.FC = () => {
           <IonItem class={HoldingAnalyticsStyles.holdings_analytics_list_item}>
             <div className="flex flex-row justify-between items-center w-full">
               <div>
-                <IonText class={HoldingAnalyticsStyles.analytics_statement_header_text}>
+                <IonText
+                  class={HoldingAnalyticsStyles.analytics_statement_header_text}
+                >
                   <h3 className="text-lg font-semibold">Income Statements</h3>
                 </IonText>
               </div>
               <div className="flex flex-row items-center">
                 <div className="mr-2">
                   <IonText color="light">
-                    <h3 className="text-lg">{currencyFormatter(overViewData.incomeStatements)}</h3>
+                    <h3 className="text-lg">
+                      {currencyFormatter(overViewData.incomeStatements)}
+                    </h3>
                   </IonText>
                 </div>
                 <div className="mr-1">
@@ -143,14 +155,18 @@ const HoldingAnalytics: React.FC = () => {
           <IonItem class={HoldingAnalyticsStyles.holdings_analytics_list_item}>
             <div className="flex flex-row justify-between items-center w-full">
               <div>
-                <IonText class={HoldingAnalyticsStyles.analytics_statement_header_text}>
+                <IonText
+                  class={HoldingAnalyticsStyles.analytics_statement_header_text}
+                >
                   <h3 className="text-lg font-semibold">Balance Sheet</h3>
                 </IonText>
               </div>
               <div className="flex flex-row items-center">
                 <div className="mr-2">
                   <IonText color="light">
-                    <h3 className="text-lg">{currencyFormatter(overViewData.balanceSheet)}</h3>
+                    <h3 className="text-lg">
+                      {currencyFormatter(overViewData.balanceSheet)}
+                    </h3>
                   </IonText>
                 </div>
                 <div className="mr-1">
@@ -162,14 +178,18 @@ const HoldingAnalytics: React.FC = () => {
           <IonItem class={HoldingAnalyticsStyles.holdings_analytics_list_item}>
             <div className="flex flex-row justify-between items-center w-full">
               <div>
-                <IonText class={HoldingAnalyticsStyles.analytics_statement_header_text}>
+                <IonText
+                  class={HoldingAnalyticsStyles.analytics_statement_header_text}
+                >
                   <h3 className="text-lg font-semibold">Cash Flow</h3>
                 </IonText>
               </div>
               <div className="flex flex-row items-center">
                 <div className="mr-2">
                   <IonText color="light">
-                    <h3 className="text-lg">{currencyFormatter(overViewData.cashFlow)}</h3>
+                    <h3 className="text-lg">
+                      {currencyFormatter(overViewData.cashFlow)}
+                    </h3>
                   </IonText>
                 </div>
                 <div className="mr-1">
