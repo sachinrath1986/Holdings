@@ -10,6 +10,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
     {
       holdingId: 'b34',
@@ -21,6 +24,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        12.5, 11, 12, 11, 10, 9, 10, 10.5, 9.5, 10, 11, 10, 8, 9.5, 10,
+      ],
     },
     {
       holdingId: 'c56',
@@ -32,6 +38,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
     {
       holdingId: 'd78',
@@ -43,6 +52,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        12.5, 11, 12, 11, 10, 9, 10, 10.5, 9.5, 10, 11, 10, 8, 9.5, 10,
+      ],
     },
     {
       holdingId: 'e90',
@@ -54,6 +66,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
     {
       holdingId: 'e91',
@@ -65,6 +80,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
     {
       holdingId: 'f01',
@@ -76,6 +94,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
     {
       holdingId: 'f02',
@@ -87,6 +108,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
     {
       holdingId: 'f03',
@@ -98,6 +122,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
     {
       holdingId: 'f04',
@@ -109,6 +136,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
     {
       holdingId: 'f05',
@@ -120,6 +150,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
     {
       holdingId: 'f06',
@@ -131,6 +164,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
     {
       holdingId: 'f07',
@@ -142,6 +178,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
     {
       holdingId: 'f08',
@@ -153,6 +192,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
     {
       holdingId: 'f09',
@@ -164,6 +206,9 @@ export default {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
   ],
 };

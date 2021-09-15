@@ -38,6 +38,7 @@ export type HoldingDataType = {
   holdingPercentChange: number;
   oneDayChange: number;
   oneDayPercentChange: number;
+  holdingHistory: number[];
 };
 
 const Portfolio: FC = () => {
@@ -52,6 +53,9 @@ const Portfolio: FC = () => {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: 3.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
     {
       holdingId: 'b34',
@@ -63,6 +67,9 @@ const Portfolio: FC = () => {
       holdingPercentChange: -15.8,
       oneDayChange: -20.0,
       oneDayPercentChange: -0.28,
+      holdingHistory: [
+        12.5, 11, 12, 11, 10, 9, 10, 10.5, 9.5, 10, 11, 10, 8, 9.5, 10,
+      ],
     },
     {
       holdingId: 'c56',
@@ -74,6 +81,9 @@ const Portfolio: FC = () => {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: 1.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
     {
       holdingId: 'd78',
@@ -85,6 +95,9 @@ const Portfolio: FC = () => {
       holdingPercentChange: -15.8,
       oneDayChange: -20.0,
       oneDayPercentChange: -2.28,
+      holdingHistory: [
+        12.5, 11, 12, 11, 10, 9, 10, 10.5, 9.5, 10, 11, 10, 8, 9.5, 10,
+      ],
     },
     {
       holdingId: 'e90',
@@ -96,6 +109,9 @@ const Portfolio: FC = () => {
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: 0.28,
+      holdingHistory: [
+        10.5, 11.5, 12, 11, 10, 11, 10, 11, 12, 13, 13.5, 14, 13, 14, 14.5,
+      ],
     },
   ]);
 
@@ -135,7 +151,8 @@ const Portfolio: FC = () => {
           >
             <IonImg src={BellIcon} class="w-6" />
             <span
-              className={`${PortfolioSummaryStyles.notifNum} flex items-center justify-center absolute h-4 rounded-3xl text-white w-4`}>
+              className={`${PortfolioSummaryStyles.notifNum} flex items-center justify-center absolute h-4 rounded-3xl text-white w-4`}
+            >
               2
             </span>
           </IonButton>
