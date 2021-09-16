@@ -17,3 +17,9 @@
 .holding_name_text {
   color: var(--holding-name-text);
 }
+
+.chartWrapper {
+  height: 2.5rem;
+  width: 5.625rem;
+  margin: 0 auto;
+}
