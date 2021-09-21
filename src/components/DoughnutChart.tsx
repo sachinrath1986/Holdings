@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // eslint-disable-next-line
 import { IonText } from '@ionic/react';
-import { Chart, Doughnut } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import DoughnutChartStyles from './DoughnutChart.module.css';
 
 const DoughnutChart = () => {
   const [innerData, setInnerData] = useState(2515666);
   const [activeLegend, setActiveLegend] = useState('Total Holding');
-  const [chartData, setChartData] = useState({
+  const [chartData] = useState({
     labels: [
       'Cash & Equivalents',
       'Convertible Securities',
@@ -41,10 +41,26 @@ const DoughnutChart = () => {
     ],
   });
 
+  const FormatWholeNumber = (labelValue: number) => {
+    let formattedValue = '';
+
+    if (Math.abs(Number(labelValue)) >= 1.0e9) {
+      formattedValue = `${(Math.abs(Number(labelValue)) / 1.0e9).toFixed(0)}B`;
+    } else if (Math.abs(Number(labelValue)) >= 1.0e6) {
+      formattedValue = `${(Math.abs(Number(labelValue)) / 1.0e6).toFixed(0)}M`;
+    } else if (Math.abs(Number(labelValue)) >= 1.0e3) {
+      formattedValue = `${(Math.abs(Number(labelValue)) / 1.0e3).toFixed(0)}K`;
+    } else {
+      formattedValue = labelValue.toString();
+    }
+
+    return formattedValue;
+  };
+
   const ChartInnerContent = () => (
     <>
       <IonText class="text-white text-center font-semibold text-3xl">
-        <p>{FormatNumber(innerData)}</p>
+        <p>{FormatWholeNumber(innerData)}</p>
       </IonText>
       <IonText class="text-white text-opacity-50 text-center text-xs">
         <p>{activeLegend}</p>
@@ -52,40 +68,12 @@ const DoughnutChart = () => {
     </>
   );
 
-  function FormatNumber(labelValue: number) {
-    let formattedValue = "";
-
-    if (Math.abs(Number(labelValue)) >= 1.0e+9) {
-      formattedValue = `${(Math.abs(Number(labelValue)) / 1.0e+9).toFixed(0)}B`;
-    }
-    else if (Math.abs(Number(labelValue)) >= 1.0e+6) {
-      formattedValue = `${(Math.abs(Number(labelValue)) / 1.0e+6).toFixed(0)}M`;
-    }
-    else if (Math.abs(Number(labelValue)) >= 1.0e+3) {
-      formattedValue = `${(Math.abs(Number(labelValue)) / 1.0e+3).toFixed(0)}K`;
-    }
-    else {
-      formattedValue = labelValue.toString();
-    }
-
-    return formattedValue;
-  }
-
   const handleOnClickLegend = (e: CustomEvent, legendItem: any) => {
-    setInnerData(chartData.datasets[0].data[legendItem.index])
-    setActiveLegend(legendItem.text)
-  }
-
-  const DoughnutComponent = () => {
-    useEffect(() => {
-      console.log('doughnut rendered');
-    }, [chartData]);
-    return (
-      <Doughnut options={options} data={chartData} />
-    )
+    setInnerData(chartData.datasets[0].data[legendItem.index]);
+    setActiveLegend(legendItem.text);
   };
 
-  const options = {
+  const chartOptions = {
     responsive: true,
     aspectRatio: 2,
     datasets: {
@@ -117,6 +105,11 @@ const DoughnutChart = () => {
       },
     },
   };
+
+  const DoughnutComponent = () => (
+    <Doughnut options={chartOptions} data={chartData} />
+  );
+
   return (
     <div className="relative">
       <DoughnutComponent />

@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { Line, Chart } from 'react-chartjs-2';
 
-const LineChart: React.FC<{ chartData: number[], chartLabels: string[] }> = ({chartData,chartLabels}) => {
+const LineChart: React.FC<{ chartData: number[]; chartLabels: string[] }> = ({
+  chartData,
+  chartLabels,
+}) => {
   const options = {
     layout: {
       padding: {
@@ -42,8 +45,8 @@ const LineChart: React.FC<{ chartData: number[], chartLabels: string[] }> = ({ch
           label: (context: any) => {
             const label = `( ${context.label} )`;
             return label;
-          }
-        }
+          },
+        },
       },
     },
     elements: {
@@ -62,7 +65,7 @@ const LineChart: React.FC<{ chartData: number[], chartLabels: string[] }> = ({ch
     // reference: https://stackoverflow.com/questions/45800521/chartjs-draw-vertical-line-at-data-point-on-chart-on-mouseover
     Chart.register({
       id: 'chart-line',
-      afterDraw: (chart: any, easing: any) => {
+      afterDraw: (chart: any) => {
         /* eslint no-underscore-dangle: "warn" */
         /* eslint prefer-destructuring: "warn" */
         if (chart.tooltip._active && chart.tooltip._active.length) {

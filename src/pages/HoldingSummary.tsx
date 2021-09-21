@@ -11,18 +11,15 @@ import {
   IonSegment,
   IonSegmentButton,
   IonLabel,
-  IonButton,
   IonImg,
 } from '@ionic/react';
 import { alertCircle } from 'ionicons/icons';
 // eslint-disable-next-line
-import { useHistory } from 'react-router';
 import HoldingOverView from './HoldingOverView';
 import HoldingAnalytics from './HoldingAnalytics';
 import { currencyFormatter } from '../utils/currency';
 import HoldingSummaryStyles from './HoldingSummary.module.css';
 import ChartLineUpImg from '../images/chart_line_up.png';
-import BackArrowImg from '../images/white-arrow-back.png';
 import DownloadImg from '../images/Download_Icon_Blue.png';
 import NavigateBack from '../components/NavigateBack';
 
@@ -41,11 +38,6 @@ const HoldingSummary: React.FC = () => {
     oneDayPercentChange: 0.68,
   });
   const [tab, setTab] = useState('Overview');
-
-  const history = useHistory();
-  const handleBack = () => {
-    history.push('/portfoliosummary');
-  };
 
   const handleTabChange = (e: CustomEvent) => {
     setTab(e.detail.value);

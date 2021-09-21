@@ -39,7 +39,7 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
 };
 
 SearchBar.defaultProps = {
-  placeholder:'Search'
-}
+  placeholder: 'Search',
+};
 
 export default SearchBar;

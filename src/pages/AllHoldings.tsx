@@ -1,14 +1,10 @@
 import { FC, useEffect, useState } from 'react';
 import {
-  IonButtons,
   IonContent,
   IonHeader,
   IonList,
-  IonMenuButton,
   IonPage,
-  IonSearchbar,
   IonText,
-  IonTitle,
   IonToolbar,
 } from '@ionic/react';
 import { HoldingDataType } from './PortfolioSummary';
