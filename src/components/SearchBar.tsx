@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { IonIcon, IonSearchbar } from '@ionic/react';
 import { filterOutline } from 'ionicons/icons';
 import SearchBarStyle from './SearchBar.module.css';
+import './SearchBar.css';
 
 type SearchBarProps = {
   onSearchChange: (value: string) => void;
@@ -13,7 +14,7 @@ type SearchBarProps = {
 const SearchBar: React.FC<SearchBarProps> = (props) => {
   const [searchText, setSearchText] = useState('');
 
-  const { onSearchChange, placeholder = 'Search', onClickFilter } = props;
+  const { onSearchChange, placeholder, onClickFilter } = props;
 
   const handleSearchChange = (event: CustomEvent) => {
     setSearchText(event.detail.value);
@@ -36,6 +37,10 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
       </div>
     </IonSearchbar>
   );
+};
+
+SearchBar.defaultProps = {
+  placeholder: 'Search',
 };
 
 export default SearchBar;

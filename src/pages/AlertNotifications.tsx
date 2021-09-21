@@ -136,7 +136,7 @@ const AlertNotifications: React.FC = () => {
         </div>
 
         <IonList class={PageStyles.alertList}>
-          {alertsArr.map((item, index) => (
+          {alertsArr.map((item) => (
             <IonItem
               key={item.holding}
               class={`${PageStyles.alertContainer} ${
