@@ -23,9 +23,7 @@ const Login: React.FC = () => {
   const doLogin = () => {
     history.push('/accountsummary');
   };
-  const doRegister = () => {
-    history.push('/create-pin');
-  };
+
   return (
     <IonPage className={styles['login-page']}>
       <IonAvatar className={styles.logo} />

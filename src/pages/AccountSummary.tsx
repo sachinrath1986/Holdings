@@ -224,7 +224,7 @@ const AccountSummary: FC = () => {
             </div>
             <IonGrid class="p-0">
               <IonRow class="p-0">
-                {portfolios.map((data, index) => (
+                {portfolios.map((data) => (
                   <IonCol
                     size="12"
                     class="p-0"
