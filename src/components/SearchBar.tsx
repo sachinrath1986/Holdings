@@ -5,6 +5,7 @@ import SearchBarStyle from './SearchBar.module.css';
 
 type SearchBarProps = {
   onSearchChange: (value: string) => void;
+  // eslint-disable-next-line react/require-default-props
   placeholder?: string;
   onClickFilter: () => void;
 };

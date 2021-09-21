@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 // Ionic Components
 import {
   IonPage,
@@ -18,6 +18,7 @@ import { useHistory } from 'react-router';
 
 // Custom Components
 import SideMenuBar from '../components/SideMenuBar';
+import LanguageSelector from '../components/LanguageSelector';
 import SettingsSummaryStyles from './Settings.module.css';
 import rightArrowIcon from '../images/next_arrow.png';
 import faceIdIcon from '../images/face_id.png';
@@ -28,7 +29,24 @@ import documentIcon from '../images/document.png';
 import helpIcon from '../images/help.png';
 import homeIcon from '../images/home_2x.png';
 
-const Portfolio: FC = () => {
+export type LangDisplay = {
+  en: string;
+  es: string;
+};
+
+const langDisplayObj = {
+  en: 'English',
+  es: 'Español',
+};
+
+const Settings: FC = () => {
+  const [lang, setLang] = useState<keyof LangDisplay>('en');
+  const [showLangs, setShowLangs] = useState<boolean>(false);
+  const handleLangChange = (key: keyof LangDisplay) => {
+    setLang(key);
+    setShowLangs(false);
+  };
+
   const history = useHistory();
   const navigatetoHome = () => {
     history.push('/portfoliosummary');
@@ -85,17 +103,29 @@ const Portfolio: FC = () => {
               ON <img src={rightArrowIcon} alt="" />
             </IonLabel>
           </div>
-          <div className={SettingsSummaryStyles.settings_list_item}>
+          <div
+            className={`${SettingsSummaryStyles.settings_list_item} ${
+              showLangs ? SettingsSummaryStyles.noItemBorder : ''
+            }`}
+          >
             <IonLabel className={SettingsSummaryStyles.settings_label}>
               <img src={languageIcon} alt="" className="mr-3" />
               Language
             </IonLabel>
             <IonLabel
               className={SettingsSummaryStyles.settings_option_list_item}
+              onClick={() => setShowLangs(!showLangs)}
             >
-              English <img src={rightArrowIcon} alt="" />
+              <span>{langDisplayObj[lang]}</span>
+              <img src={rightArrowIcon} alt="" />
             </IonLabel>
           </div>
+          {showLangs && (
+            <LanguageSelector
+              handleLangChange={handleLangChange}
+              currentLang={lang}
+            />
+          )}
         </IonList>
         {/** Others section */}
         <IonList className={`m-0 p-0 pt-5 ${SettingsSummaryStyles.screen_bg}`}>
@@ -141,4 +171,4 @@ const Portfolio: FC = () => {
   );
 };
 
-export default Portfolio;
+export default Settings;

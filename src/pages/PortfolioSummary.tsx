@@ -16,6 +16,7 @@ import {
   IonButton,
 } from '@ionic/react';
 import { useHistory } from 'react-router';
+import { useTranslation } from 'react-i18next';
 import { alertCircle } from 'ionicons/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
@@ -42,6 +43,7 @@ export type HoldingDataType = {
 };
 
 const Portfolio: FC = () => {
+  const { t: translate } = useTranslation();
   const [holdingsData] = useState<HoldingDataType[]>([
     {
       holdingId: 'a12',
@@ -142,7 +144,9 @@ const Portfolio: FC = () => {
             <IonMenuButton color="light" class="h-8" />
           </IonButtons>
           <IonText color="light">
-            <h1 className="font-bold text-xl tracking-wider">Portfolio</h1>
+            <h1 className="font-bold text-xl tracking-wider">
+              {translate('portfolio')}
+            </h1>
           </IonText>
           <IonButton
             fill="clear"
@@ -172,7 +176,7 @@ const Portfolio: FC = () => {
                         <div className="mr-1">
                           <IonText>
                             <h2 className="text-sm text-white text-opacity-40">
-                              Current
+                              {translate('current')}
                             </h2>
                           </IonText>
                         </div>
@@ -193,7 +197,7 @@ const Portfolio: FC = () => {
                       <div>
                         <IonText color="light">
                           <p className="text-sm">
-                            Invested:{' '}
+                            {translate('invested')}:{' '}
                             {currencyFormatter(overallData.investmentAmount)}
                           </p>
                         </IonText>
@@ -273,7 +277,7 @@ const Portfolio: FC = () => {
                       <div>
                         <IonText color="light">
                           <h2 className="text-sm text-opacity-50">
-                            Today&lsquo;s P&#38;L
+                            {translate('todays')} P&#38;L
                           </h2>
                         </IonText>
                       </div>
@@ -338,7 +342,7 @@ const Portfolio: FC = () => {
                 <div className="mr-1">
                   <IonText>
                     <h2 className="text-sm text-white text-opacity-30 uppercase font-semibold tracking-wider">
-                      top 5 holdings
+                      {translate('top5Holdings')}
                     </h2>
                   </IonText>
                 </div>
@@ -357,7 +361,7 @@ const Portfolio: FC = () => {
                     color="secondary"
                     class={`capitalize tracking-wider m-0 text-sm mb-1 ${PortfolioSummaryStyles.view_all_holdings_btn}`}
                   >
-                    View all Holdings
+                    {translate('viewAllHoldings')}
                     <IonImg src={NextIcon} class="w-2 ml-1" />
                   </IonButton>
                 </div>
