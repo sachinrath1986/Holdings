@@ -13,16 +13,7 @@
   font-weight: bold;
   border-bottom: 0.0625rem solid var(--settings-text);
 }
-.settings_list_item {
-  background: var(--screen-bg);
-  color: white;
-  border-bottom: 0.0625rem solid var(--settings-text);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.625rem;
-}
+
 .settings_list_item {
   background: var(--screen-bg);
   color: white;
@@ -33,6 +24,11 @@
   align-items: center;
   padding: 1rem;
 }
+
+div.settings_list_item.noItemBorder {
+  border-bottom: none;
+}
+
 .settings_option_list_item {
   display: flex;
   align-items: center;

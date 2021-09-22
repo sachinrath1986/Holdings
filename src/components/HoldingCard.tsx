@@ -1,6 +1,7 @@
 import { IonGrid, IonItem, IonRow, IonCol, IonText } from '@ionic/react';
 import { FC } from 'react';
 import { useHistory } from 'react-router';
+import { useTranslation } from 'react-i18next';
 import { HoldingDataType } from '../pages/PortfolioSummary';
 import { currencyFormatter } from '../utils/currency';
 import HoldingCardStyles from './HoldingCard.module.css';
@@ -91,6 +92,8 @@ const HoldingCard: FC<{ holdingData: HoldingDataType }> = ({ holdingData }) => {
     },
   };
 
+  const { t: translate } = useTranslation();
+
   return (
     <IonItem
       class={HoldingCardStyles.holdings_list_item}
@@ -108,7 +111,7 @@ const HoldingCard: FC<{ holdingData: HoldingDataType }> = ({ holdingData }) => {
               </IonText>
               <IonText color="light">
                 <p className="text-base">
-                  Invested:&nbsp;
+                  {translate('invested')}:&nbsp;
                   {currencyFormatter(holdingData.investmentAmount).replace(
                     '-',
                     ''
@@ -116,7 +119,9 @@ const HoldingCard: FC<{ holdingData: HoldingDataType }> = ({ holdingData }) => {
                 </p>
               </IonText>
               <IonText color="medium">
-                <p className="text-base">{holdingData.holdingType}</p>
+                <p className="text-base">
+                  {translate(holdingData.holdingType.toLowerCase())}
+                </p>
               </IonText>
             </IonCol>
             <IonCol class="pb-0 self-center">

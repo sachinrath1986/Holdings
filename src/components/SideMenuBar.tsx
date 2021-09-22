@@ -9,6 +9,7 @@ import {
   IonMenu,
 } from '@ionic/react';
 import { useHistory } from 'react-router';
+import { useTranslation } from 'react-i18next';
 import styles from './SideMenuBar.module.css';
 import homeIcon from '../images/home.png';
 import documentIcon from '../images/document.png';
@@ -31,6 +32,7 @@ type RouteCheck = {
 };
 
 const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
+  const { t: translate } = useTranslation();
   const history = useHistory();
   const backToSummary = () => {
     history.push('/accountsummary');
@@ -91,11 +93,11 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
             }`}
           >
             <img src={homeIcon} alt="" />
-            <span>Dashboard</span>
+            <span>{translate('dashboard')}</span>
           </IonItem>
           <IonItem class={styles['menu-list-item']}>
             <img src={documentIcon} alt="" />
-            <span>Documents &#38; Reports</span>
+            <span>{translate('docsAndReports')}</span>
           </IonItem>
           <IonItem
             class={`${styles['menu-list-item']} ${
@@ -104,12 +106,12 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
             onClick={() => goToTransactions()}
           >
             <img src={transactionsIcon} alt="" />
-            <span>Transactions</span>
+            <span>{translate('transactions')}</span>
             <span className={styles['transaction-num']}>12</span>
           </IonItem>
           <IonItem class={styles['menu-list-item']}>
             <img src={profileIcon} alt="" />
-            <span>Profile</span>
+            <span>{translate('profile')}</span>
           </IonItem>
           <IonItem
             class={`${styles['menu-list-item']} ${
@@ -118,15 +120,15 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
             onClick={navigateToSettings}
           >
             <img src={settingsIcon} alt="" />
-            <span>Settings</span>
+            <span>{translate('settings')}</span>
           </IonItem>
           <IonItem class={styles['menu-list-item']}>
             <img src={helpIcon} alt="" />
-            <span>Help</span>
+            <span>{translate('help')}</span>
           </IonItem>
           <IonItem class={styles['menu-list-item']}>
             <img src={logoutIcon} alt="" />
-            <span>Logout</span>
+            <span>{translate('logout')}</span>
           </IonItem>
         </IonList>
       </IonContent>

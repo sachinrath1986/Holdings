@@ -1,0 +1,11 @@
+div.langListWrapper {
+  border-bottom: 0.0625rem solid var(--settings-text);
+}
+
+div.langListWrapper ion-label.langLabel {
+  --color: white;
+}
+
+div.langListWrapper ion-item.radioItem {
+  --padding-start: 1rem;
+}
