@@ -35,19 +35,19 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
   const { t: translate } = useTranslation();
   const history = useHistory();
   const backToSummary = () => {
-    history.push('/accountsummary');
+    history.replace('/accountsummary');
   };
   const navigateToSettings = () => {
-    history.push('/settings');
+    history.replace('/settings');
   };
 
   const goToTransactions = () => {
-    history.push('/transactions');
+    history.replace('/transactions');
   };
 
-  const goToPortfolioSummary = () => {
-    history.push('/portfoliosummary');
-  };
+  // const goToPortfolioSummary = () => {
+  //   history.replace('/portfoliosummary');
+  // };
 
   const routeCheck: RouteCheck = {
     dashboard: window.location.pathname === '/portfoliosummary',
@@ -61,6 +61,7 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
       type="overlay"
       contentId={contentId}
       class={styles['side-menu']}
+      menuId={`${contentId}-menu`}
     >
       <IonContent class={styles['menu-content']}>
         <IonGrid class="p-0">
@@ -68,11 +69,7 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
             <IonCol size="3" class={styles['profile-image-col']}>
               <img src={profileImage} alt="" />
             </IonCol>
-            <IonCol
-              size="7"
-              class={styles['profile-info-col']}
-              onClick={() => goToPortfolioSummary()}
-            >
+            <IonCol size="7" class={styles['profile-info-col']}>
               <span>John Smith</span>
               <span className={styles['email-and-id']}>
                 john.smith@gmail.com
