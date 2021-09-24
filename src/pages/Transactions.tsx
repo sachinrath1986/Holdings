@@ -143,7 +143,7 @@ const Transaction: FC = () => {
 
   const history = useHistory();
   const navigatetoHome = () => {
-    history.push('/portfoliosummary');
+    history.replace('/portfoliosummary');
   };
 
   return (

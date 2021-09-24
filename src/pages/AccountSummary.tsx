@@ -60,7 +60,7 @@ const AccountSummary: FC = () => {
 
   const history = useHistory();
   const selectPortfolio = () => {
-    history.push('/portfoliosummary');
+    history.replace('/portfoliosummary');
   };
 
   return (
