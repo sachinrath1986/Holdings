@@ -74,7 +74,7 @@ const AlertNotifications: React.FC = () => {
   const [alertsArr, setAlertsArr] = useState<AlertDataType[]>(alerts);
   const history = useHistory();
   const handleBack = () => {
-    history.push('/portfoliosummary');
+    history.replace('/portfoliosummary');
   };
 
   const searchNotifs = (key: string) => {

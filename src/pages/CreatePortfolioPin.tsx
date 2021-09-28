@@ -22,7 +22,7 @@ const CreatePin: FC = () => {
 
   const history = useHistory();
   const doLogin = () => {
-    history.push('/portfoliosummary');
+    history.replace('/portfoliosummary');
   };
 
   return (

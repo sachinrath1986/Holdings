@@ -21,7 +21,7 @@ const TERMS_MSG =
 const Login: React.FC = () => {
   const history = useHistory();
   const doLogin = () => {
-    history.push('/accountsummary');
+    history.replace('/accountsummary');
   };
 
   return (
