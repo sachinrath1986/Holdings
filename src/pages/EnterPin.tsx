@@ -3,21 +3,16 @@ import { IonContent, IonPage, IonText, IonButton } from '@ionic/react';
 import { useHistory } from 'react-router';
 import OtpInput from 'react-otp-input';
 import Avatar from '../components/Avatar';
-import CreatePortfolioPinStyles from './CreatePortfolioPin.module.css';
-import './CreatePortfolioPin.css';
+import EnterPinStyles from './EnterPin.module.css';
+import './EnterPin.css';
 
-const CreatePin: FC = () => {
+const EnterPin: FC = () => {
   // State Variables
   const [pin, setPin] = useState('');
-  const [confirmPin, setConfirmPin] = useState('');
-  const isInvalid = pin === '' || confirmPin === '' || pin !== confirmPin;
+  const isInvalid = pin === '' || pin.length !== 6;
 
   const handleChangePin = (e: string) => {
     setPin(e);
-  };
-
-  const handleChangeConfirmPin = (e: string) => {
-    setConfirmPin(e);
   };
 
   const history = useHistory();
@@ -27,7 +22,7 @@ const CreatePin: FC = () => {
 
   return (
     <IonPage>
-      <IonContent class={CreatePortfolioPinStyles.screen_bg}>
+      <IonContent class={EnterPinStyles.screen_bg}>
         <div className="p-8">
           <div className="mb-4">
             <Avatar />
@@ -40,14 +35,14 @@ const CreatePin: FC = () => {
             </div>
             <div>
               <IonText color="light">
-                <h1 className="text-3xl font-bold tracking-widest">Create Pin</h1>
+                <h1 className="text-3xl font-bold tracking-widest">Let&apos;s sign you in</h1>
               </IonText>
             </div>
           </div>
-          <div className="mb-4">
-            <div className="mb-1">
+          <div className="mb-8">
+            <div className="mb-6">
               <IonText>
-                <h6 className="text-sm text-white tracking-wider">Enter Pin</h6>
+                <h6 className="text-base text-white tracking-wider">To signin enter your pin code</h6>
               </IonText>
             </div>
             <div className="otp-div">
@@ -61,32 +56,15 @@ const CreatePin: FC = () => {
               />
             </div>
           </div>
-          <div className="mb-8">
-            <div className="mb-1">
-              <IonText color="light">
-                <h6 className="text-sm text-white tracking-wider">Confirm Pin</h6>
-              </IonText>
-            </div>
-            <div className="otp-div">
-              <OtpInput
-                className="otp-input"
-                value={confirmPin}
-                onChange={handleChangeConfirmPin}
-                numInputs={6}
-                isInputSecure
-                isInputNum
-              />
-            </div>
-          </div>
           <IonButton
             disabled={isInvalid}
             expand="full"
             size="large"
-            class={CreatePortfolioPinStyles.btn_blue}
+            class={EnterPinStyles.btn_blue}
             shape="round"
             onClick={doLogin}
           >
-            Create
+            Login
           </IonButton>
         </div>
       </IonContent>
@@ -94,4 +72,4 @@ const CreatePin: FC = () => {
   );
 };
 
-export default CreatePin;
+export default EnterPin;
