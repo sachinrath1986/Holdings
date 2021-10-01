@@ -1,6 +1,8 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
+import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 import Login from './pages/LoginPage';
 import CreatePin from './pages/CreatePortfolioPin';
 import AccountSummary from './pages/AccountSummary';
@@ -37,43 +39,51 @@ import AllHoldings from './pages/AllHoldings';
 /* Theme App */
 import './theme/app.css';
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/login" />
-        </Route>
-        <Route exact path="/create-pin">
-          <CreatePin />
-        </Route>
-        <Route exact path="/portfoliosummary">
-          <PortfolioSummary />
-        </Route>
-        <Route exact path="/accountsummary">
-          <AccountSummary />
-        </Route>
-        <Route exact path="/holdingsummary">
-          <HoldingSummary />
-        </Route>
-        <Route exact path="/settings">
-          <Settings />
-        </Route>
-        <Route exact path="/alerts">
-          <AlertNotifications />
-        </Route>
-        <Route exact path="/transactions">
-          <Transactions />
-        </Route>
-        <Route exact path="/holdings">
-          <AllHoldings />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () => {
+  const { i18n } = useTranslation();
+  useEffect(() => {
+    if (localStorage.i18nLang) {
+      i18n.changeLanguage(localStorage.i18nLang);
+    }
+  }, []);
 
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/">
+            <Redirect to="/login" />
+          </Route>
+          <Route exact path="/create-pin">
+            <CreatePin />
+          </Route>
+          <Route exact path="/portfoliosummary">
+            <PortfolioSummary />
+          </Route>
+          <Route exact path="/accountsummary">
+            <AccountSummary />
+          </Route>
+          <Route exact path="/holdingsummary">
+            <HoldingSummary />
+          </Route>
+          <Route exact path="/settings">
+            <Settings />
+          </Route>
+          <Route exact path="/alerts">
+            <AlertNotifications />
+          </Route>
+          <Route exact path="/transactions">
+            <Transactions />
+          </Route>
+          <Route exact path="/holdings">
+            <AllHoldings />
+          </Route>
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 export default App;

@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 // Ionic Components
 import {
   IonPage,
@@ -14,6 +14,7 @@ import {
   IonImg,
 } from '@ionic/react';
 import { useHistory } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 // Custom Components
 import SideMenuBar from '../components/SideMenuBar';
@@ -39,17 +40,27 @@ const langDisplayObj = {
 };
 
 const Settings: FC = () => {
+  const { i18n } = useTranslation();
   const [lang, setLang] = useState<keyof LangDisplay>('en');
   const [showLangs, setShowLangs] = useState<boolean>(false);
-  const handleLangChange = (key: keyof LangDisplay) => {
-    setLang(key);
+  const handleLangChange = (event: CustomEvent) => {
+    const languageSelected = event?.detail?.value || i18n.language;
+    setLang(languageSelected);
     setShowLangs(false);
+    localStorage.i18nLang = languageSelected;
+    i18n.changeLanguage(languageSelected);
   };
 
   const history = useHistory();
   const navigatetoHome = () => {
     history.replace('/portfoliosummary');
   };
+
+  useEffect(() => {
+    if (localStorage.i18nLang) {
+      setLang(localStorage.i18nLang);
+    }
+  }, []);
 
   return (
     <IonPage className={SettingsSummaryStyles.header_bg}>
