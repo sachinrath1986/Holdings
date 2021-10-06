@@ -9,6 +9,7 @@ import HoldingSummary from './pages/HoldingSummary';
 import Settings from './pages/Settings';
 import AlertNotifications from './pages/AlertNotifications';
 import Transactions from './pages/Transactions';
+import AllHoldings from './pages/AllHoldings';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -32,7 +33,6 @@ import './theme/variables.css';
 /* Theme tailwind */
 import './theme/tailwind.css';
 import './App.css';
-import AllHoldings from './pages/AllHoldings';
 
 /* Theme App */
 import './theme/app.css';
