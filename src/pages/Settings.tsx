@@ -14,6 +14,7 @@ import {
   IonImg,
 } from '@ionic/react';
 import { useHistory } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 // Custom Components
 import SideMenuBar from '../components/SideMenuBar';
@@ -28,20 +29,22 @@ import documentIcon from '../images/document.png';
 import helpIcon from '../images/help.png';
 import homeIcon from '../images/home_2x.png';
 
-export type LangDisplay = {
-  en: string;
-  es: string;
-};
+export type ApplicationLanguages = 'en' | 'es';
 
-const langDisplayObj = {
+interface LangDisplayObj {
+  [lang: string]: string;
+}
+
+const langDisplayObj: LangDisplayObj = {
   en: 'English',
   es: 'Español',
 };
 
 const Settings: FC = () => {
-  const [lang, setLang] = useState<keyof LangDisplay>('en');
+  const { i18n } = useTranslation();
+  const [lang, setLang] = useState(i18n.language);
   const [showLangs, setShowLangs] = useState<boolean>(false);
-  const handleLangChange = (key: keyof LangDisplay) => {
+  const handleLangChange = (key: ApplicationLanguages) => {
     setLang(key);
     setShowLangs(false);
   };

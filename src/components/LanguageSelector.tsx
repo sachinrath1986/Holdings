@@ -7,12 +7,12 @@ import {
   IonList,
 } from '@ionic/react';
 import { useTranslation } from 'react-i18next';
-import { LangDisplay } from '../pages/Settings';
+import { ApplicationLanguages } from '../pages/Settings';
 import SelectorStyles from './LanguageSelector.module.css';
 
 type LanguageSelectorProps = {
-  handleLangChange: (key: keyof LangDisplay) => void;
-  currentLang: keyof LangDisplay;
+  handleLangChange: (key: ApplicationLanguages) => void;
+  currentLang: string;
 };
 
 const LanguageSelector: FC<LanguageSelectorProps> = ({
