@@ -59,7 +59,7 @@ const DoughnutChart: React.FC = () => {
     return formattedValue;
   };
 
-  const getChartInnerContent = () => (
+  const getChartInnerContent: React.FC = () => (
     <>
       <IonText className="text-white text-center font-semibold text-3xl">
         <p>{FormatWholeNumber(innerData)}</p>
@@ -67,7 +67,6 @@ const DoughnutChart: React.FC = () => {
       <IonText className="text-white text-opacity-50 text-center text-xs">
         <p>{activeLegend}</p>
       </IonText>
-      <span>aaa</span>
     </>
   );
 
