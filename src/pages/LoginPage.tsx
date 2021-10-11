@@ -12,6 +12,7 @@ import {
   IonGrid,
 } from '@ionic/react';
 import { useHistory } from 'react-router';
+import Avatar from '../components/Avatar';
 import styles from './LoginPage.module.css';
 
 const SIGN_IN_MSG = `Let's sign you in`;
@@ -26,7 +27,9 @@ const Login: React.FC = () => {
 
   return (
     <IonPage className={styles['login-page']}>
-      <IonAvatar className={styles.logo} />
+      <div className="mb-6">
+        <Avatar />
+      </div>
       <div className={styles.header}>
         <IonText color="light">
           <h5>Welcome to Wissen</h5>
