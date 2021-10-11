@@ -1,10 +1,12 @@
+/* eslint-disable */
+// @ts-nocheck
 import React, { useState } from 'react';
 // eslint-disable-next-line
 import { IonText } from '@ionic/react';
 import { Doughnut } from 'react-chartjs-2';
 import DoughnutChartStyles from './DoughnutChart.module.css';
 
-const DoughnutChart = () => {
+const DoughnutChart: React.FC = () => {
   const [innerData, setInnerData] = useState(2515666);
   const [activeLegend, setActiveLegend] = useState('Total Holding');
   const [chartData] = useState({
@@ -57,14 +59,15 @@ const DoughnutChart = () => {
     return formattedValue;
   };
 
-  const ChartInnerContent = () => (
+  const getChartInnerContent = () => (
     <>
-      <IonText class="text-white text-center font-semibold text-3xl">
+      <IonText className="text-white text-center font-semibold text-3xl">
         <p>{FormatWholeNumber(innerData)}</p>
       </IonText>
-      <IonText class="text-white text-opacity-50 text-center text-xs">
+      <IonText className="text-white text-opacity-50 text-center text-xs">
         <p>{activeLegend}</p>
       </IonText>
+      <span>aaa</span>
     </>
   );
 
@@ -114,7 +117,7 @@ const DoughnutChart = () => {
     <div className="relative">
       <DoughnutComponent />
       <div className={`${DoughnutChartStyles.inner_content} absolute`}>
-        <ChartInnerContent />
+        {getChartInnerContent()}
       </div>
     </div>
   );

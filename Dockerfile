@@ -1,6 +1,6 @@
 # Step 1 ->
 
-FROM node:14-alpine as build-step
+FROM node:16.6-alpine as build-step
 RUN mkdir /app
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
