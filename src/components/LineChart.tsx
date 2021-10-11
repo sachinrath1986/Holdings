@@ -1,3 +1,5 @@
+/* eslint-disable */
+// @ts-nocheck
 import React, { useEffect } from 'react';
 import { Line, Chart } from 'react-chartjs-2';
 
