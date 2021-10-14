@@ -41,7 +41,7 @@ const LineChart: React.FC<{ chartData: number[]; chartLabels: string[] }> = ({
         mode: 'nearest',
         callbacks: {
           title: (context: any) => {
-            const title = `₹ ${chartData[context[0].dataIndex].toString()}`;
+            const title = `$ ${chartData[context[0].dataIndex].toString()}`;
             return title;
           },
           label: (context: any) => {
@@ -53,8 +53,8 @@ const LineChart: React.FC<{ chartData: number[]; chartLabels: string[] }> = ({
     },
     elements: {
       point: {
-        pointRadius: 2,
-        pointHoverRadius: 5,
+        pointRadius: 4,
+        pointHoverRadius: 6,
         pointHoverBackgroundColor: '#0a95ff',
       },
       line: {
