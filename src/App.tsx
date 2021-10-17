@@ -1,4 +1,4 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Login from './pages/LoginPage';
@@ -41,36 +41,38 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/login" />
-        </Route>
-        <Route exact path="/create-pin">
-          <CreatePin />
-        </Route>
-        <Route exact path="/portfoliosummary">
-          <PortfolioSummary />
-        </Route>
-        <Route exact path="/accountsummary">
-          <AccountSummary />
-        </Route>
-        <Route exact path="/holdingsummary">
-          <HoldingSummary />
-        </Route>
-        <Route exact path="/settings">
-          <Settings />
-        </Route>
-        <Route exact path="/alerts">
-          <AlertNotifications />
-        </Route>
-        <Route exact path="/transactions">
-          <Transactions />
-        </Route>
-        <Route exact path="/holdings">
-          <AllHoldings />
-        </Route>
+        <Switch>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/create-pin">
+            <CreatePin />
+          </Route>
+          <Route exact path="/portfoliosummary">
+            <PortfolioSummary />
+          </Route>
+          <Route exact path="/accountsummary">
+            <AccountSummary />
+          </Route>
+          <Route exact path="/holdingsummary">
+            <HoldingSummary />
+          </Route>
+          <Route exact path="/settings">
+            <Settings />
+          </Route>
+          <Route exact path="/alerts">
+            <AlertNotifications />
+          </Route>
+          <Route exact path="/transactions">
+            <Transactions />
+          </Route>
+          <Route exact path="/holdings">
+            <AllHoldings />
+          </Route>
+          <Route path="/">
+            <Redirect to="/login" />
+          </Route>
+        </Switch>
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

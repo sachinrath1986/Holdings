@@ -10,7 +10,7 @@ import PortSumLineChart from './PortfolioSummaryLineChart';
 const HoldingCard: FC<{ holdingData: HoldingDataType }> = ({ holdingData }) => {
   const history = useHistory();
   const selectHolding = () => {
-    history.replace('/holdingsummary');
+    history.push('/holdingsummary');
   };
 
   const chartData = (canvas: any) => {

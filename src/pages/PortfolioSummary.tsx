@@ -128,11 +128,11 @@ const Portfolio: FC = () => {
 
   const history = useHistory();
   const openNotifications = () => {
-    history.replace('/alerts');
+    history.push('/alerts');
   };
 
   const navigateToAllHoldings = () => {
-    history.replace('/holdings');
+    history.push('/holdings');
   };
 
   return (

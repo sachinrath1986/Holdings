@@ -74,7 +74,7 @@ const AlertNotifications: React.FC = () => {
   const [alertsArr, setAlertsArr] = useState<AlertDataType[]>(alerts);
   const history = useHistory();
   const handleBack = () => {
-    history.replace('/portfoliosummary');
+    history.goBack();
   };
 
   const searchNotifs = (key: string) => {
@@ -108,11 +108,7 @@ const AlertNotifications: React.FC = () => {
       <IonHeader class={`p-4 ${PageStyles.pageHeader} pl-0 pb-1`}>
         <div className="flex flex-row items-center">
           <div className={PageStyles.backBtnTxt}>
-            <IonButton
-              fill="clear"
-              class="p-0 m-0"
-              onClick={() => handleBack()}
-            >
+            <IonButton fill="clear" class="p-0 m-0" onClick={handleBack}>
               <IonImg src={backArrow} alt="" />
               <IonText color="light">
                 <span>Back</span>
