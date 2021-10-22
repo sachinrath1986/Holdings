@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import {
+  IonBackButton,
   IonContent,
   IonHeader,
   IonList,
@@ -12,7 +13,6 @@ import allHoldings from '../mocks/allHoldings';
 import AllHoldingsStyles from './AllHoldings.module.css';
 import SearchBar from '../components/SearchBar';
 import HoldingCard from '../components/HoldingCard';
-import NavigateBack from '../components/NavigateBack';
 
 const AllHoldings: FC = () => {
   const [holdingData, setHoldingDate] = useState<HoldingDataType[]>([]);
@@ -34,7 +34,7 @@ const AllHoldings: FC = () => {
       <IonHeader>
         <IonToolbar>
           <div className="flex flex-row items-center justify-start mx-3 my-4">
-            <NavigateBack />
+            <IonBackButton color="primary" />
             <IonText color="light" className="ml-12">
               <h1 className="font-bold text-xl">All Holdings</h1>
             </IonText>

@@ -12,6 +12,7 @@ import {
   IonSegmentButton,
   IonLabel,
   IonImg,
+  IonBackButton,
 } from '@ionic/react';
 import { alertCircle } from 'ionicons/icons';
 // eslint-disable-next-line
@@ -21,7 +22,6 @@ import { currencyFormatter } from '../utils/currency';
 import HoldingSummaryStyles from './HoldingSummary.module.css';
 import ChartLineUpImg from '../images/chart_line_up.png';
 import DownloadImg from '../images/Download_Icon_Blue.png';
-import NavigateBack from '../components/NavigateBack';
 
 export type HoldingDetailDataType = {
   holdingName: string;
@@ -47,7 +47,7 @@ const HoldingSummary: React.FC = () => {
     <IonPage>
       <IonHeader class={`p-4 ${HoldingSummaryStyles.header_bg} pl-3`}>
         <div className="flex flex-row items-center justify-between">
-          <NavigateBack />
+          <IonBackButton color="primary" />
           <div className="flex flex-row items-center">
             <div className="mr-1">
               <IonImg src={DownloadImg} class="w-3" alt="DownloadImg" />

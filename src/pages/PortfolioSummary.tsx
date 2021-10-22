@@ -48,10 +48,10 @@ const Portfolio: FC = () => {
     {
       holdingId: 'a12',
       holdingName: 'rcom',
-      investmentAmount: 2789.0,
+      investmentAmount: 3000.0,
       holdingType: 'Bonds',
-      holdingAmount: 2900.0,
-      holdingChange: 111.0,
+      holdingAmount: 4400.0,
+      holdingChange: 1400.0,
       holdingPercentChange: 15.8,
       oneDayChange: 20.0,
       oneDayPercentChange: 3.28,
