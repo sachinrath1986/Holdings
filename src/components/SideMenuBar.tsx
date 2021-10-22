@@ -34,9 +34,11 @@ type RouteCheck = {
 const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
   const { t: translate } = useTranslation();
   const history = useHistory();
+
   const backToSummary = () => {
     history.replace('/accountsummary');
   };
+
   const navigateToSettings = () => {
     history.replace('/settings');
   };
@@ -92,10 +94,6 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
             <img src={homeIcon} alt="" />
             <span>{translate('dashboard')}</span>
           </IonItem>
-          <IonItem class={styles['menu-list-item']}>
-            <img src={documentIcon} alt="" />
-            <span>{translate('docsAndReports')}</span>
-          </IonItem>
           <IonItem
             class={`${styles['menu-list-item']} ${
               routeCheck.transactions ? styles.activeItem : ''
@@ -106,10 +104,6 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
             <span>{translate('transactions')}</span>
             <span className={styles['transaction-num']}>12</span>
           </IonItem>
-          <IonItem class={styles['menu-list-item']}>
-            <img src={profileIcon} alt="" />
-            <span>{translate('profile')}</span>
-          </IonItem>
           <IonItem
             class={`${styles['menu-list-item']} ${
               routeCheck.settings ? styles.activeItem : ''
@@ -119,11 +113,24 @@ const SideMenuBar: FC<SideMenuProps> = ({ contentId }) => {
             <img src={settingsIcon} alt="" />
             <span>{translate('settings')}</span>
           </IonItem>
-          <IonItem class={styles['menu-list-item']}>
+          <IonItem class={styles['menu-list-item']} disabled>
+            <img src={documentIcon} alt="" />
+            <span>{translate('docsAndReports')}</span>
+          </IonItem>
+          <IonItem class={styles['menu-list-item']} disabled>
+            <img src={profileIcon} alt="" />
+            <span>{translate('profile')}</span>
+          </IonItem>
+          <IonItem class={styles['menu-list-item']} disabled>
             <img src={helpIcon} alt="" />
             <span>{translate('help')}</span>
           </IonItem>
-          <IonItem class={styles['menu-list-item']}>
+          <IonItem
+            class={styles['menu-list-item']}
+            onClick={() => {
+              history.push('/logout');
+            }}
+          >
             <img src={logoutIcon} alt="" />
             <span>{translate('logout')}</span>
           </IonItem>

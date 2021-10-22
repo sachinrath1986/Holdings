@@ -47,11 +47,6 @@ ion-item.menu-list-item:nth-child(7) img {
   margin-right: 0.6875rem;
 }
 
-.menu-list .menu-list-item:last-child {
-  --color: #6a7487;
-  font-weight: 600;
-}
-
 ion-col.profile-info-col {
   padding-top: 0.6rem;
 }

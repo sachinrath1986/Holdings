@@ -22,6 +22,7 @@ import { currencyFormatter } from '../utils/currency';
 import HoldingSummaryStyles from './HoldingSummary.module.css';
 import ChartLineUpImg from '../images/chart_line_up.png';
 import DownloadImg from '../images/Download_Icon_Blue.png';
+import { ComingSoonSection } from './ComingSoon';
 
 export type HoldingDetailDataType = {
   holdingName: string;
@@ -179,6 +180,7 @@ const HoldingSummary: React.FC = () => {
           </div>
           {tab === 'Overview' ? <HoldingOverView /> : null}
           {tab === 'Analytics' ? <HoldingAnalytics /> : null}
+          {tab === 'Statements' ? <ComingSoonSection /> : null}
         </div>
       </IonContent>
     </IonPage>

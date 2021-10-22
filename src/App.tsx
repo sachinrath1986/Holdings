@@ -69,6 +69,9 @@ const App: React.FC = () => (
           <Route exact path="/holdings">
             <AllHoldings />
           </Route>
+          <Route exact path="/logout">
+            <Redirect to="/login" />
+          </Route>
           <Route path="/">
             <Redirect to="/login" />
           </Route>
