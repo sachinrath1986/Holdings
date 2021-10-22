@@ -41,7 +41,7 @@ const langDisplayObj: LangDisplayObj = {
 };
 
 const Settings: FC = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t: translate } = useTranslation();
   const [lang, setLang] = useState(i18n.language);
   const [showLangs, setShowLangs] = useState<boolean>(false);
   const handleLangChange = (key: ApplicationLanguages) => {
@@ -63,7 +63,7 @@ const Settings: FC = () => {
             <IonMenuButton color="light" />
           </IonButtons>
           <IonText color="light">
-            <h1 className="font-semibold text-xl">Settings</h1>
+            <h1 className="font-semibold text-xl">{translate('settings')}</h1>
           </IonText>
           <div>
             <IonImg
@@ -77,12 +77,13 @@ const Settings: FC = () => {
       <IonContent className={SettingsSummaryStyles.screen_bg} id="settings">
         <IonList className={`m-0 p-0 ${SettingsSummaryStyles.screen_bg}`}>
           <IonListHeader className={SettingsSummaryStyles.settings_list_header}>
-            <IonLabel>PREFERENCES</IonLabel>
+            <IonLabel>{translate('preferences')}</IonLabel>
           </IonListHeader>
 
           <div className={SettingsSummaryStyles.settings_list_item}>
             <IonLabel className={SettingsSummaryStyles.settings_label}>
-              <img src={faceIdIcon} alt="" className="mr-3" /> Face ID
+              <img src={faceIdIcon} alt="" className="mr-3" />{' '}
+              {translate('faceId')}
             </IonLabel>
             <IonToggle slot="end" checked />
           </div>
@@ -90,14 +91,14 @@ const Settings: FC = () => {
           <div className={SettingsSummaryStyles.settings_list_item}>
             <IonLabel className={SettingsSummaryStyles.settings_label}>
               <img src={darkModeIcon} alt="" className="mr-3" />
-              Dark theme
+              {translate('darkTheme')}
             </IonLabel>
             <IonToggle slot="end" checked />
           </div>
           <div className={SettingsSummaryStyles.settings_list_item}>
             <IonLabel className={SettingsSummaryStyles.settings_label}>
               <img src={notificationIcon} alt="" className="mr-3" />
-              Notifications
+              {translate('notifications')}
             </IonLabel>
             <IonLabel
               className={SettingsSummaryStyles.settings_option_list_item}
@@ -112,7 +113,7 @@ const Settings: FC = () => {
           >
             <IonLabel className={SettingsSummaryStyles.settings_label}>
               <img src={languageIcon} alt="" className="mr-3" />
-              Language
+              {translate('language')}
             </IonLabel>
             <IonLabel
               className={SettingsSummaryStyles.settings_option_list_item}
@@ -132,12 +133,12 @@ const Settings: FC = () => {
         {/** Others section */}
         <IonList className={`m-0 p-0 pt-5 ${SettingsSummaryStyles.screen_bg}`}>
           <IonListHeader className={SettingsSummaryStyles.settings_list_header}>
-            <IonLabel>OTHERS</IonLabel>
+            <IonLabel>{translate('others')}</IonLabel>
           </IonListHeader>
           <div className={SettingsSummaryStyles.settings_list_item}>
             <IonLabel className={SettingsSummaryStyles.settings_label}>
               <img src={helpIcon} alt="" className="mr-3" />
-              About us
+              {translate('aboutUs')}
             </IonLabel>
             <img
               src={rightArrowIcon}
@@ -148,7 +149,7 @@ const Settings: FC = () => {
           <div className={SettingsSummaryStyles.settings_list_item}>
             <IonLabel className={SettingsSummaryStyles.settings_label}>
               <img src={documentIcon} alt="" className="mr-3" />
-              Privacy Policy
+              {translate('privacyPolicy')}
             </IonLabel>
             <img
               src={rightArrowIcon}
@@ -159,7 +160,7 @@ const Settings: FC = () => {
           <div className={SettingsSummaryStyles.settings_list_item}>
             <IonLabel className={SettingsSummaryStyles.settings_label}>
               <img src={documentIcon} alt="" className="mr-3" />
-              Terms & Conditions
+              {translate('termsAndCondition')}
             </IonLabel>
             <img
               src={rightArrowIcon}

@@ -15,6 +15,15 @@ const translation = {
   bonds: 'Bonds',
   royalties: 'Royalties',
   stocks: 'Stocks',
+  preferences: 'PREFERENCES',
+  faceId: 'Face ID',
+  darkTheme: 'Dark theme',
+  notifications: 'Notifications',
+  language: 'Language',
+  others: 'OTHERS',
+  aboutUs: 'About us',
+  privacyPolicy: 'Privacy Policy',
+  termsAndCondition: 'Terms & Conditions',
 };
 
 export default translation;

@@ -5,7 +5,7 @@ import AvatarStyles from './Avatar.module.css';
 
 const Avatar: FC = () => (
   <IonAvatar class={AvatarStyles.screen_avatar}>
-    <img src={AppLogo} alt="AppLogo" className={AvatarStyles.app_logo}/>
+    <img src={AppLogo} alt="AppLogo" className={AvatarStyles.app_logo} />
   </IonAvatar>
 );
 

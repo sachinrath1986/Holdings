@@ -15,6 +15,15 @@ const translation = {
   bonds: 'Cautiverio',
   royalties: 'Regalías',
   stocks: 'Cepo',
+  preferences: 'PREFERENCIAS',
+  faceId: 'ID de rostro',
+  darkTheme: 'Tema oscuro',
+  notifications: 'Notificaciones',
+  language: 'Idioma',
+  others: 'OTRAS',
+  aboutUs: 'Sobre nosotras',
+  privacyPolicy: 'Política de privacidad',
+  termsAndCondition: 'Términos y condiciones',
 };
 
 export default translation;
